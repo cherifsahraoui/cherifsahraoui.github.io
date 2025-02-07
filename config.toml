@@ -27,5 +27,5 @@ menu = [
 
 socials = [
     { name= "github", url= "https://github.com/cherifsahraoui/", icon="github" },
-    { name= "linkedin", url="https://www.linkedin.com/in/cherifsahraoui/", icon="linkedin" },
+    { name= "linkedin", url="https://www.linkedin.com/in/cherif-sahraoui/", icon="linkedin" },
 ]
