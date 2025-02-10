@@ -1,11 +1,12 @@
 ---
-title: "Setting Up a Free VPN with ZeroTier on Two Raspberry Pi Devices"
+title: "Routing All Traffic Through Home with ZeroTier and Two Raspberry Pi Devices"
 date: 2025-02-09T14:00:00+02:00
 tags: ["vpn"]
 draft: false
 ---
 
-In this tutorial, we'll guide you through creating a simple, free Virtual Private Network (VPN) using ZeroTier and two Raspberry Pi devices. ZeroTier is a powerful tool that allows you to create secure virtual networks, enabling your devices to communicate as if they're on the same local network, regardless of their physical locations.
+In this tutorial, we'll guide you through creating a simple, solution to route all traffic through your home network using two Raspberry Pi devices and ZeroTier. This setup allows you to securely connect to your home network from anywhere and route all your internet traffic through your home network, providing an extra layer of security and privacy. You will also get the same IP address as you Home network from anywhere in the world.
+ZeroTier is a powerful tool that allows you to create secure virtual networks, enabling your devices to communicate as if they're on the same local network, regardless of their physical locations.
 
 **Note:** This tutorial is inspired by the [DigitalOcean guide](https://www.digitalocean.com/community/tutorials/getting-started-software-defined-networking-creating-vpn-zerotier-one) and [harivemula guide](https://harivemula.com/2021/09/18/routing-all-traffic-through-home-with-zerotier-on-travel/).
 
@@ -13,7 +14,7 @@ In this tutorial, we'll guide you through creating a simple, free Virtual Privat
 
 Before we begin, ensure you have the following:
 
-- Two Raspberry Pi devices with Raspberry Pi OS installed and updated. (I used two Raspberry Pi 3 devices for this tutorial.)
+- Two Raspberry Pi devices with Raspberry Pi OS installed and updated. (I used two Raspberry Pi 3 devices with Raspberry Pi OS (64-bit, Kernel version: 6.6) for this tutorial.)
 - Internet connectivity for both Raspberry Pi devices.
 - A ZeroTier account. If you don't have one, you can create it for free at [ZeroTier Central](https://my.zerotier.com/).
 
