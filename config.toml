@@ -6,9 +6,17 @@ title = "cherifsahraoui"
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
+build_search_index = true
 
 theme = "apollo"
+
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+index_format = "elasticlunr_json"
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
@@ -23,9 +31,13 @@ footer = "Copyright © 2025 Cherif Sahraoui. All rights reserved."
 mathjax = true
 menu = [
     { name= "/about", url= "/about", weight=1 },
+    {name="/contact-me", url= "/contact-me", weight=1 },
 ]
 
 socials = [
     { name= "github", url= "https://github.com/cherifsahraoui/", icon="github" },
     { name= "linkedin", url="https://www.linkedin.com/in/cherif-sahraoui/", icon="linkedin" },
 ]
+
+[extra.analytics]
+enabled = false
