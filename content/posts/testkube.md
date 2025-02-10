@@ -5,65 +5,159 @@ tags: ["testkube"]
 draft: false
 ---
 
-Testkube is a powerful, Kubernetes-native testing framework designed to simplify and streamline the execution of tests in cloud-native environments. It allows developers and testers to define, run, and analyze tests using their existing tools and infrastructure, all while leveraging the scalability and flexibility of Kubernetes. Below is an overview of Testkube's features, benefits, and use cases.
-
----
-
 ## **What is Testkube?**
 Testkube is a **Test Orchestration and Execution Framework** for cloud-native applications. It provides a unified platform for running tests, integrating seamlessly with Kubernetes and existing CI/CD pipelines. Testkube consists of two main components:
 - **Control Plane**: Manages test execution, reporting, and orchestration. It can run in the cloud or on-premises.
 - **Agents**: Execute tests in your infrastructure and are 100% open source. They can also operate standalone without the Control Plane.
 
+### **Licensing**
+Testkube is available under two licenses:
+- **MIT License**: Open-source and free to use.
+- **Testkube Community License (TCL)**: Covers additional enterprise functionalities.
+
 ---
 
 ## **Key Features**
-1. **Vendor-Agnostic Testing**  
-   Testkube supports a wide range of testing tools, including K6, JMeter, Cypress, Postman, Pytest, and more. It integrates with your existing CI/CD systems and tools, making it a versatile solution for any testing need.
+1. **Test Workflows** (Primary Custom Resource Definition - CRD)  
+   - Replaces the older CRDs (Test, TestSuite, and Executor).
+   - Manages the full lifecycle of tests in Kubernetes.
+   - Supports multiple testing tool versions and dependencies.
+   - Allows defining multiple execution steps with setup/teardown processes.
+   - Configures tool-specific commands and arguments.
+   - Provides better resource management and test control.
 
-2. **Test Workflows and Templates**  
-   Define complex test workflows with support for parallelization, sharding, and parameterization. Testkube's rich syntax allows for modular and reusable test definitions.
+2. **Kubernetes-Native Execution**  
+   - Analyzes expected operations and images to build required Kubernetes resources (ConfigMaps, Secrets, Jobs, and Pods).
+   - Automatically deletes created resources after test execution.
+   - Components:
+     - **Job**: Schedules test execution.
+     - **Pod**: Executes requested operations and returns logs.
 
-3. **Kubernetes-Native Integration**  
-   Testkube leverages Kubernetes' scalability and flexibility to run tests efficiently. It supports hardware testing, such as GPU-based workloads, and integrates with Kubernetes Device Plugins for advanced use cases.
+3. **Enterprise Features**  
+   - Exclusive for Testkube Enterprise users.
+   - Enhanced orchestration and management capabilities.
 
 4. **Centralized Reporting and Analysis**  
-   Testkube provides a centralized dashboard for managing test executions, logs, and artifacts. It also offers reporting and analysis features to help teams make data-driven decisions.
-
-5. **Open Source Core**  
-   The Testkube Agent is open source, enabling teams to execute millions of tests in their own infrastructure. The commercial Control Plane adds advanced management and orchestration capabilities.
+   - Provides a dashboard to manage test executions, logs, and artifacts.
+   - Supports advanced analytics for informed decision-making.
 
 ---
 
-## **Benefits**
-- **For DevOps**:  
-  - Consistent, script-less framework for running tests.  
-  - Schedule tests from anywhere and integrate with GitOps tools like Argo and Flux.
+## **Testkube Test Workflow**
 
-- **For Testers**:  
-  - Easily retrieve test results and artifacts for debugging.  
-  - Create test suites and manage tests across multiple environments.
+Test Workflows are the primary Custom Resource Definition (CRD) in Testkube, replacing the older CRDs (Test, TestSuite, and Executor). They manage the full lifecycle of tests in Kubernetes, offering several key features:
 
-- **For Engineering Management**:  
-  - Centralize test execution and reporting.  
-  - Simplify test orchestration and scale tests effortlessly.
+- **Running Tests**: Supports different testing tool versions and dependencies.
+- **Multiple Execution Steps**: Allows defining multiple steps for test execution, including setup and teardown processes.
+- **Enhanced Control**: Provides more control over test execution, including resource consumption and setup/teardown processes.
+- **Tool-Specific Commands**: Enables configuration of tool-specific commands and arguments.
+
+![image](/images/testworkflow.png)
+
+Test Workflows analyze the expected operations and images, and build all the required native Kubernetes resources, such as ConfigMaps and Secrets for data, and most importantly, Jobs and Pods for the actual execution.
+
+After the Test Workflow execution is finished, all the created resources are deleted from the Kubernetes cluster.
+
+- Components:
+   - **Job**: For every execution, a Job is created to schedule the actual execution pod.
+   - **Pod**: Based on the Test Workflow, a Pod is built to execute all the requested operations and return all the information within its logs.
+
+Example of a Test Workflow for running Postman tests:
+```yaml
+kind: TestWorkflow
+apiVersion: testworkflows.testkube.io/v1
+metadata:
+  name: postman-sample
+  namespace: testkube
+  labels:
+    docs: example
+content:
+  git:
+    uri: https://github.com/kubeshop/testkube
+    revision: main
+    paths:
+      - test/postman/executor-tests/postman-executor-smoke-without-envs-postman_collection.json
+container:
+  workingDir: /data/repo/test/postman/executor-tests
+resources:
+  requests:
+    cpu: 256m
+    memory: 128Mi
+steps:
+  - name: Run test
+    run:
+      image: postman/newman:6-alpine
+      args:
+        - run
+        - postman-executor-smoke-without-envs.postman_collection.json
+```
+
+## **Testkube Architecture**
+
+![image](/images/testkube_architecture.png)
+
+Testkube consists of two main components:
+- Testkube Agent
+   running in cluster that manages Testkube resources, runs tests, gathers results, etc.
+   
+   Helm Chart: [helm-charts](https://kubeshop.github.io/helm-charts)
+
+- Testkube Server (Control plane)
+   includes the Testkube Dashboard, Storage for Results/Artifacts, Cluster Federation, etc
+   
+   Helm Chart: [testkube-cloud-charts](https://kubeshop.github.io/testkube-cloud-charts)
+
+Additional components are:
+   - Dex: identity provider
+   - MinIO: storage backend for storing artifacts
+   - NATS: message broker for communication between API and Agents
+   - MongoDB: database for storing all the data (logs, test results …)
+
+PS: The testkube agent and testkube server can be deployed in different clusters
+
+---
+
+## **Triggering Tests in Testkube**
+Test workflows can be triggered through multiple mechanisms:
+
+1. **Manual Execution**  
+   - Tests can be triggered directly from the Testkube Dashboard.
+
+2. **Kubernetes Event-Based Triggers**  
+   - Automates Test Workflows based on Kubernetes resource events (e.g., Deployment updates, Ingress deletions).
+   - Uses selectors (nameRegex, labelSelector) and conditions (e.g., Progressing, Available) to define triggers.
+
+3. **CLI Execution**  
+   - Commands to trigger tests:
+     - **Free version**: `testkube set context --kubeconfig`
+     - **Pro version**: `testkube set context --org-id $TESTKUBE_ORG_ID --env-id $TESTKUBE_ENV_ID -c cloud --root-domain test.bare.pandrosion.org --api-prefix testkube-api -k $TESTKUBE_API_TOKEN`
+     - Running a test: `testkube run <resource_type> <resource_name>`
+
+4. **API Execution**  
+   - Tests can be triggered using a POST request to the Testkube Agent API:
+     ```
+     POST https://testkube-api.test.bare.pandrosion.org/organizations/$TESTKUBE_ORG_ID/environments/$TESTKUBE_ENV_ID/agent/test-workflows/$TEST/executions
+     ```
+   - Authorization: Bearer Token (generated in Testkube Dashboard).
+   - Required variables stored in Vault under: `testkube-cloud`.
 
 ---
 
 ## **Use Cases**
 1. **Load and Performance Testing**  
-   Testkube supports tools like K6, JMeter, and Gatling for distributed load testing.
+   - Supports tools like K6, JMeter, and Gatling for distributed load testing.
 
 2. **End-to-End (E2E) Testing**  
-   Run E2E tests using frameworks like Playwright, Cypress, and Selenium.
+   - Run E2E tests using frameworks like Playwright, Cypress, and Selenium.
 
 3. **API Testing**  
-   Integrate with Postman, SoapUI, and REST Assured for API testing workflows.
+   - Integrate with Postman, SoapUI, and REST Assured for API testing workflows.
 
 4. **Hardware Testing**  
-   Test hardware components like GPUs in Kubernetes clusters using Testkube's TestWorkflows.
+   - Test hardware components like GPUs in Kubernetes clusters using Testkube's TestWorkflows.
 
 5. **Python Testing with Pytest**  
-   Testkube simplifies the integration of Pytest into Kubernetes, enabling scalable and efficient testing workflows.
+   - Simplifies the integration of Pytest into Kubernetes, enabling scalable and efficient testing workflows.
 
 ---
 
