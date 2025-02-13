@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html class="dark light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    
+    
+    
+    <title>
+         Testkube: Kubernetes-Native Test Orchestration and Execution Platform
+        
+    </title>
+
+        
+            <meta property="og:title" content="Testkube: Kubernetes-Native Test Orchestration and Execution Platform" />
+        
+     
+
+     
+         
+     
+
+     
+         
+    
+
+    
+    
+        <link rel="icon" type="image/png" href=icon&#x2F;favicon.png />
+    
+
+    
+    
+        <link href=https://cherifsahraoui.github.io/fonts.css rel="stylesheet" />
+    
+
+    
+    
+
+
+    
+        
+        <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="cherifsahraoui" href="https://cherifsahraoui.github.io/atom.xml">
+
+
+    
+    
+        <link rel="stylesheet" type="text/css" href=https://cherifsahraoui.github.io/theme/dark.css />
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href=https://cherifsahraoui.github.io/main.css />
+
+    
+</head>
+
+<body>
+    <div class="content">
+        <header>
+    <style>
+        .avatar {
+            vertical-align: middle;
+            width: 150px;
+            height: 150px;
+            border: none;
+        }
+
+        #wrapper {
+            width: 100%;
+            clear: both;
+            text-align: center;
+        }
+
+        #wrapper_photo {
+            width: 100%;
+            clear: both;
+            text-align: center;
+        }
+    </style>
+    <div class="main">
+        <a href=https:&#x2F;&#x2F;cherifsahraoui.github.io&#x2F;>cherifsahraoui</a>
+
+        <div class="socials">
+            
+            <a rel="me" href="https:&#x2F;&#x2F;github.com&#x2F;cherifsahraoui&#x2F;" class="social">
+                <img alt=github src="/social_icons/github.svg">
+            </a>
+            
+            <a rel="me" href="https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;cherif-sahraoui&#x2F;" class="social">
+                <img alt=linkedin src="/social_icons/linkedin.svg">
+            </a>
+            
+        </div>
+    </div>
+
+    <nav>
+        
+        <a href=&#x2F;about style="margin-left: 0.7em">&#x2F;about</a>
+        
+        <a href=&#x2F;contact-me style="margin-left: 0.7em">&#x2F;contact-me</a>
+        
+
+        
+    </nav>
+</header>
+        
+        
+    
+<main>
+    <article>
+        <div class="title">
+            
+            
+    <div class="page-header">
+        Testkube: Kubernetes-Native Test Orchestration and Execution Platform<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
+
+
+                <div class="meta">
+                    
+                        Posted on <time>2025-02-07</time>
+                    
+
+                    
+                </div>
+        </div>
+
+        
+
+        
+        
+
+        <section class="body">
+            <h2 id="what-is-testkube"><strong>What is Testkube?</strong></h2>
+<p>Testkube is a <strong>Test Orchestration and Execution Framework</strong> for cloud-native applications. It provides a unified platform for running tests, integrating seamlessly with Kubernetes and existing CI/CD pipelines. Testkube consists of two main components:</p>
+<ul>
+<li><strong>Control Plane</strong>: Manages test execution, reporting, and orchestration. It can run in the cloud or on-premises.</li>
+<li><strong>Agents</strong>: Execute tests in your infrastructure and are 100% open source. They can also operate standalone without the Control Plane.</li>
+</ul>
+<h3 id="licensing"><strong>Licensing</strong></h3>
+<p>Testkube is available under two licenses:</p>
+<ul>
+<li><strong>MIT License</strong>: Open-source and free to use.</li>
+<li><strong>Testkube Community License (TCL)</strong>: Covers additional enterprise functionalities.</li>
+</ul>
+<hr />
+<h2 id="key-features"><strong>Key Features</strong></h2>
+<ol>
+<li>
+<p><strong>Test Workflows</strong> (Primary Custom Resource Definition - CRD)</p>
+<ul>
+<li>Replaces the older CRDs (Test, TestSuite, and Executor).</li>
+<li>Manages the full lifecycle of tests in Kubernetes.</li>
+<li>Supports multiple testing tool versions and dependencies.</li>
+<li>Allows defining multiple execution steps with setup/teardown processes.</li>
+<li>Configures tool-specific commands and arguments.</li>
+<li>Provides better resource management and test control.</li>
+</ul>
+</li>
+<li>
+<p><strong>Kubernetes-Native Execution</strong></p>
+<ul>
+<li>Analyzes expected operations and images to build required Kubernetes resources (ConfigMaps, Secrets, Jobs, and Pods).</li>
+<li>Automatically deletes created resources after test execution.</li>
+<li>Components:
+<ul>
+<li><strong>Job</strong>: Schedules test execution.</li>
+<li><strong>Pod</strong>: Executes requested operations and returns logs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Enterprise Features</strong></p>
+<ul>
+<li>Exclusive for Testkube Enterprise users.</li>
+<li>Enhanced orchestration and management capabilities.</li>
+</ul>
+</li>
+<li>
+<p><strong>Centralized Reporting and Analysis</strong></p>
+<ul>
+<li>Provides a dashboard to manage test executions, logs, and artifacts.</li>
+<li>Supports advanced analytics for informed decision-making.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="testkube-test-workflow"><strong>Testkube Test Workflow</strong></h2>
+<p>Test Workflows are the primary Custom Resource Definition (CRD) in Testkube, replacing the older CRDs (Test, TestSuite, and Executor). They manage the full lifecycle of tests in Kubernetes, offering several key features:</p>
+<ul>
+<li><strong>Running Tests</strong>: Supports different testing tool versions and dependencies.</li>
+<li><strong>Multiple Execution Steps</strong>: Allows defining multiple steps for test execution, including setup and teardown processes.</li>
+<li><strong>Enhanced Control</strong>: Provides more control over test execution, including resource consumption and setup/teardown processes.</li>
+<li><strong>Tool-Specific Commands</strong>: Enables configuration of tool-specific commands and arguments.</li>
+</ul>
+<p><img src="/images/testworkflow.png" alt="image" /></p>
+<p>Test Workflows analyze the expected operations and images, and build all the required native Kubernetes resources, such as ConfigMaps and Secrets for data, and most importantly, Jobs and Pods for the actual execution.</p>
+<p>After the Test Workflow execution is finished, all the created resources are deleted from the Kubernetes cluster.</p>
+<ul>
+<li>Components:
+<ul>
+<li><strong>Job</strong>: For every execution, a Job is created to schedule the actual execution pod.</li>
+<li><strong>Pod</strong>: Based on the Test Workflow, a Pod is built to execute all the requested operations and return all the information within its logs.</li>
+</ul>
+</li>
+</ul>
+<p>Example of a Test Workflow for running Postman tests:</p>
+<pre data-lang="yaml" style="background-color:#282c34;color:#abb2bf;" class="language-yaml "><code class="language-yaml" data-lang="yaml"><span style="color:#e06c75;">kind</span><span>: </span><span style="color:#98c379;">TestWorkflow
+</span><span style="color:#e06c75;">apiVersion</span><span>: </span><span style="color:#98c379;">testworkflows.testkube.io/v1
+</span><span style="color:#e06c75;">metadata</span><span>:
+</span><span>  </span><span style="color:#e06c75;">name</span><span>: </span><span style="color:#98c379;">postman-sample
+</span><span>  </span><span style="color:#e06c75;">namespace</span><span>: </span><span style="color:#98c379;">testkube
+</span><span>  </span><span style="color:#e06c75;">labels</span><span>:
+</span><span>    </span><span style="color:#e06c75;">docs</span><span>: </span><span style="color:#98c379;">example
+</span><span style="color:#e06c75;">content</span><span>:
+</span><span>  </span><span style="color:#e06c75;">git</span><span>:
+</span><span>    </span><span style="color:#e06c75;">uri</span><span>: </span><span style="color:#98c379;">https://github.com/kubeshop/testkube
+</span><span>    </span><span style="color:#e06c75;">revision</span><span>: </span><span style="color:#98c379;">main
+</span><span>    </span><span style="color:#e06c75;">paths</span><span>:
+</span><span>      - </span><span style="color:#98c379;">test/postman/executor-tests/postman-executor-smoke-without-envs-postman_collection.json
+</span><span style="color:#e06c75;">container</span><span>:
+</span><span>  </span><span style="color:#e06c75;">workingDir</span><span>: </span><span style="color:#98c379;">/data/repo/test/postman/executor-tests
+</span><span style="color:#e06c75;">resources</span><span>:
+</span><span>  </span><span style="color:#e06c75;">requests</span><span>:
+</span><span>    </span><span style="color:#e06c75;">cpu</span><span>: </span><span style="color:#98c379;">256m
+</span><span>    </span><span style="color:#e06c75;">memory</span><span>: </span><span style="color:#98c379;">128Mi
+</span><span style="color:#e06c75;">steps</span><span>:
+</span><span>  - </span><span style="color:#e06c75;">name</span><span>: </span><span style="color:#98c379;">Run test
+</span><span>    </span><span style="color:#e06c75;">run</span><span>:
+</span><span>      </span><span style="color:#e06c75;">image</span><span>: </span><span style="color:#98c379;">postman/newman:6-alpine
+</span><span>      </span><span style="color:#e06c75;">args</span><span>:
+</span><span>        - </span><span style="color:#98c379;">run
+</span><span>        - </span><span style="color:#98c379;">postman-executor-smoke-without-envs.postman_collection.json
+</span></code></pre>
+<h2 id="testkube-architecture"><strong>Testkube Architecture</strong></h2>
+<p><img src="/images/testkube_architecture.png" alt="image" /></p>
+<p>Testkube consists of two main components:</p>
+<ul>
+<li>
+<p>Testkube Agent
+running in cluster that manages Testkube resources, runs tests, gathers results, etc.</p>
+<p>Helm Chart: <a href="https://kubeshop.github.io/helm-charts">helm-charts</a></p>
+</li>
+<li>
+<p>Testkube Server (Control plane)
+includes the Testkube Dashboard, Storage for Results/Artifacts, Cluster Federation, etc</p>
+<p>Helm Chart: <a href="https://kubeshop.github.io/testkube-cloud-charts">testkube-cloud-charts</a></p>
+</li>
+</ul>
+<p>Additional components are:</p>
+<ul>
+<li>Dex: identity provider</li>
+<li>MinIO: storage backend for storing artifacts</li>
+<li>NATS: message broker for communication between API and Agents</li>
+<li>MongoDB: database for storing all the data (logs, test results …)</li>
+</ul>
+<p>PS: The testkube agent and testkube server can be deployed in different clusters</p>
+<hr />
+<h2 id="triggering-tests-in-testkube"><strong>Triggering Tests in Testkube</strong></h2>
+<p>Test workflows can be triggered through multiple mechanisms:</p>
+<ol>
+<li>
+<p><strong>Manual Execution</strong></p>
+<ul>
+<li>Tests can be triggered directly from the Testkube Dashboard.</li>
+</ul>
+</li>
+<li>
+<p><strong>Kubernetes Event-Based Triggers</strong></p>
+<ul>
+<li>Automates Test Workflows based on Kubernetes resource events (e.g., Deployment updates, Ingress deletions).</li>
+<li>Uses selectors (nameRegex, labelSelector) and conditions (e.g., Progressing, Available) to define triggers.</li>
+</ul>
+</li>
+<li>
+<p><strong>CLI Execution</strong></p>
+<ul>
+<li>Commands to trigger tests:
+<ul>
+<li><strong>Free version</strong>: <code>testkube set context --kubeconfig</code></li>
+<li><strong>Pro version</strong>: <code>testkube set context --org-id $TESTKUBE_ORG_ID --env-id $TESTKUBE_ENV_ID -c cloud --root-domain test.bare.pandrosion.org --api-prefix testkube-api -k $TESTKUBE_API_TOKEN</code></li>
+<li>Running a test: <code>testkube run &lt;resource_type&gt; &lt;resource_name&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>API Execution</strong></p>
+<ul>
+<li>Tests can be triggered using a POST request to the Testkube Agent API:<pre style="background-color:#282c34;color:#abb2bf;"><code><span>POST https://testkube-api.test.bare.pandrosion.org/organizations/$TESTKUBE_ORG_ID/environments/$TESTKUBE_ENV_ID/agent/test-workflows/$TEST/executions
+</span></code></pre>
+</li>
+<li>Authorization: Bearer Token (generated in Testkube Dashboard).</li>
+<li>Required variables stored in Vault under: <code>testkube-cloud</code>.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="use-cases"><strong>Use Cases</strong></h2>
+<ol>
+<li>
+<p><strong>Load and Performance Testing</strong></p>
+<ul>
+<li>Supports tools like K6, JMeter, and Gatling for distributed load testing.</li>
+</ul>
+</li>
+<li>
+<p><strong>End-to-End (E2E) Testing</strong></p>
+<ul>
+<li>Run E2E tests using frameworks like Playwright, Cypress, and Selenium.</li>
+</ul>
+</li>
+<li>
+<p><strong>API Testing</strong></p>
+<ul>
+<li>Integrate with Postman, SoapUI, and REST Assured for API testing workflows.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hardware Testing</strong></p>
+<ul>
+<li>Test hardware components like GPUs in Kubernetes clusters using Testkube's TestWorkflows.</li>
+</ul>
+</li>
+<li>
+<p><strong>Python Testing with Pytest</strong></p>
+<ul>
+<li>Simplifies the integration of Pytest into Kubernetes, enabling scalable and efficient testing workflows.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>Testkube is a game-changer for cloud-native testing, offering a scalable, flexible, and vendor-agnostic platform for running tests in Kubernetes environments. Whether you're a developer, tester, or DevOps engineer, Testkube empowers you to deliver high-quality software with confidence.</p>
+<p>For more information, visit the <a href="https://docs.testkube.io/">Testkube Documentation</a> or explore the <a href="https://testkube.io/blog">Testkube Blog</a> for the latest updates and tutorials.</p>
+
+        </section>
+
+        
+
+    </article>
+</main>
+
+
+        
+        <hr>
+        <center><small>Copyright © 2025 Cherif Sahraoui. All rights reserved.</small></center>
+        
+    </div>
+</body>
+
+</html>

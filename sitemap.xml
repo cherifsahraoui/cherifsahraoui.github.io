@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://cherifsahraoui.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://cherifsahraoui.github.io/about/</loc>
+    </url>
+    <url>
+        <loc>https://cherifsahraoui.github.io/contact-me/</loc>
+    </url>
+    <url>
+        <loc>https://cherifsahraoui.github.io/posts/</loc>
+    </url>
+    <url>
+        <loc>https://cherifsahraoui.github.io/posts/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://cherifsahraoui.github.io/posts/prod-testing/</loc>
+        <lastmod>2025-02-13T10:39:00+02:00</lastmod>
+    </url>
+    <url>
+        <loc>https://cherifsahraoui.github.io/posts/testkube/</loc>
+        <lastmod>2025-02-07T16:27:00+02:00</lastmod>
+    </url>
+    <url>
+        <loc>https://cherifsahraoui.github.io/posts/vpn/</loc>
+        <lastmod>2025-02-09T14:00:00+02:00</lastmod>
+    </url>
+</urlset>
