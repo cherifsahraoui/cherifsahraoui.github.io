@@ -1,0 +1,58 @@
+<div class="footer">
+    <ul class="footer-links">
+        <li><a id="legal-notice-link"></a></li>
+        <li><a id="privacy-policy-link"></a></li>
+        <li><a id="contact-link"></a></li>
+    </ul>
+</div>
+
+<script>
+    const language = window.location.href.includes("/de/") ? "de" : "en";
+
+    function updateFooterLinks() {
+        if (language === "en") {
+            document.getElementById("legal-notice-link").textContent = "Legal Notice";
+            document.getElementById("legal-notice-link").href = "/legal_notice/";
+            document.getElementById("privacy-policy-link").textContent = "Privacy Policy";
+            document.getElementById("privacy-policy-link").href = "/privacy_policy/";
+            document.getElementById("contact-link").textContent = "Contact";
+            document.getElementById("contact-link").href = "/contact/";
+        } else {
+            document.getElementById("legal-notice-link").textContent = "Impressum";
+            document.getElementById("legal-notice-link").href = "/de/legal_notice/";
+            document.getElementById("privacy-policy-link").textContent = "Datenshutz";
+            document.getElementById("privacy-policy-link").href = "/de/privacy_policy/";
+            document.getElementById("contact-link").textContent = "Kontakt";
+            document.getElementById("contact-link").href = "/de/contact/";
+        }
+    }
+
+    updateFooterLinks();
+</script>
+
+<style>
+    .footer {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-flex;
+        gap: 30px;
+    }
+
+    .footer-links li {
+        display: inline;
+    }
+
+    .footer-links a {
+        text-decoration: none;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+</style>
