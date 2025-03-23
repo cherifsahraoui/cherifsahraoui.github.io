@@ -1,0 +1,88 @@
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+{{- $description := partialCached "data/description" . .RelPermalink -}}
+<meta name='description' {{ printf "content=%q" $description | safeHTMLAttr }}>
+{{ with .Params.Keywords }}
+<meta name="keywords" content="{{ delimit . " , " }}">{{ end }}
+
+{{- $title := partial "data/title" . -}}
+<title>{{ $title }}</title>
+
+<link rel='canonical' href='{{ .Permalink }}'>
+
+{{- partial "head/style.html" . -}}
+{{- partial "head/script.html" . -}}
+{{- partial "head/opengraph/include.html" . -}}
+
+{{- range .AlternativeOutputFormats -}}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{- end -}}
+
+{{- if .IsTranslated -}}
+{{ range .AllTranslations }}
+{{- if eq .Language.Lang "en" -}}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+{{- end -}}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+{{- end -}}
+{{ end }}
+
+{{ with .Site.Params.favicon }}
+<link rel="shortcut icon" href="{{ . | relURL }}" />
+<link rel="mask-icon" href="{{ . | relURL }}" />
+{{ end }}
+{{ with .Site.Params.appleTouchIcon }}
+<link rel="apple-touch-icon" href="{{ . | relURL }}" type="image/png" />
+{{ end }}
+<script>
+  const favicon = document.querySelector('link[rel~="icon"]');
+  const favmaskicon = document.querySelector('link[rel~="mask-icon"]');
+  const favappleicon = document.querySelector('link[rel~="apple-touch-icon"]');
+  const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const changeFavicon = () => {
+    if (isDark.matches) {
+      favmaskicon.href = "/favicon_dark.ico";
+      favicon.href = "/favicon_dark.ico";
+      favappleicon.href = "/favicon_dark.png";
+    }
+    else {
+      favmaskicon.href = "/favicon_light.ico";
+      favicon.href = "/favicon_light.ico";
+      favappleicon.href = "/favicon_light.png";
+    }
+  };
+  changeFavicon();
+  isDark.addEventListener("change", changeFavicon);
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sahraoui-IT",
+      "url": "https://sahraoui-it.com",
+      "logo": "https://sahraoui-it.com/images/logo.svg",
+      "sameAs": [
+        "https://github.com/cherifsahraoui",
+        "https://www.linkedin.com/in/cherif-sahraoui/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-17657755284",
+        "contactType": "Customer Service",
+        "areaServed": "DE",
+        "availableLanguage": "German, English"
+      },
+      "description": "Sahraoui-IT is a freelance IT consultancy offering services in DevOps, Kubernetes, and software testing. Providing remote and on-site IT consulting for businesses of all sizes.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Düsseldorf",
+        "postalCode": "40472",
+        "streetAddress": "Niederbeckstraße 33",
+        "addressRegion": "NRW",
+        "addressCountry": "DE"
+      },
+    }
+</script>
+{{- template "_internal/google_analytics.html" . -}}
+{{- partial "head/custom.html" . -}}

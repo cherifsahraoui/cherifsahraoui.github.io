@@ -1,0 +1,22 @@
+{
+  "comment": "adrs-rules",
+  "default": true,
+  "whitespace": false,
+  "ul-start-left": false,
+  "ul-indent": {
+    "indent": 2
+  },
+  "line_length": {
+    "line_length": 120
+  },
+  "no-inline-html": false,
+  "no-bare-urls": true,
+  "fenced-code-language": false,
+  "first-line-h1": false,
+  "MD024": false,
+  "MD013": {
+    "code_block_line_length": 200,
+    "line_length": 120,
+    "tables": false
+  }
+}
