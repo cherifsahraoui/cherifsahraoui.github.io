@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vpn on Sahraoui-IT</title><link>cherifsahraoui.github.io/tags/vpn/</link><description>Recent content in Vpn on Sahraoui-IT</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Cherif Sahraoui</copyright><lastBuildDate>Sun, 09 Feb 2025 14:00:00 +0200</lastBuildDate><atom:link href="cherifsahraoui.github.io/tags/vpn/index.xml" rel="self" type="application/rss+xml"/><item><title>Routing All Traffic Through Home with ZeroTier and Two Raspberry Pi Devices</title><link>cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/</link><pubDate>Sun, 09 Feb 2025 14:00:00 +0200</pubDate><guid>cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/</guid><description>&lt;img src="cherifsahraoui.github.io/cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier.png" alt="Featured image of post Routing All Traffic Through Home with ZeroTier and Two Raspberry Pi Devices" />&lt;p>In this tutorial, we&amp;rsquo;ll guide you through creating a simple, solution to route
+all traffic through your home network using two Raspberry Pi devices and
+ZeroTier. This setup allows you to securely connect to your home network from
+anywhere and route all your internet traffic through your home network,
+providing an extra layer of security and privacy. You will also get the same IP
+address as you Home network from anywhere in the world. ZeroTier is a powerful
+tool that allows you to create secure virtual networks, enabling your devices to
+communicate as if they&amp;rsquo;re on the same local network, regardless of their
+physical locations.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> This tutorial is inspired by the &lt;a class="link" href="https://www.digitalocean.com/community/tutorials/getting-started-software-defined-networking-creating-vpn-zerotier-one" target="_blank" rel="noopener"
+>DigitalOcean
+guide&lt;/a>
+and &lt;a class="link" href="https://harivemula.com/2021/09/18/routing-all-traffic-through-home-with-zerotier-on-travel/" target="_blank" rel="noopener"
+>harivemula
+guide&lt;/a>.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites
+&lt;/h2>&lt;p>Before we begin, ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>Two Raspberry Pi devices with Raspberry Pi OS installed and updated. (I used
+two Raspberry Pi 3 devices with Raspberry Pi OS (64-bit, Kernel version: 6.6)
+for this tutorial.)&lt;/li>
+&lt;li>Internet connectivity for both Raspberry Pi devices.&lt;/li>
+&lt;li>A ZeroTier account. If you don&amp;rsquo;t have one, you can create it for free at
+&lt;a class="link" href="https://my.zerotier.com/" target="_blank" rel="noopener"
+>ZeroTier Central&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="overview-of-the-architecture">Overview of the Architecture
+&lt;/h2>&lt;img src="vpn_architecture.png" alt="VPN Architecture" style="width:90%;"/>
+&lt;h2 id="step-1-set-up-a-zerotier-network">Step 1: Set Up a ZeroTier Network
+&lt;/h2>&lt;h3 id="create-a-zerotier-account">Create a ZeroTier Account
+&lt;/h3>&lt;ol>
+&lt;li>Visit &lt;a class="link" href="https://my.zerotier.com/" target="_blank" rel="noopener"
+>ZeroTier Central&lt;/a> and sign up for a free
+account.&lt;/li>
+&lt;/ol>
+&lt;h3 id="create-a-new-network">Create a New Network
+&lt;/h3>&lt;ol>
+&lt;li>Once logged in, click on &amp;ldquo;Create A Network.&amp;rdquo;&lt;/li>
+&lt;li>A new network will be created, and you&amp;rsquo;ll be provided with a unique Network
+ID. Note this ID, as you&amp;rsquo;ll need it later.&lt;/li>
+&lt;/ol>
+&lt;h3 id="configure-the-network">Configure the Network
+&lt;/h3>&lt;ol>
+&lt;li>Click on your newly created network to access its settings.&lt;/li>
+&lt;li>Here, you can set a name for your network and adjust other settings as
+needed.&lt;/li>
+&lt;li>Ensure that &amp;ldquo;Private&amp;rdquo; is selected under &amp;ldquo;Access Control&amp;rdquo; to keep your network
+secure.&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-2-install-zerotier-on-the-raspberry-pi-devices">Step 2: Install ZeroTier on the Raspberry Pi Devices
+&lt;/h2>&lt;p>Perform the following steps on both Raspberry Pi devices.&lt;/p>
+&lt;h3 id="install-needed-packages">Install needed packages
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>Install the ZeroTier repository and its GPG key:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">curl https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg &lt;span class="p">|&lt;/span> gpg --dearmor &lt;span class="p">|&lt;/span> sudo tee /usr/share/keyrings/zerotierone-archive-keyring.gpg &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">RELEASE&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>lsb_release -cs&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;deb [signed-by=/usr/share/keyrings/zerotierone-archive-keyring.gpg] http://download.zerotier.com/debian/&lt;/span>&lt;span class="nv">$RELEASE&lt;/span>&lt;span class="s2"> &lt;/span>&lt;span class="nv">$RELEASE&lt;/span>&lt;span class="s2"> main&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> sudo tee /etc/apt/sources.list.d/zerotier.list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install -y zerotier-one
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Verify the Installation:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You should see an output indicating that ZeroTier is online.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Install additional packages:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt install dnsmasq hostapd iptables dhcpcd5
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>dnsmasq: A lightweight DNS and DHCP server. iptables: A tool for configuring
+the Linux kernel firewall. hostapd: A user space daemon for access point and
+authentication servers. (Only needed for the Travel Raspberry Pi for setting
+up a Wi-Fi access point) dhcpcd5: A DHCP (Dynamic Host Configuration Protocol
+Client Daemon) client and server. (Only needed for the Travel Raspberry Pi
+for setting up a static IP address)&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-3-join-your-zerotier-network">Step 3: Join your ZeroTier Network
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>Run the following command on each Raspberry Pi:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli join &lt;span class="o">[&lt;/span>Your_Network_ID&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Replace &lt;code>[Your_Network_ID]&lt;/code> with the Network ID you noted earlier.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Authorize the Devices:&lt;/p>
+&lt;p>In ZeroTier Central, under your network&amp;rsquo;s settings, scroll down to the
+&amp;ldquo;Members&amp;rdquo; section.&lt;/p>
+&lt;p>You should see the Raspberry Pi devices listed as new devices. Check the
+&amp;ldquo;Auth?&amp;rdquo; box next to each device to authorize them on the network and click
+&amp;ldquo;Authorize&amp;rdquo; button.&lt;/p>
+&lt;p>You can also rename the devices to make them easily identifiable.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Verify Connectivity:&lt;/p>
+&lt;p>On each Raspberry Pi, list the networks to confirm they&amp;rsquo;re connected:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli listnetworks
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You should see your network listed with the status &amp;ldquo;OK.&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-4-test-the-vpn-connection">Step 4: Test the VPN Connection
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>Obtain the ZeroTier IP Addresses: In ZeroTier Central, under the &amp;ldquo;Members&amp;rdquo;
+section, note the managed IP addresses assigned to each Raspberry Pi. If no
+IP address is assigned automatically, you can assign one manually. In this
+tutorial, we&amp;rsquo;ll use the ZeroTier IP addresses &lt;code>192.168.191.99&lt;/code> for the Travel
+Raspberry Pi and &lt;code>192.168.191.134&lt;/code> for the Home Raspberry Pi.&lt;/p>
+&lt;p>&lt;img src="cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_config.png"
+width="785"
+height="218"
+srcset="cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_config_hu_1ecb5b2be3d7b363.png 480w, cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_config_hu_b577a763e40a9620.png 1024w"
+loading="lazy"
+alt="image"
+class="gallery-image"
+data-flex-grow="360"
+data-flex-basis="864px"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Test Connectivity: You can join the same network on your local machine using
+the ZeroTier client and ping the Raspberry Pi devices to verify connectivity.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ping &lt;span class="o">[&lt;/span>ZeroTier_IP_of_Raspberry_Pi&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You should receive responses, indicating a successful VPN connection.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-5-configure-home-raspberry-pi">Step 5: Configure Home Raspberry Pi
+&lt;/h2>&lt;p>To configure the home Raspberry Pi to route all traffic through it, follow these
+steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Enable IP Forwarding:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the sysctl configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/sysctl.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Uncomment or add the following line to enable IP forwarding:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">net.ipv4.ip_forward=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net.ipv4.conf.all.rp_filter=2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Apply the changes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo sysctl -p
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>dnsmasq&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>dnsmasq&lt;/code> configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/dnsmasq.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following line to configure the DNS server:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">server=192.168.1.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>rc.local&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>rc.local&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/rc.local
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines before the &lt;code>exit 0&lt;/code> line to join the ZeroTier
+network and set up NAT:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli join [Your_Network_ID]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo iptables -A FORWARD -i ztc3qulcfx -o eth0 -j ACCEPT
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>PS: The Home Raspberry Pi may also be connected to the internet via Wi-Fi.
+In this case, replace &lt;code>eth0&lt;/code> with the interface name of the internet
+connection (e.g. &lt;code>wlan0&lt;/code>).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Make &lt;code>rc.local&lt;/code> file executable:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo chmod +x /etc/rc.local
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure ZeroTier Network Settings:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the ZeroTier network configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /var/lib/zerotier-one/networks.d/&lt;span class="o">[&lt;/span>Your_Network_ID&lt;span class="o">]&lt;/span>.local.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to allow managed routes and global traffic:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">allowManaged=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowGlobal=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowDefault=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowDNS=0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Reboot the Raspberry Pi:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Reboot the Raspberry Pi to apply all changes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo reboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-6-configure-travel-raspberry-pi">Step 6: Configure Travel Raspberry Pi
+&lt;/h2>&lt;p>This Raspberry Pi should be connected to the internet via Ethernet and will act
+as a Wi-Fi access point for other devices. All traffic from the Wi-Fi clients
+will be routed through the ZeroTier network and the Home Raspberry Pi. PS: If
+you want to connect the Travel Raspberry Pi to the internet via Wi-Fi, you need
+an additional USB Wi-Fi adapter. (not covered in this tutorial) To configure the
+Travel Raspberry Pi, follow these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Configure Static IP Address:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the DHCP client configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/dhcpcd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to set a static IP address for the &lt;code>wlan0&lt;/code>
+interface:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">interface wlan0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">static ip_address=192.168.1.1/24
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nohook wpa_supplicant
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>dnsmasq&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>dnsmasq&lt;/code> configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/dnsmasq.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to configure DHCP and DNS settings:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">interface=wlan0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server=8.8.8.8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server=8.8.4.4
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dhcp-range=192.168.1.2,192.168.1.200,255.255.255.0,24h
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Enable wlan0:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Ensure wlan0 is unblocked:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo rfkill unblock wlan
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo ifconfig wlan0 up
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>hostapd&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>hostapd&lt;/code> configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/hostapd/hostapd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to configure the Wi-Fi access point:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">country_code=DE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">interface=wlan0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssid=TESTWLAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">channel=13
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">auth_algs=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wpa=2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wpa_passphrase=[passphrase]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wpa_key_mgmt=WPA-PSK
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wpa_pairwise=TKIP CCMP
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rsn_pairwise=CCMP
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Change [passphrase] with your own password for the Wi-Fi access point. The
+Wi-Fi access point name used here is &amp;ldquo;TESTWLAN&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Set the correct permissions for the configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo chmod &lt;span class="m">600&lt;/span> /etc/hostapd/hostapd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Unmask, start and enable &lt;code>hostapd&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo systemctl unmask hostapd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl start hostapd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl &lt;span class="nb">enable&lt;/span> hostapd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure hostapd to run as a background service:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/default/hostapd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Add following lines:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">RUN_DAEMON=yes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">DAEMON_CONF=&amp;#34;/etc/hostapd/hostapd.conf&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Enable IP Forwarding:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the sysctl configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/sysctl.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Uncomment or add the following line to enable IP forwarding:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">net.ipv4.ip_forward=1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Apply the changes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo sysctl -p
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Test that the Wi-Fi access point can be enabled:&lt;/p>
+&lt;ul>
+&lt;li>Run following command&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo hostapd /etc/hostapd/hostapd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>rc.local&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>rc.local&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/rc.local
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines before the &lt;code>exit 0&lt;/code> line to join the ZeroTier
+network and start necessary services on boot:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">sudo rfkill unblock wlan
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo ifconfig wlan0 up
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo zerotier-cli join [Your_Network_ID]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl start dhcpcd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo iptables -t nat -A POSTROUTING -o ztc3qulcfx -j MASQUERADE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo hostapd /etc/hostapd/hostapd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>PS: Replace &lt;code>ztc3qulcfx&lt;/code> with the interface name of the ZeroTier network.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Make &lt;code>rc.local&lt;/code> file executable:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo chmod +x /etc/rc.local
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure ZeroTier Network Settings:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the ZeroTier network configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /var/lib/zerotier-one/networks.d/&lt;span class="o">[&lt;/span>Your_Network_ID&lt;span class="o">]&lt;/span>.local.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to allow managed routes and global traffic:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">allowManaged=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowGlobal=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowDefault=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowDNS=0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Reboot the Raspberry Pi:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Reboot the Raspberry Pi to apply all changes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo reboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-7-configure-zerotier-managed-routes">Step 7: Configure ZeroTier Managed Routes
+&lt;/h2>&lt;p>You should now configure the ZeroTier managed routes to ensure that traffic
+is routed correctly between the Raspberry Pi devices. Following is my
+ZeroTier managed routes configuration:&lt;/p>
+&lt;p>&lt;img src="cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_managed_routes.png"
+width="471"
+height="142"
+srcset="cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_managed_routes_hu_39c370bb507263f2.png 480w, cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_managed_routes_hu_3d7b4d3f9f52f9eb.png 1024w"
+loading="lazy"
+alt="image"
+class="gallery-image"
+data-flex-grow="331"
+data-flex-basis="796px"
+>&lt;/p>
+&lt;ul>
+&lt;li>The IP address &lt;code>192.168.191.134&lt;/code> is the ZeroTier IP address of the Travel
+Raspberry PI.&lt;/li>
+&lt;li>192.168.191.0/24 (LAN) is the ZeroTier server’s network.&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-8-test-the-vpn-connection">Step 8: Test the VPN connection
+&lt;/h2>&lt;p>To test the VPN connection, connect to the Wi-Fi access point of the Travel
+Raspberry Pi and try to access the internet. You should see that all traffic
+is routed through the Home Raspberry Pi. You can verify this by checking your
+public IP address, which should match the public IP address of the Home
+Raspberry Pi.&lt;/p>
+&lt;h2 id="additional-considerations">Additional Considerations
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Security:&lt;/strong> Ensure that you have strong passwords and firewall rules in
+place to secure your network.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Performance:&lt;/strong> The performance of your VPN may vary based on the Raspberry
+Pi model and network conditions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Troubleshooting:&lt;/strong> If you encounter issues, check the logs on both Raspberry
+Pi devices for error messages and investigate accordingly.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Desabling the VPN:&lt;/strong> If you want to disable the VPN, you can simply stop the
+ZeroTier service on both Raspberry Pi devices:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo systemctl stop zerotier-one
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You can also set allowDefault back to 0:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli &lt;span class="nb">set&lt;/span> NetworkID &lt;span class="nv">allowDefault&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul></description></item></channel></rss>

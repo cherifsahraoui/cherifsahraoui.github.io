@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sahraoui-IT</title><link>cherifsahraoui.github.io/</link><description>Recent content on Sahraoui-IT</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Cherif Sahraoui</copyright><lastBuildDate>Thu, 13 Feb 2025 10:39:00 +0200</lastBuildDate><atom:link href="cherifsahraoui.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Testing in Production: Risks, Benefits, and Best Practices</title><link>cherifsahraoui.github.io/p/testing-in-production-risks-benefits-and-best-practices/</link><pubDate>Thu, 13 Feb 2025 10:39:00 +0200</pubDate><guid>cherifsahraoui.github.io/p/testing-in-production-risks-benefits-and-best-practices/</guid><description>&lt;img src="cherifsahraoui.github.io/cherifsahraoui.github.io/p/testing-in-production-risks-benefits-and-best-practices/prod_testing_img.png" alt="Featured image of post Testing in Production: Risks, Benefits, and Best Practices" />&lt;p>Testing in production has long been seen as risky, often causing debates among developers, testers, and stakeholders.
+But in today&amp;rsquo;s fast-paced tech world, it&amp;rsquo;s becoming more common. Testing in production does not mean skipping tests in
+lower environments and solely relying on production testing. It simply means that after thorough testing in staging and
+other pre-production environments, we continue to validate in production to ensure real-world reliability and
+performance.&lt;/p>
+&lt;h2 id="understanding-testing-in-production">Understanding Testing in Production
+&lt;/h2>&lt;p>Production testing means running tests in a live environment. While staging and development environments try to mimic
+production, they often fall short. Testing in production helps bridge this gap, ensuring that applications work as
+expected under real conditions.&lt;/p>
+&lt;h2 id="when-production-testing-is-crucial">When Production Testing is Crucial
+&lt;/h2>&lt;p>Sometimes, testing in lower environments is not enough. For example:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Third-Party Dependencies&lt;/strong>: Some services, like external APIs, behave differently in production than in staging.&lt;/li>
+&lt;li>&lt;strong>Real User Load&lt;/strong>: Performance and scalability issues only become clear when real users interact with the system.&lt;/li>
+&lt;li>&lt;strong>Complex Microservices&lt;/strong>: Staging environments often lack the full set of dependencies that exist in production.
+If the QA team skips even basic manual smoke tests in production, there&amp;rsquo;s a risk of blindly promoting changes that could
+lead to critical failures. Production validation acts as a final safeguard, helping to catch unforeseen issues that
+might not surface in lower environments due to differences in data, traffic patterns, or infrastructure nuances.&lt;/li>
+&lt;/ul>
+&lt;h2 id="risks-of-performing-tests-in-production-and-mitigation-strategies">Risks of Performing Tests in Production and Mitigation Strategies
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Risk&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Mitigation Strategy&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>Unintended User Impact&lt;/strong>&lt;/td>
+&lt;td>Test actions might trigger unintended user-visible changes, such as notifications, emails, or altered UI states.&lt;/td>
+&lt;td>Use test accounts and feature flags, exclude real users from test scenarios, and monitor user-facing effects.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Data Corruption&lt;/strong>&lt;/td>
+&lt;td>Test executions could modify or delete real production data, impacting reporting and business operations.&lt;/td>
+&lt;td>Implement strict data isolation, use synthetic or readonly test data, and ensure proper rollback mechanisms.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Performance Degradation&lt;/strong>&lt;/td>
+&lt;td>Automated or manual tests might introduce additional load, slowing down the system for real users.&lt;/td>
+&lt;td>Schedule tests during low-traffic periods, monitor system load, and set rate limits on test executions.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Security Risks&lt;/strong>&lt;/td>
+&lt;td>Test data or scripts might unintentionally expose sensitive information or trigger security vulnerabilities.&lt;/td>
+&lt;td>Follow security best practices, sanitize test data, and use proper authentication and access controls for testing.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>False Positives/Negatives&lt;/strong>&lt;/td>
+&lt;td>Differences between test and real user behavior might lead to misleading test results, causing unnecessary rollbacks or missed issues.&lt;/td>
+&lt;td>Use A/B testing, shadow testing, and compare test results with historical production data.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="benefits-of-testing-in-production">Benefits of Testing in Production
+&lt;/h2>&lt;p>Despite its risks, production testing has major benefits:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Real-World Validation&lt;/strong>: Captures real interactions that can&amp;rsquo;t be replicated in lower environments.&lt;/li>
+&lt;li>&lt;strong>Early Bug Detection&lt;/strong>: Finds hidden issues before they impact all users.&lt;/li>
+&lt;li>&lt;strong>Better Performance Insights&lt;/strong>: Ensures scalability by testing under real traffic conditions.&lt;/li>
+&lt;li>&lt;strong>Data-Driven Decisions&lt;/strong>: Enables A/B testing and feature comparison.&lt;/li>
+&lt;/ul>
+&lt;h2 id="real-world-examples-where-testing-in-production-was-essential">Real World Examples where Testing in Production was Essential
+&lt;/h2>&lt;p>Testing in production environments can uncover issues that might not surface during pre-production testing. Here are two
+real-world scenarios illustrating this:
+&lt;strong>1. Mobile App Crashes Due to Network Variability&lt;/strong>
+A political campaign&amp;rsquo;s mobile app, &amp;ldquo;Campaign Sidekick,&amp;rdquo; experienced significant issues during field operations. The app,
+designed to track canvassers, relied on high-speed internet connectivity. In rural areas with slow or unreliable
+internet, the app struggled to function properly, leading to data upload failures and task reassignment glitches. This
+resulted in wasted efforts and incomplete voter contact. The issues were exacerbated by the app&amp;rsquo;s inability to operate
+effectively offline, highlighting the importance of testing under diverse real-world conditions.
+&lt;a class="link" href="https://www.tothenew.com/blog/how-network-variability-impacts-mobile-applications" target="_blank" rel="noopener"
+>source&lt;/a>
+&lt;strong>2. Windows Blue Screen of Death (BSOD) from Faulty Update&lt;/strong>
+In August 2014, Microsoft released a security update (MS14-045) intended to address vulnerabilities in the Windows
+kernel. However, the update inadvertently caused some systems to crash, displaying the &amp;ldquo;Blue Screen of Death&amp;rdquo; (BSOD).
+This issue was traced back to a faulty patch that had not been adequately tested in production environments. The
+incident underscores the critical need for thorough testing of updates in production to prevent system instability and
+data loss. &lt;a class="link" href="https://testrigor.com/blog/microsofts-blue-screen-of-death/" target="_blank" rel="noopener"
+>source&lt;/a>
+These examples highlight the importance of testing in production to identify issues that may not be evident in
+controlled testing environments. Implementing robust testing protocols and monitoring systems can help mitigate such
+risks.&lt;/p>
+&lt;h2 id="conclusion">Conclusion
+&lt;/h2>&lt;p>Testing in production is no longer a reckless practice, it’s a necessity in modern software development. When done
+right, it helps catch real-world issues early, improves software quality, and enhances user experience. However, it
+requires the right tools, best practices, and a well-prepared team.
+By combining automation, monitoring, and feature flags, companies can safely test in production and deliver high-quality
+software with confidence.&lt;/p></description></item><item><title>Routing All Traffic Through Home with ZeroTier and Two Raspberry Pi Devices</title><link>cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/</link><pubDate>Sun, 09 Feb 2025 14:00:00 +0200</pubDate><guid>cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/</guid><description>&lt;img src="cherifsahraoui.github.io/cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier.png" alt="Featured image of post Routing All Traffic Through Home with ZeroTier and Two Raspberry Pi Devices" />&lt;p>In this tutorial, we&amp;rsquo;ll guide you through creating a simple, solution to route
+all traffic through your home network using two Raspberry Pi devices and
+ZeroTier. This setup allows you to securely connect to your home network from
+anywhere and route all your internet traffic through your home network,
+providing an extra layer of security and privacy. You will also get the same IP
+address as you Home network from anywhere in the world. ZeroTier is a powerful
+tool that allows you to create secure virtual networks, enabling your devices to
+communicate as if they&amp;rsquo;re on the same local network, regardless of their
+physical locations.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> This tutorial is inspired by the &lt;a class="link" href="https://www.digitalocean.com/community/tutorials/getting-started-software-defined-networking-creating-vpn-zerotier-one" target="_blank" rel="noopener"
+>DigitalOcean
+guide&lt;/a>
+and &lt;a class="link" href="https://harivemula.com/2021/09/18/routing-all-traffic-through-home-with-zerotier-on-travel/" target="_blank" rel="noopener"
+>harivemula
+guide&lt;/a>.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites
+&lt;/h2>&lt;p>Before we begin, ensure you have the following:&lt;/p>
+&lt;ul>
+&lt;li>Two Raspberry Pi devices with Raspberry Pi OS installed and updated. (I used
+two Raspberry Pi 3 devices with Raspberry Pi OS (64-bit, Kernel version: 6.6)
+for this tutorial.)&lt;/li>
+&lt;li>Internet connectivity for both Raspberry Pi devices.&lt;/li>
+&lt;li>A ZeroTier account. If you don&amp;rsquo;t have one, you can create it for free at
+&lt;a class="link" href="https://my.zerotier.com/" target="_blank" rel="noopener"
+>ZeroTier Central&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="overview-of-the-architecture">Overview of the Architecture
+&lt;/h2>&lt;img src="vpn_architecture.png" alt="VPN Architecture" style="width:90%;"/>
+&lt;h2 id="step-1-set-up-a-zerotier-network">Step 1: Set Up a ZeroTier Network
+&lt;/h2>&lt;h3 id="create-a-zerotier-account">Create a ZeroTier Account
+&lt;/h3>&lt;ol>
+&lt;li>Visit &lt;a class="link" href="https://my.zerotier.com/" target="_blank" rel="noopener"
+>ZeroTier Central&lt;/a> and sign up for a free
+account.&lt;/li>
+&lt;/ol>
+&lt;h3 id="create-a-new-network">Create a New Network
+&lt;/h3>&lt;ol>
+&lt;li>Once logged in, click on &amp;ldquo;Create A Network.&amp;rdquo;&lt;/li>
+&lt;li>A new network will be created, and you&amp;rsquo;ll be provided with a unique Network
+ID. Note this ID, as you&amp;rsquo;ll need it later.&lt;/li>
+&lt;/ol>
+&lt;h3 id="configure-the-network">Configure the Network
+&lt;/h3>&lt;ol>
+&lt;li>Click on your newly created network to access its settings.&lt;/li>
+&lt;li>Here, you can set a name for your network and adjust other settings as
+needed.&lt;/li>
+&lt;li>Ensure that &amp;ldquo;Private&amp;rdquo; is selected under &amp;ldquo;Access Control&amp;rdquo; to keep your network
+secure.&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-2-install-zerotier-on-the-raspberry-pi-devices">Step 2: Install ZeroTier on the Raspberry Pi Devices
+&lt;/h2>&lt;p>Perform the following steps on both Raspberry Pi devices.&lt;/p>
+&lt;h3 id="install-needed-packages">Install needed packages
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>Install the ZeroTier repository and its GPG key:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">curl https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg &lt;span class="p">|&lt;/span> gpg --dearmor &lt;span class="p">|&lt;/span> sudo tee /usr/share/keyrings/zerotierone-archive-keyring.gpg &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">RELEASE&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>lsb_release -cs&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;deb [signed-by=/usr/share/keyrings/zerotierone-archive-keyring.gpg] http://download.zerotier.com/debian/&lt;/span>&lt;span class="nv">$RELEASE&lt;/span>&lt;span class="s2"> &lt;/span>&lt;span class="nv">$RELEASE&lt;/span>&lt;span class="s2"> main&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> sudo tee /etc/apt/sources.list.d/zerotier.list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install -y zerotier-one
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Verify the Installation:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You should see an output indicating that ZeroTier is online.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Install additional packages:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt install dnsmasq hostapd iptables dhcpcd5
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>dnsmasq: A lightweight DNS and DHCP server. iptables: A tool for configuring
+the Linux kernel firewall. hostapd: A user space daemon for access point and
+authentication servers. (Only needed for the Travel Raspberry Pi for setting
+up a Wi-Fi access point) dhcpcd5: A DHCP (Dynamic Host Configuration Protocol
+Client Daemon) client and server. (Only needed for the Travel Raspberry Pi
+for setting up a static IP address)&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-3-join-your-zerotier-network">Step 3: Join your ZeroTier Network
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>Run the following command on each Raspberry Pi:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli join &lt;span class="o">[&lt;/span>Your_Network_ID&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Replace &lt;code>[Your_Network_ID]&lt;/code> with the Network ID you noted earlier.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Authorize the Devices:&lt;/p>
+&lt;p>In ZeroTier Central, under your network&amp;rsquo;s settings, scroll down to the
+&amp;ldquo;Members&amp;rdquo; section.&lt;/p>
+&lt;p>You should see the Raspberry Pi devices listed as new devices. Check the
+&amp;ldquo;Auth?&amp;rdquo; box next to each device to authorize them on the network and click
+&amp;ldquo;Authorize&amp;rdquo; button.&lt;/p>
+&lt;p>You can also rename the devices to make them easily identifiable.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Verify Connectivity:&lt;/p>
+&lt;p>On each Raspberry Pi, list the networks to confirm they&amp;rsquo;re connected:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli listnetworks
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You should see your network listed with the status &amp;ldquo;OK.&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-4-test-the-vpn-connection">Step 4: Test the VPN Connection
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>Obtain the ZeroTier IP Addresses: In ZeroTier Central, under the &amp;ldquo;Members&amp;rdquo;
+section, note the managed IP addresses assigned to each Raspberry Pi. If no
+IP address is assigned automatically, you can assign one manually. In this
+tutorial, we&amp;rsquo;ll use the ZeroTier IP addresses &lt;code>192.168.191.99&lt;/code> for the Travel
+Raspberry Pi and &lt;code>192.168.191.134&lt;/code> for the Home Raspberry Pi.&lt;/p>
+&lt;p>&lt;img src="cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_config.png"
+width="785"
+height="218"
+srcset="cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_config_hu_1ecb5b2be3d7b363.png 480w, cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_config_hu_b577a763e40a9620.png 1024w"
+loading="lazy"
+alt="image"
+class="gallery-image"
+data-flex-grow="360"
+data-flex-basis="864px"
+>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Test Connectivity: You can join the same network on your local machine using
+the ZeroTier client and ping the Raspberry Pi devices to verify connectivity.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ping &lt;span class="o">[&lt;/span>ZeroTier_IP_of_Raspberry_Pi&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You should receive responses, indicating a successful VPN connection.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-5-configure-home-raspberry-pi">Step 5: Configure Home Raspberry Pi
+&lt;/h2>&lt;p>To configure the home Raspberry Pi to route all traffic through it, follow these
+steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Enable IP Forwarding:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the sysctl configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/sysctl.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Uncomment or add the following line to enable IP forwarding:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">net.ipv4.ip_forward=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">net.ipv4.conf.all.rp_filter=2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Apply the changes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo sysctl -p
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>dnsmasq&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>dnsmasq&lt;/code> configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/dnsmasq.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following line to configure the DNS server:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">server=192.168.1.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>rc.local&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>rc.local&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/rc.local
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines before the &lt;code>exit 0&lt;/code> line to join the ZeroTier
+network and set up NAT:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli join [Your_Network_ID]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo iptables -A FORWARD -i ztc3qulcfx -o eth0 -j ACCEPT
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>PS: The Home Raspberry Pi may also be connected to the internet via Wi-Fi.
+In this case, replace &lt;code>eth0&lt;/code> with the interface name of the internet
+connection (e.g. &lt;code>wlan0&lt;/code>).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Make &lt;code>rc.local&lt;/code> file executable:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo chmod +x /etc/rc.local
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure ZeroTier Network Settings:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the ZeroTier network configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /var/lib/zerotier-one/networks.d/&lt;span class="o">[&lt;/span>Your_Network_ID&lt;span class="o">]&lt;/span>.local.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to allow managed routes and global traffic:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">allowManaged=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowGlobal=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowDefault=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowDNS=0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Reboot the Raspberry Pi:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Reboot the Raspberry Pi to apply all changes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo reboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-6-configure-travel-raspberry-pi">Step 6: Configure Travel Raspberry Pi
+&lt;/h2>&lt;p>This Raspberry Pi should be connected to the internet via Ethernet and will act
+as a Wi-Fi access point for other devices. All traffic from the Wi-Fi clients
+will be routed through the ZeroTier network and the Home Raspberry Pi. PS: If
+you want to connect the Travel Raspberry Pi to the internet via Wi-Fi, you need
+an additional USB Wi-Fi adapter. (not covered in this tutorial) To configure the
+Travel Raspberry Pi, follow these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Configure Static IP Address:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the DHCP client configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/dhcpcd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to set a static IP address for the &lt;code>wlan0&lt;/code>
+interface:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">interface wlan0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">static ip_address=192.168.1.1/24
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">nohook wpa_supplicant
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>dnsmasq&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>dnsmasq&lt;/code> configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/dnsmasq.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to configure DHCP and DNS settings:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">interface=wlan0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server=8.8.8.8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">server=8.8.4.4
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dhcp-range=192.168.1.2,192.168.1.200,255.255.255.0,24h
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Enable wlan0:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Ensure wlan0 is unblocked:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo rfkill unblock wlan
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo ifconfig wlan0 up
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>hostapd&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>hostapd&lt;/code> configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/hostapd/hostapd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to configure the Wi-Fi access point:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">country_code=DE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">interface=wlan0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ssid=TESTWLAN
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">channel=13
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">auth_algs=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wpa=2
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wpa_passphrase=[passphrase]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wpa_key_mgmt=WPA-PSK
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wpa_pairwise=TKIP CCMP
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rsn_pairwise=CCMP
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Change [passphrase] with your own password for the Wi-Fi access point. The
+Wi-Fi access point name used here is &amp;ldquo;TESTWLAN&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Set the correct permissions for the configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo chmod &lt;span class="m">600&lt;/span> /etc/hostapd/hostapd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Unmask, start and enable &lt;code>hostapd&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo systemctl unmask hostapd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl start hostapd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl &lt;span class="nb">enable&lt;/span> hostapd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure hostapd to run as a background service:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/default/hostapd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Add following lines:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">RUN_DAEMON=yes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">DAEMON_CONF=&amp;#34;/etc/hostapd/hostapd.conf&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Enable IP Forwarding:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the sysctl configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/sysctl.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Uncomment or add the following line to enable IP forwarding:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">net.ipv4.ip_forward=1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Apply the changes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo sysctl -p
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Test that the Wi-Fi access point can be enabled:&lt;/p>
+&lt;ul>
+&lt;li>Run following command&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo hostapd /etc/hostapd/hostapd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Configure &lt;code>rc.local&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the &lt;code>rc.local&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/rc.local
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines before the &lt;code>exit 0&lt;/code> line to join the ZeroTier
+network and start necessary services on boot:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">sudo rfkill unblock wlan
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo ifconfig wlan0 up
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo zerotier-cli join [Your_Network_ID]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl start dhcpcd
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo iptables -t nat -A POSTROUTING -o ztc3qulcfx -j MASQUERADE
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo hostapd /etc/hostapd/hostapd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>PS: Replace &lt;code>ztc3qulcfx&lt;/code> with the interface name of the ZeroTier network.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Make &lt;code>rc.local&lt;/code> file executable:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo chmod +x /etc/rc.local
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Configure ZeroTier Network Settings:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open the ZeroTier network configuration file:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /var/lib/zerotier-one/networks.d/&lt;span class="o">[&lt;/span>Your_Network_ID&lt;span class="o">]&lt;/span>.local.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following lines to allow managed routes and global traffic:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">allowManaged=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowGlobal=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowDefault=1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">allowDNS=0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Reboot the Raspberry Pi:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Reboot the Raspberry Pi to apply all changes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo reboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-7-configure-zerotier-managed-routes">Step 7: Configure ZeroTier Managed Routes
+&lt;/h2>&lt;p>You should now configure the ZeroTier managed routes to ensure that traffic
+is routed correctly between the Raspberry Pi devices. Following is my
+ZeroTier managed routes configuration:&lt;/p>
+&lt;p>&lt;img src="cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_managed_routes.png"
+width="471"
+height="142"
+srcset="cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_managed_routes_hu_39c370bb507263f2.png 480w, cherifsahraoui.github.io/p/routing-all-traffic-through-home-with-zerotier-and-two-raspberry-pi-devices/zerotier_managed_routes_hu_3d7b4d3f9f52f9eb.png 1024w"
+loading="lazy"
+alt="image"
+class="gallery-image"
+data-flex-grow="331"
+data-flex-basis="796px"
+>&lt;/p>
+&lt;ul>
+&lt;li>The IP address &lt;code>192.168.191.134&lt;/code> is the ZeroTier IP address of the Travel
+Raspberry PI.&lt;/li>
+&lt;li>192.168.191.0/24 (LAN) is the ZeroTier server’s network.&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-8-test-the-vpn-connection">Step 8: Test the VPN connection
+&lt;/h2>&lt;p>To test the VPN connection, connect to the Wi-Fi access point of the Travel
+Raspberry Pi and try to access the internet. You should see that all traffic
+is routed through the Home Raspberry Pi. You can verify this by checking your
+public IP address, which should match the public IP address of the Home
+Raspberry Pi.&lt;/p>
+&lt;h2 id="additional-considerations">Additional Considerations
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Security:&lt;/strong> Ensure that you have strong passwords and firewall rules in
+place to secure your network.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Performance:&lt;/strong> The performance of your VPN may vary based on the Raspberry
+Pi model and network conditions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Troubleshooting:&lt;/strong> If you encounter issues, check the logs on both Raspberry
+Pi devices for error messages and investigate accordingly.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Desabling the VPN:&lt;/strong> If you want to disable the VPN, you can simply stop the
+ZeroTier service on both Raspberry Pi devices:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo systemctl stop zerotier-one
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You can also set allowDefault back to 0:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo zerotier-cli &lt;span class="nb">set&lt;/span> NetworkID &lt;span class="nv">allowDefault&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul></description></item><item><title>Testkube: Kubernetes-Native Test Orchestration and Execution Platform</title><link>cherifsahraoui.github.io/p/testkube/</link><pubDate>Fri, 07 Feb 2025 16:27:00 +0200</pubDate><guid>cherifsahraoui.github.io/p/testkube/</guid><description>&lt;img src="cherifsahraoui.github.io/cherifsahraoui.github.io/p/testkube/testkube_logo.jpg" alt="Featured image of post Testkube: Kubernetes-Native Test Orchestration and Execution Platform" />&lt;h2 id="what-is-testkube">&lt;strong>What is Testkube?&lt;/strong>
+&lt;/h2>&lt;p>Testkube is a &lt;strong>Test Orchestration and Execution Framework&lt;/strong> for cloud-native applications. It provides a unified
+platform for running tests, integrating seamlessly with Kubernetes and existing CI/CD pipelines. Testkube consists of
+two main components:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Control Plane&lt;/strong>: Manages test execution, reporting, and orchestration. It can run in the cloud or on-premises.&lt;/li>
+&lt;li>&lt;strong>Agents&lt;/strong>: Execute tests in your infrastructure and are 100% open source. They can also operate standalone without
+the Control Plane.
+&lt;strong>Licensing&lt;/strong>:&lt;br>
+Testkube is available under two licenses:&lt;/li>
+&lt;li>&lt;strong>MIT License&lt;/strong>: Open-source and free to use.&lt;/li>
+&lt;li>&lt;strong>Testkube Community License (TCL)&lt;/strong>: Covers additional enterprise functionalities.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="key-features">&lt;strong>Key Features&lt;/strong>
+&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Test Workflows&lt;/strong> (Primary Custom Resource Definition - CRD)
+&lt;ul>
+&lt;li>Replaces the older CRDs (Test, TestSuite, and Executor).&lt;/li>
+&lt;li>Manages the full lifecycle of tests in Kubernetes.&lt;/li>
+&lt;li>Supports multiple testing tool versions and dependencies.&lt;/li>
+&lt;li>Allows defining multiple execution steps with setup/teardown processes.&lt;/li>
+&lt;li>Configures tool-specific commands and arguments.&lt;/li>
+&lt;li>Provides better resource management and test control.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Kubernetes-Native Execution&lt;/strong>
+&lt;ul>
+&lt;li>Analyzes expected operations and images to build required Kubernetes resources (ConfigMaps, Secrets, Jobs, and
+Pods).&lt;/li>
+&lt;li>Automatically deletes created resources after test execution.&lt;/li>
+&lt;li>Components:
+&lt;ul>
+&lt;li>&lt;strong>Job&lt;/strong>: Schedules test execution.&lt;/li>
+&lt;li>&lt;strong>Pod&lt;/strong>: Executes requested operations and returns logs.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Enterprise Features&lt;/strong>
+&lt;ul>
+&lt;li>Exclusive for Testkube Enterprise users.&lt;/li>
+&lt;li>Enhanced orchestration and management capabilities.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Centralized Reporting and Analysis&lt;/strong>
+&lt;ul>
+&lt;li>Provides a dashboard to manage test executions, logs, and artifacts.&lt;/li>
+&lt;li>Supports advanced analytics for informed decision-making.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="testkube-test-workflow">&lt;strong>Testkube Test Workflow&lt;/strong>
+&lt;/h2>&lt;p>Test Workflows are the primary Custom Resource Definition (CRD) in Testkube, replacing the older CRDs (Test, TestSuite,
+and Executor). They manage the full lifecycle of tests in Kubernetes, offering several key features:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Running Tests&lt;/strong>: Supports different testing tool versions and dependencies.&lt;/li>
+&lt;li>&lt;strong>Multiple Execution Steps&lt;/strong>: Allows defining multiple steps for test execution, including setup and teardown
+processes.&lt;/li>
+&lt;li>&lt;strong>Enhanced Control&lt;/strong>: Provides more control over test execution, including resource consumption and setup/teardown
+processes.&lt;/li>
+&lt;li>&lt;strong>Tool-Specific Commands&lt;/strong>: Enables configuration of tool-specific commands and arguments.
+&lt;img src="testworkflow.png" alt="testworkflow" style="width:90%;"/>&lt;/li>
+&lt;/ul>
+&lt;p>Test Workflows analyze the expected operations and images, and build all the required native Kubernetes resources, such
+as ConfigMaps and Secrets for data, and most importantly, Jobs and Pods for the actual execution.
+After the Test Workflow execution is finished, all the created resources are deleted from the Kubernetes cluster.&lt;/p>
+&lt;ul>
+&lt;li>Components:
+&lt;ul>
+&lt;li>&lt;strong>Job&lt;/strong>: For every execution, a Job is created to schedule the actual execution pod.&lt;/li>
+&lt;li>&lt;strong>Pod&lt;/strong>: Based on the Test Workflow, a Pod is built to execute all the requested operations and return all the
+information within its logs.
+Example of a Test Workflow for running Postman tests:&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">kind&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TestWorkflow&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">apiVersion&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">testworkflows.testkube.io/v1&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">metadata&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">postman-sample&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">namespace&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">testkube&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">labels&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">docs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">example&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">content&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">git&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uri&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com/kubeshop/testkube&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">revision&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">paths&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">test/postman/executor-tests/postman-executor-smoke-without-envs-postman_collection.json&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">container&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">workingDir&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">/data/repo/test/postman/executor-tests&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">resources&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">requests&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">cpu&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">256m&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">memory&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">128Mi&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Run test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">postman/newman:6-alpine&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">args&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">run&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">postman-executor-smoke-without-envs.postman_collection.json&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="testkube-architecture">&lt;strong>Testkube Architecture&lt;/strong>
+&lt;/h2>&lt;p>&lt;img src="cherifsahraoui.github.io/p/testkube/testkube_architecture.png"
+width="695"
+height="611"
+srcset="cherifsahraoui.github.io/p/testkube/testkube_architecture_hu_4040b52a8a7f62ca.png 480w, cherifsahraoui.github.io/p/testkube/testkube_architecture_hu_3e272c29bbb417b8.png 1024w"
+loading="lazy"
+alt="image"
+class="gallery-image"
+data-flex-grow="113"
+data-flex-basis="272px"
+>
+Testkube consists of two main components:&lt;/p>
+&lt;ul>
+&lt;li>Testkube Agent
+running in cluster that manages Testkube resources, runs tests, gathers results, etc.
+Helm Chart: &lt;a class="link" href="https://kubeshop.github.io/helm-charts" target="_blank" rel="noopener"
+>helm-charts&lt;/a>&lt;/li>
+&lt;li>Testkube Server (Control plane)
+includes the Testkube Dashboard, Storage for Results/Artifacts, Cluster Federation, etc
+Helm Chart: &lt;a class="link" href="https://kubeshop.github.io/testkube-cloud-charts" target="_blank" rel="noopener"
+>testkube-cloud-charts&lt;/a>
+Additional components are:&lt;/li>
+&lt;li>Dex: identity provider&lt;/li>
+&lt;li>MinIO: storage backend for storing artifacts&lt;/li>
+&lt;li>NATS: message broker for communication between API and Agents&lt;/li>
+&lt;li>MongoDB: database for storing all the data (logs, test results …)
+PS: The testkube agent and testkube server can be deployed in different clusters&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="triggering-tests-in-testkube">&lt;strong>Triggering Tests in Testkube&lt;/strong>
+&lt;/h2>&lt;p>Test workflows can be triggered through multiple mechanisms:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Manual Execution&lt;/strong>
+&lt;ul>
+&lt;li>Tests can be triggered directly from the Testkube Dashboard.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Kubernetes Event-Based Triggers&lt;/strong>
+&lt;ul>
+&lt;li>Automates Test Workflows based on Kubernetes resource events (e.g., Deployment updates, Ingress deletions).&lt;/li>
+&lt;li>Uses selectors (nameRegex, labelSelector) and conditions (e.g., Progressing, Available) to define triggers.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>CLI Execution&lt;/strong>
+&lt;ul>
+&lt;li>Commands to trigger tests:
+&lt;ul>
+&lt;li>&lt;strong>Free version&lt;/strong>: &lt;code>testkube set context --kubeconfig&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Pro version&lt;/strong>: &lt;code>testkube set context --org-id $TESTKUBE_ORG_ID --env-id $TESTKUBE_ENV_ID -c cloud --root-domain test.bare.pandrosion.org --api-prefix testkube-api -k $TESTKUBE_API_TOKEN&lt;/code>&lt;/li>
+&lt;li>Running a test: &lt;code>testkube run &amp;lt;resource_type&amp;gt; &amp;lt;resource_name&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>API Execution&lt;/strong>
+&lt;ul>
+&lt;li>
+&lt;p>Tests can be triggered using a POST request to the Testkube Agent API:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">POST https://testkube-
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>api.test.bare.pandrosion.org/organizations/$TESTKUBE_ORG_ID/environments/$TESTKUBE_ENV_ID/agent/test-
+workflows/$TEST/executions
+```&lt;/p>
+&lt;ul>
+&lt;li>Authorization: Bearer Token (generated in Testkube Dashboard).&lt;/li>
+&lt;li>Required variables stored in Vault under: &lt;code>testkube-cloud&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="use-cases">&lt;strong>Use Cases&lt;/strong>
+&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Load and Performance Testing&lt;/strong>
+&lt;ul>
+&lt;li>Supports tools like K6, JMeter, and Gatling for distributed load testing.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>End-to-End (E2E) Testing&lt;/strong>
+&lt;ul>
+&lt;li>Run E2E tests using frameworks like Playwright, Cypress, and Selenium.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>API Testing&lt;/strong>
+&lt;ul>
+&lt;li>Integrate with Postman, SoapUI, and REST Assured for API testing workflows.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Hardware Testing&lt;/strong>
+&lt;ul>
+&lt;li>Test hardware components like GPUs in Kubernetes clusters using Testkube&amp;rsquo;s TestWorkflows.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Python Testing with Pytest&lt;/strong>
+&lt;ul>
+&lt;li>Simplifies the integration of Pytest into Kubernetes, enabling scalable and efficient testing workflows.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="conclusion">&lt;strong>Conclusion&lt;/strong>
+&lt;/h2>&lt;p>Testkube is a game-changer for cloud-native testing, offering a scalable, flexible, and vendor-agnostic platform for
+running tests in Kubernetes environments. Whether you&amp;rsquo;re a developer, tester, or DevOps engineer, Testkube empowers you
+to deliver high-quality software with confidence.
+For more information, visit the &lt;a class="link" href="https://docs.testkube.io/" target="_blank" rel="noopener"
+>Testkube Documentation&lt;/a> or explore the &lt;a class="link" href="https://testkube.io/blog" target="_blank" rel="noopener"
+>Testkube
+Blog&lt;/a> for the latest updates and tutorials.&lt;/p></description></item><item><title>Links</title><link>cherifsahraoui.github.io/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>cherifsahraoui.github.io/links/</guid><description/></item><item><title>My Profile</title><link>cherifsahraoui.github.io/profile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>cherifsahraoui.github.io/profile/</guid><description>&lt;p>A seasoned QA Lead with 5+ years of experience in quality assurance and software testing. Currently leading a team of
+two testers at Deloitte Consulting in Germany, specializing in agile DevOps environments and CI/CD integration. Skilled
+in optimizing software quality, analyzing test results, and driving continuous improvement, with expertise in automation
+tools and programming languages.&lt;/p>
+&lt;h2 id="key-skills">Key Skills
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Leadership and Team Management&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Strategic Thinking and Planning&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Advanced Problem-Solving and Analytical Skills&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Automation and Tools Expertise&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="technical-skill-set">Technical Skill Set
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Testing Tools&lt;/strong>: Pytest, Selenium, Cypress, JUnit, Postman, Testkube&lt;/li>
+&lt;li>&lt;strong>Cloud &amp;amp; DevOps&lt;/strong>: Kubernetes, Docker, Terraform, AWS, GCP, IaaS, CI/CD&lt;/li>
+&lt;li>&lt;strong>Programming&lt;/strong>: Python, Linux command line&lt;/li>
+&lt;li>&lt;strong>Version Control &amp;amp; CI/CD Tools&lt;/strong>: Bitbucket, GitLab, Jenkins, ArgoCD, Jira (Xray), Confluence, Vault, Sonarqube,
+Testrail&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="education">Education
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>Bachelor of Science in Electrical Engineering&lt;/strong>
+Technical University of Braunschweig, Germany, September 2019&lt;/li>
+&lt;li>&lt;strong>Master of Science in Electronic Automotive and Aerospace Systems&lt;/strong>
+Technical University of Braunschweig, Germany, May 2021&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="professional-experience">Professional Experience
+&lt;/h2>&lt;h3 id="qa-lead--deloitte-consulting-gmbh-düsseldorf-germany--september-2023-to-present">QA Lead | Deloitte Consulting GmbH, Düsseldorf, Germany | September 2023 to present
+&lt;/h3>&lt;p>&lt;strong>Energy Sector Project&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Led QA efforts, collaborating closely with development engineers.&lt;/li>
+&lt;li>Implemented manual and automated testing in a CI/CD environment.&lt;/li>
+&lt;li>Ensured application scalability and compatibility in Kubernetes clusters.&lt;/li>
+&lt;li>Conducted UI/UX testing to optimize user experience.
+&lt;strong>Banking Sector Project&lt;/strong>:&lt;/li>
+&lt;li>Led automation initiatives as Test Manager.&lt;/li>
+&lt;li>Managed test data preparation for auditing document creation.&lt;/li>
+&lt;li>Enhanced test coverage and optimized test processes for efficiency.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="system-integration-and-test-engineer--volkswagen-infotainment-gmbh-bochum-germany--june-2021-to-august-2022">System Integration and Test Engineer | Volkswagen Infotainment GmbH, Bochum, Germany | June 2021 to August 2022
+&lt;/h3>&lt;ul>
+&lt;li>Analyzed requirements and defined software integration and test criteria.&lt;/li>
+&lt;li>Developed and implemented software, integration, and system tests, including test automation.&lt;/li>
+&lt;li>Collaborated with internal and external partners (VW, Continental) and tracked issues in Jira.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="internships--working-student-positions--wolfsburg-germany--september-2018--may-2021">Internships &amp;amp; Working Student Positions | Wolfsburg, Germany | September 2018 – May 2021
+&lt;/h3>&lt;ul>
+&lt;li>Conducted test analysis and developed unit/system test cases for the VW HMI Notification Manager and central locking
+system.&lt;/li>
+&lt;li>Performed HiL simulation, test automation, error analysis, and ECU flashing, while troubleshooting issues.&lt;/li>
+&lt;li>Enhanced microcontroller-based CAN simulation and developed a Windows GUI application for controlling the residual
+bus.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="certifications">Certifications
+&lt;/h2>&lt;ul>
+&lt;li>&lt;strong>&lt;a class="link" href="http://scr.istqb.org/?name=sahraoui&amp;amp;number=105833" target="_blank" rel="noopener"
+>ISTQB Certified Tester Foundation Level&lt;/a>&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;a class="link" href="https://www.credly.com/badges/c39efa09-170b-4d19-bea9-e8a0e136c53e" target="_blank" rel="noopener"
+>AWS Certified Cloud Practitioner&lt;/a>&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;a class="link" href="https://www.credly.com/badges/d282e0bc-d4ab-4458-a707-3928e79e47bb" target="_blank" rel="noopener"
+>Google Associate Cloud Engineer
+Certification&lt;/a>&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;a class="link" href="https://www.credly.com/badges/b8d14f21-a729-4828-a475-59c15aca6730" target="_blank" rel="noopener"
+>Certified SAFe® 6 Agilist&lt;/a>&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;div class="contact-container">
+&lt;p>If you have any questions or would like to get in touch, please feel free to send me a message using the form
+below.&lt;/p>
+&lt;p>I will get back to you as soon as I can.&lt;/p>
+&lt;form target="_blank" action="https://formspree.io/f/xnnpdwkj" method="POST">
+&lt;div class="form-group">
+&lt;div class="form-row">
+&lt;div class="col">
+&lt;input type="text" name="name" class="form-control" placeholder="Full Name" required>
+&lt;/div>
+&lt;div class="col">
+&lt;input type="email" name="email" class="form-control" placeholder="Email Address" required>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="form-group">
+&lt;textarea name="message" class="form-control textarea" placeholder="Your Message" rows="6" required>&lt;/textarea>
+&lt;/div>
+&lt;button type="submit" class="btn">Submit Form&lt;/button>
+&lt;/form>
+&lt;/div></description></item><item><title>Projects</title><link>cherifsahraoui.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>cherifsahraoui.github.io/projects/</guid><description>&lt;div class="projects-container">
+&lt;a href="cherifsahraoui.github.io/p/50-hz-project/">
+&lt;div class="project-card">
+&lt;img src="50hz.png" alt="50Hz Project">
+&lt;div class="project-title">50Hz Project&lt;/div>
+&lt;div class="project-desc">By 2032, 50Hertz aims to integrate
+an annual average of 100 percent renewable energies safely into the grid and the system.
+The digital transformation plays a decisive role in this.
+For this reason, 50Hertz is developing a new grid control system for the integration of 100 percent renewables.&lt;/div>
+&lt;/div>
+&lt;/a>
+&lt;/div></description></item><item><title>Search</title><link>cherifsahraoui.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>cherifsahraoui.github.io/search/</guid><description/></item></channel></rss>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Testkube on Sahraoui-IT</title><link>cherifsahraoui.github.io/tags/testkube/</link><description>Recent content in Testkube on Sahraoui-IT</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Cherif Sahraoui</copyright><lastBuildDate>Fri, 07 Feb 2025 16:27:00 +0200</lastBuildDate><atom:link href="cherifsahraoui.github.io/tags/testkube/index.xml" rel="self" type="application/rss+xml"/><item><title>Testkube: Kubernetes-Native Test Orchestration and Execution Platform</title><link>cherifsahraoui.github.io/p/testkube/</link><pubDate>Fri, 07 Feb 2025 16:27:00 +0200</pubDate><guid>cherifsahraoui.github.io/p/testkube/</guid><description>&lt;img src="cherifsahraoui.github.io/cherifsahraoui.github.io/p/testkube/testkube_logo.jpg" alt="Featured image of post Testkube: Kubernetes-Native Test Orchestration and Execution Platform" />&lt;h2 id="what-is-testkube">&lt;strong>What is Testkube?&lt;/strong>
+&lt;/h2>&lt;p>Testkube is a &lt;strong>Test Orchestration and Execution Framework&lt;/strong> for cloud-native applications. It provides a unified
+platform for running tests, integrating seamlessly with Kubernetes and existing CI/CD pipelines. Testkube consists of
+two main components:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Control Plane&lt;/strong>: Manages test execution, reporting, and orchestration. It can run in the cloud or on-premises.&lt;/li>
+&lt;li>&lt;strong>Agents&lt;/strong>: Execute tests in your infrastructure and are 100% open source. They can also operate standalone without
+the Control Plane.
+&lt;strong>Licensing&lt;/strong>:&lt;br>
+Testkube is available under two licenses:&lt;/li>
+&lt;li>&lt;strong>MIT License&lt;/strong>: Open-source and free to use.&lt;/li>
+&lt;li>&lt;strong>Testkube Community License (TCL)&lt;/strong>: Covers additional enterprise functionalities.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="key-features">&lt;strong>Key Features&lt;/strong>
+&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Test Workflows&lt;/strong> (Primary Custom Resource Definition - CRD)
+&lt;ul>
+&lt;li>Replaces the older CRDs (Test, TestSuite, and Executor).&lt;/li>
+&lt;li>Manages the full lifecycle of tests in Kubernetes.&lt;/li>
+&lt;li>Supports multiple testing tool versions and dependencies.&lt;/li>
+&lt;li>Allows defining multiple execution steps with setup/teardown processes.&lt;/li>
+&lt;li>Configures tool-specific commands and arguments.&lt;/li>
+&lt;li>Provides better resource management and test control.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Kubernetes-Native Execution&lt;/strong>
+&lt;ul>
+&lt;li>Analyzes expected operations and images to build required Kubernetes resources (ConfigMaps, Secrets, Jobs, and
+Pods).&lt;/li>
+&lt;li>Automatically deletes created resources after test execution.&lt;/li>
+&lt;li>Components:
+&lt;ul>
+&lt;li>&lt;strong>Job&lt;/strong>: Schedules test execution.&lt;/li>
+&lt;li>&lt;strong>Pod&lt;/strong>: Executes requested operations and returns logs.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Enterprise Features&lt;/strong>
+&lt;ul>
+&lt;li>Exclusive for Testkube Enterprise users.&lt;/li>
+&lt;li>Enhanced orchestration and management capabilities.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Centralized Reporting and Analysis&lt;/strong>
+&lt;ul>
+&lt;li>Provides a dashboard to manage test executions, logs, and artifacts.&lt;/li>
+&lt;li>Supports advanced analytics for informed decision-making.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="testkube-test-workflow">&lt;strong>Testkube Test Workflow&lt;/strong>
+&lt;/h2>&lt;p>Test Workflows are the primary Custom Resource Definition (CRD) in Testkube, replacing the older CRDs (Test, TestSuite,
+and Executor). They manage the full lifecycle of tests in Kubernetes, offering several key features:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Running Tests&lt;/strong>: Supports different testing tool versions and dependencies.&lt;/li>
+&lt;li>&lt;strong>Multiple Execution Steps&lt;/strong>: Allows defining multiple steps for test execution, including setup and teardown
+processes.&lt;/li>
+&lt;li>&lt;strong>Enhanced Control&lt;/strong>: Provides more control over test execution, including resource consumption and setup/teardown
+processes.&lt;/li>
+&lt;li>&lt;strong>Tool-Specific Commands&lt;/strong>: Enables configuration of tool-specific commands and arguments.
+&lt;img src="testworkflow.png" alt="testworkflow" style="width:90%;"/>&lt;/li>
+&lt;/ul>
+&lt;p>Test Workflows analyze the expected operations and images, and build all the required native Kubernetes resources, such
+as ConfigMaps and Secrets for data, and most importantly, Jobs and Pods for the actual execution.
+After the Test Workflow execution is finished, all the created resources are deleted from the Kubernetes cluster.&lt;/p>
+&lt;ul>
+&lt;li>Components:
+&lt;ul>
+&lt;li>&lt;strong>Job&lt;/strong>: For every execution, a Job is created to schedule the actual execution pod.&lt;/li>
+&lt;li>&lt;strong>Pod&lt;/strong>: Based on the Test Workflow, a Pod is built to execute all the requested operations and return all the
+information within its logs.
+Example of a Test Workflow for running Postman tests:&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">kind&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TestWorkflow&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">apiVersion&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">testworkflows.testkube.io/v1&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">metadata&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">postman-sample&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">namespace&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">testkube&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">labels&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">docs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">example&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">content&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">git&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uri&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com/kubeshop/testkube&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">revision&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">paths&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">test/postman/executor-tests/postman-executor-smoke-without-envs-postman_collection.json&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">container&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">workingDir&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">/data/repo/test/postman/executor-tests&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">resources&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">requests&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">cpu&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">256m&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">memory&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">128Mi&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Run test&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">postman/newman:6-alpine&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">args&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">run&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">postman-executor-smoke-without-envs.postman_collection.json&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="testkube-architecture">&lt;strong>Testkube Architecture&lt;/strong>
+&lt;/h2>&lt;p>&lt;img src="cherifsahraoui.github.io/p/testkube/testkube_architecture.png"
+width="695"
+height="611"
+srcset="cherifsahraoui.github.io/p/testkube/testkube_architecture_hu_4040b52a8a7f62ca.png 480w, cherifsahraoui.github.io/p/testkube/testkube_architecture_hu_3e272c29bbb417b8.png 1024w"
+loading="lazy"
+alt="image"
+class="gallery-image"
+data-flex-grow="113"
+data-flex-basis="272px"
+>
+Testkube consists of two main components:&lt;/p>
+&lt;ul>
+&lt;li>Testkube Agent
+running in cluster that manages Testkube resources, runs tests, gathers results, etc.
+Helm Chart: &lt;a class="link" href="https://kubeshop.github.io/helm-charts" target="_blank" rel="noopener"
+>helm-charts&lt;/a>&lt;/li>
+&lt;li>Testkube Server (Control plane)
+includes the Testkube Dashboard, Storage for Results/Artifacts, Cluster Federation, etc
+Helm Chart: &lt;a class="link" href="https://kubeshop.github.io/testkube-cloud-charts" target="_blank" rel="noopener"
+>testkube-cloud-charts&lt;/a>
+Additional components are:&lt;/li>
+&lt;li>Dex: identity provider&lt;/li>
+&lt;li>MinIO: storage backend for storing artifacts&lt;/li>
+&lt;li>NATS: message broker for communication between API and Agents&lt;/li>
+&lt;li>MongoDB: database for storing all the data (logs, test results …)
+PS: The testkube agent and testkube server can be deployed in different clusters&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="triggering-tests-in-testkube">&lt;strong>Triggering Tests in Testkube&lt;/strong>
+&lt;/h2>&lt;p>Test workflows can be triggered through multiple mechanisms:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Manual Execution&lt;/strong>
+&lt;ul>
+&lt;li>Tests can be triggered directly from the Testkube Dashboard.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Kubernetes Event-Based Triggers&lt;/strong>
+&lt;ul>
+&lt;li>Automates Test Workflows based on Kubernetes resource events (e.g., Deployment updates, Ingress deletions).&lt;/li>
+&lt;li>Uses selectors (nameRegex, labelSelector) and conditions (e.g., Progressing, Available) to define triggers.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>CLI Execution&lt;/strong>
+&lt;ul>
+&lt;li>Commands to trigger tests:
+&lt;ul>
+&lt;li>&lt;strong>Free version&lt;/strong>: &lt;code>testkube set context --kubeconfig&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Pro version&lt;/strong>: &lt;code>testkube set context --org-id $TESTKUBE_ORG_ID --env-id $TESTKUBE_ENV_ID -c cloud --root-domain test.bare.pandrosion.org --api-prefix testkube-api -k $TESTKUBE_API_TOKEN&lt;/code>&lt;/li>
+&lt;li>Running a test: &lt;code>testkube run &amp;lt;resource_type&amp;gt; &amp;lt;resource_name&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>API Execution&lt;/strong>
+&lt;ul>
+&lt;li>
+&lt;p>Tests can be triggered using a POST request to the Testkube Agent API:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">POST https://testkube-
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>api.test.bare.pandrosion.org/organizations/$TESTKUBE_ORG_ID/environments/$TESTKUBE_ENV_ID/agent/test-
+workflows/$TEST/executions
+```&lt;/p>
+&lt;ul>
+&lt;li>Authorization: Bearer Token (generated in Testkube Dashboard).&lt;/li>
+&lt;li>Required variables stored in Vault under: &lt;code>testkube-cloud&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="use-cases">&lt;strong>Use Cases&lt;/strong>
+&lt;/h2>&lt;ol>
+&lt;li>&lt;strong>Load and Performance Testing&lt;/strong>
+&lt;ul>
+&lt;li>Supports tools like K6, JMeter, and Gatling for distributed load testing.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>End-to-End (E2E) Testing&lt;/strong>
+&lt;ul>
+&lt;li>Run E2E tests using frameworks like Playwright, Cypress, and Selenium.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>API Testing&lt;/strong>
+&lt;ul>
+&lt;li>Integrate with Postman, SoapUI, and REST Assured for API testing workflows.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Hardware Testing&lt;/strong>
+&lt;ul>
+&lt;li>Test hardware components like GPUs in Kubernetes clusters using Testkube&amp;rsquo;s TestWorkflows.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Python Testing with Pytest&lt;/strong>
+&lt;ul>
+&lt;li>Simplifies the integration of Pytest into Kubernetes, enabling scalable and efficient testing workflows.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="conclusion">&lt;strong>Conclusion&lt;/strong>
+&lt;/h2>&lt;p>Testkube is a game-changer for cloud-native testing, offering a scalable, flexible, and vendor-agnostic platform for
+running tests in Kubernetes environments. Whether you&amp;rsquo;re a developer, tester, or DevOps engineer, Testkube empowers you
+to deliver high-quality software with confidence.
+For more information, visit the &lt;a class="link" href="https://docs.testkube.io/" target="_blank" rel="noopener"
+>Testkube Documentation&lt;/a> or explore the &lt;a class="link" href="https://testkube.io/blog" target="_blank" rel="noopener"
+>Testkube
+Blog&lt;/a> for the latest updates and tutorials.&lt;/p></description></item></channel></rss>
