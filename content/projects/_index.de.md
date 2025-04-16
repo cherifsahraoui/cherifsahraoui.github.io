@@ -3,7 +3,7 @@ title: Projekte
 readingTime: false
 menu:
     main:
-        weight: 7
+        weight: 3
         params:
             icon: project
 ---

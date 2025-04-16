@@ -2,7 +2,7 @@
 title: Mein Profil
 menu:
     main:
-        weight: 6
+        weight: 2
         params:
             icon: profile
 comments: false
