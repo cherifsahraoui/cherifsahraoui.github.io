@@ -3,6 +3,8 @@ title: "Kontakt"
 draft: false
 layout: "single"
 comments: false
+sitemap:
+  disable: true
 ---
 <div class="contact-container">
   <p>Wenn Sie Fragen haben oder mit mir in Kontakt treten möchten,

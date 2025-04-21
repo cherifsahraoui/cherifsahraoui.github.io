@@ -3,6 +3,8 @@ title: "Datenschutz"
 draft: false
 layout: "single"
 comments: false
+sitemap:
+  disable: true
 ---
 
 ## I. Name und Anschrift des Verantwortlichen

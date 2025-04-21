@@ -3,6 +3,8 @@ title: "Legal Notice"
 draft: false
 layout: "single"
 comments: false
+sitemap:
+  disable: true
 ---
 <a href="/"> <svg xmlns="http://www.w3.org/2000/svg" width="150px"
     height="150px" viewBox="0 0 3000 3000"> <path fill="currentColor"

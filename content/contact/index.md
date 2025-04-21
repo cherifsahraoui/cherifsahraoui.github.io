@@ -3,6 +3,8 @@ title: "Contact"
 draft: false
 layout: "single"
 comments: false
+sitemap:
+  disable: true
 ---
 <div class="contact-container">
   <p>If you have any questions or would like to get in touch, please feel free to send me a message using the form
