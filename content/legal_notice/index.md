@@ -315,7 +315,7 @@ VAT identification number according to §27a of the German VAT Act: [Your VAT ID
 
 ## Responsible for content (according to § 55 Abs. 2 RStV)  
 
-**Sahraoui IT** \
+**Sahraoui - Consulting** \
 **Cherif Sahraoui** \
 Niederbeckstraße 33, \
 40472 Düsseldorf, Germany

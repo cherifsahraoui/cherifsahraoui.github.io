@@ -315,7 +315,7 @@ Umsatzsteuer-Identifikationsnummer nach §27a Umsatzsteuergesetz: [Your VAT ID] 
 
 ## Verantwortlich für den Inhalt (gem. § 55 Abs. 2 RStV)  
 
-**Sahraoui IT**\
+**Sahraoui - Consulting**\
 **Cherif Sahraoui** \
 Niederbeckstraße 33, \
 40472 Düsseldorf, Deutschland

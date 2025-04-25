@@ -9,8 +9,8 @@ caches:
 baseurl: https://sahraoui-it.com
 languageCode: en-us
 theme: hugo-theme-stack
-title: Sahraoui-IT
-copyright: Cherif Sahraoui - Sahraoui-IT
+title: Sahraoui-Consulting
+copyright: Cherif Sahraoui / Sahraoui - Consulting
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -23,7 +23,7 @@ hasCJKLanguage: false
 languages:
     en:
         languageName: English
-        title: Sahraoui-IT
+        title: Sahraoui-Consulting
         weight: 1
         params:
             reading_speed: 228
@@ -31,15 +31,15 @@ languages:
                 subtitle: A seasoned QA Lead with 5+ years of experience in quality assurance and software testing.
             home:
                 title: Your Partner for Quality and Stability in Complex IT Projects
-                subtitle: We specialize in quality assurance, DevOps consulting, and test automation for complex enterprise environments. From the automotive and banking sectors to critical energy infrastructure, Sahraoui-IT delivers resilient, scalable solutions that accelerate time-to-market and uphold the highest standards of compliance and performance.
+                subtitle: We specialize in quality assurance, DevOps consulting, and test automation for complex enterprise environments. From the automotive and banking sectors to critical energy infrastructure, Sahraoui-Consulting delivers resilient, scalable solutions that accelerate time-to-market and uphold the highest standards of compliance and performance.
             about:
-                title: About Sahraoui-IT
+                title: About Sahraoui-Consulting
                 subtitle: Dedicated to excellence in quality assurance and software testing
                 whyQuality:
                     title: Why Quality Assurance Matters
                     text1: In today's fast-paced development environment, integrating quality assurance early in the project lifecycle is not just beneficial—it's essential. Early QA involvement helps identify potential issues before they become costly problems, reduces technical debt, and ensures a smoother path to production.
                     text2: As a seasoned QA Lead with over 5 years of experience, I bring proven expertise in implementing robust testing strategies that align with your business goals. My approach focuses on building quality into the process rather than testing it in afterward.
-                    text3: By partnering with Sahraoui-IT, you gain a strategic quality advocate who understands the critical balance between speed and reliability in modern software development.
+                    text3: By partnering with Sahraoui-Consulting, you gain a strategic quality advocate who understands the critical balance between speed and reliability in modern software development.
                 btnText: Learn More About My Approach
             services:
                 title: Services
@@ -117,7 +117,7 @@ languages:
 
     de:
         languageName: Deutsch
-        title: Sahraoui-IT
+        title: Sahraoui-Consulting
         weight: 2
         params:
             reading_speed: 228
@@ -125,15 +125,15 @@ languages:
                 subtitle: Ein erfahrener QA Lead mit über 5 Jahren Erfahrung in Qualitätssicherung und Softwaretests.
             home:
                 title: Ihr Partner für Qualität und Stabilität in komplexen IT-Projekten
-                subtitle: Wir spezialisieren uns auf Qualitätssicherung, DevOps-Beratung und Testautomatisierung für komplexe Unternehmensumgebungen. Vom Automobil- und Bankensektor bis hin zu kritischen Energiewirtschaftsinfrastrukturen bietet Sahraoui-IT robuste, skalierbare Lösungen, die die Markteinführungszeit beschleunigen und höchste Standards in Bezug auf Compliance und Leistung einhalten.
+                subtitle: Wir spezialisieren uns auf Qualitätssicherung, DevOps-Beratung und Testautomatisierung für komplexe Unternehmensumgebungen. Vom Automobil- und Bankensektor bis hin zu kritischen Energiewirtschaftsinfrastrukturen bietet Sahraoui-Consulting robuste, skalierbare Lösungen, die die Markteinführungszeit beschleunigen und höchste Standards in Bezug auf Compliance und Leistung einhalten.
             about:
-                title: Über Sahraoui-IT
+                title: Über Sahraoui-Consulting
                 subtitle: Engagiert für Exzellenz in Qualitätssicherung und Softwaretests
                 whyQuality:
                     title: Warum Qualitätssicherung wichtig ist
                     text1: In der heutigen schnelllebigen Entwicklungsumgebung ist es nicht nur vorteilhaft, sondern entscheidend, die Qualitätssicherung frühzeitig in den Projektlebenszyklus zu integrieren. Eine frühzeitige QA-Beteiligung hilft, potenzielle Probleme zu identifizieren, bevor sie kostspielige Probleme verursachen, reduziert technische Schulden und sorgt für einen reibungsloseren Weg zur Produktion.
                     text2: Als erfahrener QA Lead mit über 5 Jahren Erfahrung bringe ich nachgewiesene Expertise in der Implementierung robuster Teststrategien mit, die auf Ihre Geschäftsziele abgestimmt sind. Mein Ansatz konzentriert sich darauf, Qualität in den Prozess zu integrieren, anstatt sie später zu testen.
-                    text3: Durch die Partnerschaft mit Sahraoui-IT erhalten Sie einen strategischen Qualitätsverfechter, der das kritische Gleichgewicht zwischen Geschwindigkeit und Zuverlässigkeit in der modernen Softwareentwicklung versteht.
+                    text3: Durch die Partnerschaft mit Sahraoui-Consulting erhalten Sie einen strategischen Qualitätsverfechter, der das kritische Gleichgewicht zwischen Geschwindigkeit und Zuverlässigkeit in der modernen Softwareentwicklung versteht.
                 btnText: Erfahren Sie mehr über meinen Ansatz
             services:
                 title: Dienstleistungen
@@ -392,7 +392,7 @@ menu:
               icon: brand-linkedin
 
         - identifier: sahraoui-it
-          name: Sahraoui-IT
+          name: Sahraoui-Consulting
           url: https://sahraoui-it.com
           params:
               icon: brand-sahraoui-it
