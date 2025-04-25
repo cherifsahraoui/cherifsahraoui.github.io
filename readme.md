@@ -1,10 +1,10 @@
-# Sahraoui-Consulting Website
+# Sahraoui - Consulting Website
 
-<img src="https://sahraoui-it.com/favicon_light_bg.gif" alt="Sahraoui-Consulting Logo"
+<img src="https://sahraoui-it.com/favicon_light_bg.gif" alt="sahraoui-consulting Logo"
 href="https://sahraoui-it.com" width="200" height="200">
 
 This repository contains the source code for the personal website of
-**Sahraoui-Consulting**, a freelance QA Lead with 5+ years of experience in quality
+**Sahraoui - Consulting**, a freelance QA Lead with 5+ years of experience in quality
 assurance, test automation, and DevOps.
 
 ## 🔍 About
