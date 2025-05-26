@@ -309,9 +309,8 @@ sitemap:
              1851.00,2893.00 1851.00,2893.00 1851.00,2893.00 1859.00,2892.00
            1859.00,2892.00 Z" /> </svg> </a>
 
-<!-- TODO -->
-<!-- ### VAT ID:  
-VAT identification number according to §27a of the German VAT Act: [Your VAT ID] -->
+### VAT ID:  
+VAT identification number according to §27a of the German VAT Act: DE453879276
 
 ## Responsible for content (according to § 55 Abs. 2 RStV)  
 

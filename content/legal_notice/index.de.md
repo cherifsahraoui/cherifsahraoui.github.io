@@ -309,9 +309,8 @@ sitemap:
              1851.00,2893.00 1851.00,2893.00 1851.00,2893.00 1859.00,2892.00
            1859.00,2892.00 Z" /> </svg> </a>
 
-<!-- TODO -->
-<!-- ### Umsatzsteuer-ID:  
-Umsatzsteuer-Identifikationsnummer nach §27a Umsatzsteuergesetz: [Your VAT ID] -->
+### Umsatzsteuer-ID:  
+Umsatzsteuer-Identifikationsnummer nach §27a Umsatzsteuergesetz: DE453879276
 
 ## Verantwortlich für den Inhalt (gem. § 55 Abs. 2 RStV)  
 
