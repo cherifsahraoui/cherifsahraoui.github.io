@@ -44,7 +44,17 @@ mit Expertise in Automatisierungstools und Programmiersprachen.
 
 ## Berufserfahrung
 
-### QA Lead | Deloitte Consulting GmbH, Düsseldorf, Deutschland | September 2023 bis heute
+### QA Lead und DevOps-Spezialist | Freelancer, Berlin, Germany | Juni 2025 bis jetzt
+
+**Energie-Sektor-Projekt**:
+
+- Qualitätssicherung und Testmanagement in Kubernetes-Umgebungen (On-Prem)
+- Automatisiertes Testen von APIs und User Interfaces
+- Optimierung von CI/CD-Prozessen zur Erhöhung der Deployment-Stabilität
+- Entwicklung und Pflege von Testframeworks für Developer Tools
+- Enge Zusammenarbeit mit DevOps-Teams zur Sicherstellung von Zuverlässigkeit und Monitoring interner Plattformen
+
+### QA Lead | Deloitte Consulting GmbH, Düsseldorf, Deutschland | September 2023 bis Mai 2025
 
 **Energie-Sektor-Projekt**:
 

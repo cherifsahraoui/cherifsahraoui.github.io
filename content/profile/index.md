@@ -42,7 +42,17 @@ Testrail
 
 ## Professional Experience
 
-### QA Lead | Deloitte Consulting GmbH, Düsseldorf, Germany | September 2023 to present
+### QA Lead and DevOps-Spezialist | Freelancer, Berlin, Germany | June 2025 to present
+
+**Energy Sector Project**:
+
+- Quality assurance and test management in on-premises Kubernetes environments
+- Automated testing of APIs and user interfaces
+- Optimization of CI/CD pipelines to improve deployment stability
+- Development and maintenance of test frameworks for developer tools
+- Close collaboration with DevOps teams to ensure reliability and monitoring of internal platforms
+
+### QA Lead | Deloitte Consulting GmbH, Düsseldorf, Germany | September 2023 to May 2025
 
 **Energy Sector Project**:
 
