@@ -42,7 +42,7 @@ Testrail
 
 ## Professional Experience
 
-### QA Lead and DevOps-Spezialist | Freelancer, Berlin, Germany | June 2025 to present
+### QA Lead and DevOps specialist | Freelancer, Berlin, Germany | June 2025 to present
 
 **Energy Sector Project**:
 
