@@ -44,9 +44,7 @@ mit Expertise in Automatisierungstools und Programmiersprachen.
 
 ## Berufserfahrung
 
-### QA Lead und DevOps-Spezialist | Freelancer, Berlin, Germany | Juni 2025 bis jetzt
-
-**Energie-Sektor-Projekt**:
+### QA Lead und DevOps-Spezialist | Freelancer, Germany | Juni 2025 bis jetzt
 
 - Qualitätssicherung und Testmanagement in Kubernetes-Umgebungen (On-Prem)
 - Automatisiertes Testen von APIs und User Interfaces
@@ -99,12 +97,12 @@ mit Expertise in Automatisierungstools und Programmiersprachen.
 
 ## Zertifikate
 
+- **[Professional Cloud Architect
+  Certification](https://www.credly.com/badges/36866d3e-0abf-413d-bf64-014f4846d209)**
 - **[ISTQB Certified Tester Foundation
   Level](http://scr.istqb.org/?name=sahraoui&number=105833)**
 - **[AWS Certified Cloud
   Practitioner](https://www.credly.com/badges/c39efa09-170b-4d19-bea9-e8a0e136c53e)**
-- **[Google Associate Cloud Engineer
-  Certification](https://www.credly.com/badges/d282e0bc-d4ab-4458-a707-3928e79e47bb)**
 - **[Certified SAFe® 6
   Agilist](https://www.credly.com/badges/b8d14f21-a729-4828-a475-59c15aca6730)**
 

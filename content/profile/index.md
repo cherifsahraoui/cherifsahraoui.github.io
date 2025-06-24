@@ -42,9 +42,7 @@ Testrail
 
 ## Professional Experience
 
-### QA Lead and DevOps specialist | Freelancer, Berlin, Germany | June 2025 to present
-
-**Energy Sector Project**:
+### QA Lead and DevOps specialist | Freelancer, Germany | June 2025 to present
 
 - Quality assurance and test management in on-premises Kubernetes environments
 - Automated testing of APIs and user interfaces
@@ -89,10 +87,10 @@ bus.
 
 ## Certifications
 
+- **[Professional Cloud Architect
+  Certification](https://www.credly.com/badges/36866d3e-0abf-413d-bf64-014f4846d209)**
 - **[ISTQB Certified Tester Foundation Level](http://scr.istqb.org/?name=sahraoui&number=105833)**
 - **[AWS Certified Cloud Practitioner](https://www.credly.com/badges/c39efa09-170b-4d19-bea9-e8a0e136c53e)**
-- **[Google Associate Cloud Engineer
-Certification](https://www.credly.com/badges/d282e0bc-d4ab-4458-a707-3928e79e47bb)**
 - **[Certified SAFe® 6 Agilist](https://www.credly.com/badges/b8d14f21-a729-4828-a475-59c15aca6730)**
 
 ---
