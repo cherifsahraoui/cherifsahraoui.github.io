@@ -19,10 +19,8 @@ grid stability.
 
 ## My Role in the 50Hertz Project
 
-Since February 2024, I have been working as the Quality Assurance (QA) Lead for
-one of the product lines in the 50Hertz project. In this role at Deloitte
-Consulting, I collaborate closely with development engineers and system
-architects, contributing to the success of this critical initiative.
+I worked as the Quality Assurance (QA) Lead for
+one of the product lines in the 50Hertz project. In this role, I collaborated closely with development engineers and system architects, contributing to the success of this critical initiative.
 
 ## Key Responsibilities
 

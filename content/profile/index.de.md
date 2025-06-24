@@ -8,7 +8,7 @@ menu:
 comments: false
 ---
 Ein erfahrener QA Lead mit mehr als 5 Jahren Erfahrung in der Qualitätssicherung
-und Softwaretests. Derzeit leite ich ein Team von zwei Testern bei Deloitte
+und Softwaretests. Derzeit leite ich ein Team von zwei Testern 
 Consulting in Deutschland, spezialisiert auf agile DevOps-Umgebungen und
 CI/CD-Integration. Ich bin versiert in der Optimierung der Softwarequalität, der
 Analyse von Testergebnissen und der Förderung kontinuierlicher Verbesserungen,

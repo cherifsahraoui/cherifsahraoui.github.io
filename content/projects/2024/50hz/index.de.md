@@ -19,10 +19,10 @@ erneuerbarer Energien zu managen und die Netzstabilität zu gewährleisten.
 
 ## Meine Rolle im 50Hertz Projekt
 
-Seit Februar 2024 arbeite ich als Quality Assurance (QA) Lead für eine der
-Produktlinien im 50Hertz-Projekt. In dieser Rolle bei Deloitte Consulting
-arbeite ich eng mit Entwicklungsingenieuren und Systemarchitekten zusammen und
-trage zum Erfolg dieser wichtigen Initiative bei.
+Ich habe als Quality Assurance (QA) Lead für eine der
+Produktlinien im 50Hertz-Projekt gearbeitet. In dieser Rolle habe
+ich eng mit Entwicklungsingenieuren und Systemarchitekten zusammen gearbeitet und
+haben zum Erfolg dieser wichtigen Initiative beigetrgagen.
 
 ## Hauptverantwortlichkeiten
 
