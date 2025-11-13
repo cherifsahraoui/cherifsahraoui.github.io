@@ -40,7 +40,14 @@ Testrail
 
 ## Professional Experience
 
-### QA Lead and DevOps specialist | Freelancer, Germany | June 2025 to present
+### Product Owner – SCM & CI product | Freelancer, Germany | November 2025 to Present
+- Owned the roadmap and release planning for the SCM/CI product.
+- Coordinated with cross-functional stakeholders to gather requirements and define priorities.
+- Managed product specifications, user stories, and acceptance criteria throughout the delivery cycle.
+- Oversaw integration of CI/CD, security, and platform capabilities into the product.
+- Supported onboarding, documentation, and best-practice adoption for internal teams.
+
+### QA Lead and DevOps specialist | Freelancer, Germany | June 2025 to October 2025
 
 - Quality assurance and test management in on-premises Kubernetes environments
 - Automated testing of APIs and user interfaces

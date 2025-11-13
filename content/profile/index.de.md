@@ -44,7 +44,15 @@ mit Expertise in Automatisierungstools und Programmiersprachen.
 
 ## Berufserfahrung
 
-### QA Lead und DevOps-Spezialist | Freelancer, Germany | Juni 2025 bis jetzt
+### Product Owner – SCM & CI product | Freelancer, Germany | November 2025 to Jetzt
+- Roadmap- und Release-Planung des SCM/CI-Plattformprodukts
+- Anforderungs- und Prioritätenabstimmung mit bereichsübergreifenden Stakeholdern
+- Erstellung und Verwaltung von Produktspezifikationen, User Stories und Akzeptanzkriterien
+- Integration von CI/CD-, Sicherheits- und Plattformfunktionen in das Produkt
+- Unterstützung der Teams beim Onboarding, bei der Dokumentation und bei Best Practices
+
+
+### QA Lead und DevOps-Spezialist | Freelancer, Germany | Juni 2025 bis Oktober 2025
 
 - Qualitätssicherung und Testmanagement in Kubernetes-Umgebungen (On-Prem)
 - Automatisiertes Testen von APIs und User Interfaces
