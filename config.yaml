@@ -28,91 +28,124 @@ languages:
         params:
             reading_speed: 228
             sidebar:
-                subtitle: A seasoned QA Lead with 5+ years of experience in quality assurance and software testing.
+                subtitle: A DevOps & Platform Engineering consultant specializing in Kubernetes, Infrastructure-as-Code, CI/CD automation, cloud platforms, and secure software delivery.
             home:
-                title: Your Partner for Quality and Stability in Complex IT Projects
-                subtitle: We specialize in quality assurance, DevOps consulting, and test automation for complex enterprise environments. From the automotive and banking sectors to critical energy infrastructure, Sahraoui - Consulting delivers resilient, scalable solutions that accelerate time-to-market and uphold the highest standards of compliance and performance.
+                title: Your Partner for Reliable DevOps, Cloud Platforms & Modern Delivery
+                subtitle: We help organizations modernize their delivery pipelines, build resilient cloud-native platforms, and automate infrastructure using Kubernetes, Terraform, CI/CD, and GitOps. Sahraoui - Consulting enables teams to ship faster, more securely, and with confidence.
             about:
                 title: About Sahraoui - Consulting
-                subtitle: Dedicated to excellence in quality assurance and software testing
+                subtitle: Empowering teams through DevOps excellence, automation, and scalable delivery
                 whyQuality:
-                    title: Why Quality Assurance Matters
-                    text1: In today's fast-paced development environment, integrating quality assurance early in the project lifecycle is not just beneficial—it's essential. Early QA involvement helps identify potential issues before they become costly problems, reduces technical debt, and ensures a smoother path to production.
-                    text2: As a seasoned QA Lead with over 5 years of experience, I bring proven expertise in implementing robust testing strategies that align with your business goals. My approach focuses on building quality into the process rather than testing it in afterward.
-                    text3: By partnering with Sahraoui - Consulting, you gain a strategic quality advocate who understands the critical balance between speed and reliability in modern software development.
-                btnText: Learn More About My Approach
+                    title: Why DevOps & Platform Engineering Matter
+                    text1: Modern software development depends on stable, automated, and secure platforms. DevOps practices, IaC, and Kubernetes-native architectures reduce operational risk, accelerate delivery, and improve developer productivity.
+                    text2: With deep experience in CI/CD, Kubernetes, and infrastructure automation — combined with a strong background in QA — I bridge the gap between engineering, operations, and product.
+                    text3: Sahraoui - Consulting provides pragmatic, scalable solutions that strengthen reliability, security, and long-term maintainability across your entire delivery ecosystem.
+                btnText: Learn More About My DevOps Approach
             services:
                 title: Services
-                subtitle: Comprehensive quality assurance solutions tailored to your needs
+                subtitle: DevOps, Platform Engineering & Cloud Infrastructure Services
                 qaStrategy:
-                    title: QA Strategy Development
-                    description: Creating comprehensive testing strategies aligned with your business goals and development methodology.
+                    title: DevOps Architecture & Strategy
+                    description: Designing scalable DevOps architectures, GitOps workflows, and cloud-native delivery models.
                 testAutomation:
-                    title: Test Automation Framework Design
-                    description: Building scalable, maintainable test automation frameworks using industry-leading tools.
+                    title: Infrastructure-as-Code & Automation
+                    description: Building and automating infrastructure using Terraform, Helm, Kubernetes, and modern IaC standards.
                 cicdIntegration:
-                    title: CI/CD Pipeline Integration
-                    description: Seamlessly integrating testing into your CI/CD pipelines.
+                    title: CI/CD Pipeline Engineering
+                    description: Designing secure, reliable CI/CD pipelines with GitLab, Jenkins, Harness, and cloud-native tools.
                 performanceSecurity:
-                    title: Performance & Security Testing
-                    description: Identifying performance bottlenecks and security vulnerabilities before they impact your users.
+                    title: Cloud Security & Reliability
+                    description: Implementing secrets management, governance, compliance, and platform reliability best practices.
                 qaLeadership:
-                    title: QA Team Leadership
-                    description: Building and mentoring high-performing QA teams.
+                    title: Product Ownership & Technical Leadership
+                    description: Leading platform initiatives, roadmap planning, requirements engineering, and cross-team alignment.
                 testProcessOptimization:
-                    title: Test Process Optimization
-                    description: Analyzing and improving existing test processes for increased efficiency.
+                    title: Observability & Continuous Improvement
+                    description: Enabling actionable monitoring, metrics, and feedback loops across complex systems.
             skills:
                 title: Technical Skill Set
-                subtitle: Leveraging a broad range of tools and technologies to deliver top-tier testing and quality assurance services.
+                subtitle: Modern DevOps, Cloud, and Platform Engineering Technologies
+
                 testingTools:
-                    title: Testing Tools
+                    title: Automation & QA (Supporting Skills)
                     pytest: Pytest
                     selenium: Selenium
                     cypress: Cypress
                     junit: JUnit
                     postman: Postman
                     testkube: Testkube
+                    apiUiTests: Automated API/UI Testing
+
                 cloudDevOps:
                     title: Cloud & DevOps
-                    kubernetes: Kubernetes
+                    kubernetes: Kubernetes (K8s)
                     docker: Docker
+                    helm: Helm
+                    argocd: ArgoCD
+                    kustomize: Kustomize
                     terraform: Terraform
+                    gitops: GitOps
+                    harness: Harness
+                    gitlabCi: GitLab CI
+                    jenkins: Jenkins
+                    bitbucketPipelines: Bitbucket Pipelines
                     aws: AWS
                     gcp: GCP
-                    iaas: IaaS
+                    onPremK8s: On-Prem Kubernetes
+                    iaac: Infrastructure-as-Code (IaC)
                     cicd: CI/CD Pipelines
+
                 programming:
-                    title: Programming Languages
+                    title: Programming & Scripting
                     python: Python
+                    bash: Bash
                     linuxCommandLine: Linux Command Line
+
+                monitoring:
+                    title: Monitoring & Observability
+                    prometheus: Prometheus
+                    grafana: Grafana
+                    sast: SAST (Static Application Security Testing)
+                    dast: DAST (Dynamic Application Security Testing)
+
                 versionControl:
-                    title: Version Control Tools
+                    title: Platform & Delivery Tools
                     bitbucket: Bitbucket
                     gitlab: GitLab
-                    jenkins: Jenkins
-                    argocd: ArgoCD
-                    jiraXray: Jira/XRay
                     confluence: Confluence
+                    jira: Jira
+                    jiraXray: Jira/XRay
+                    testrail: TestRail
                     vault: Vault
                     sonarqube: SonarQube
-                    testrail: TestRail
+
+                security:
+                    title: Security & DevSecOps
+                    secretsManagement: Secrets Management (Vault, KMS)
+                    imageSecurity: Container & OCI Image Security
+                    supplyChain: Software Supply Chain Security (SLSA, SBOM)
+                    signing: Artifact Signing (Cosign, Notation)
+                    scanning: Dependency & Vulnerability Scanning (Trivy,)
+                    policy: Policy-as-Code (OPA, Kyverno)
+                    compliance: Compliance & Regulatory Controls (Energy, Banking)
+
+
             industries:
-                title: Industries We Worked With
-                subtitle: Delivering customized solutions across a wide range of industries
+                title: Industries We Support
+                subtitle: Delivering DevOps and cloud-native solutions across sectors
                 automotive:
                     title: Automotive
-                    description: Ensuring the highest quality standards for the automotive industry with robust testing solutions.
+                    description: Modernizing testing and delivery pipelines for automotive platforms and embedded software.
                 banking:
                     title: Banking & Finance
-                    description: Helping banks and financial institutions maintain the highest levels of security and compliance through rigorous testing.
+                    description: Secure, compliant CI/CD and infrastructure automation for regulated environments.
                 energy:
                     title: Energy
-                    description: Delivering reliable, scalable solutions for the energy sector, focusing on stability and performance.
+                    description: Reliability-focused DevOps solutions for critical energy and grid infrastructure.
             cta:
-                title: Ready to Get Started?
-                text1: If you're looking for an expert in quality assurance, test automation, and DevOps integration, let's get in touch!
-                text2: I'm here to help you achieve your quality goals and accelerate your software development processes.
+                title: Ready to Transform Your Delivery?
+                text1: If you're looking for DevOps expertise, platform engineering support, or CI/CD modernization — let's connect.
+                text2: I help teams build secure, scalable, and automated delivery ecosystems designed for the future.
                 btnText: Contact Me
 
     de:
@@ -122,91 +155,124 @@ languages:
         params:
             reading_speed: 228
             sidebar:
-                subtitle: Ein erfahrener QA Lead mit über 5 Jahren Erfahrung in Qualitätssicherung und Softwaretests.
+                subtitle: DevOps- und Platform-Engineering-Berater mit Fokus auf Kubernetes, Infrastructure-as-Code, CI/CD-Automatisierung, Cloud-Plattformen und sichere Softwarebereitstellung.
             home:
-                title: Ihr Partner für Qualität und Stabilität in komplexen IT-Projekten
-                subtitle: Wir spezialisieren uns auf Qualitätssicherung, DevOps-Beratung und Testautomatisierung für komplexe Unternehmensumgebungen. Vom Automobil- und Bankensektor bis hin zu kritischen Energiewirtschaftsinfrastrukturen bietet Sahraoui - Consulting robuste, skalierbare Lösungen, die die Markteinführungszeit beschleunigen und höchste Standards in Bezug auf Compliance und Leistung einhalten.
+                title: Ihr Partner für moderne DevOps-, Cloud- und Plattformlösungen
+                subtitle: Wir unterstützen Unternehmen beim Aufbau zuverlässiger Cloud-Plattformen, automatisierter CI/CD-Pipelines und skalierbarer Infrastrukturen. Sahraoui - Consulting liefert DevOps-Expertise, die Entwicklungsteams schneller, sicherer und stabiler macht.
             about:
                 title: Über Sahraoui - Consulting
-                subtitle: Engagiert für Exzellenz in Qualitätssicherung und Softwaretests
+                subtitle: Moderne Softwarebereitstellung braucht Automatisierung, Stabilität und Skalierbarkeit
                 whyQuality:
-                    title: Warum Qualitätssicherung wichtig ist
-                    text1: In der heutigen schnelllebigen Entwicklungsumgebung ist es nicht nur vorteilhaft, sondern entscheidend, die Qualitätssicherung frühzeitig in den Projektlebenszyklus zu integrieren. Eine frühzeitige QA-Beteiligung hilft, potenzielle Probleme zu identifizieren, bevor sie kostspielige Probleme verursachen, reduziert technische Schulden und sorgt für einen reibungsloseren Weg zur Produktion.
-                    text2: Als erfahrener QA Lead mit über 5 Jahren Erfahrung bringe ich nachgewiesene Expertise in der Implementierung robuster Teststrategien mit, die auf Ihre Geschäftsziele abgestimmt sind. Mein Ansatz konzentriert sich darauf, Qualität in den Prozess zu integrieren, anstatt sie später zu testen.
-                    text3: Durch die Partnerschaft mit Sahraoui - Consulting erhalten Sie einen strategischen Qualitätsverfechter, der das kritische Gleichgewicht zwischen Geschwindigkeit und Zuverlässigkeit in der modernen Softwareentwicklung versteht.
-                btnText: Erfahren Sie mehr über meinen Ansatz
+                    title: Warum DevOps & Platform Engineering entscheidend sind
+                    text1: In der heutigen Cloud-nativen Welt sind automatisierte, zuverlässige Plattformen der Schlüssel zu schneller und hochwertiger Softwarebereitstellung. DevOps-Praktiken, Kubernetes und IaC reduzieren Risiken und verbessern Effizienz.
+                    text2: Mit tiefem Know-how in CI/CD, Kubernetes und Infrastrukturautomatisierung — kombiniert mit fundierter QA-Erfahrung — schlage ich die Brücke zwischen Entwicklung, Betrieb und Produkt.
+                    text3: Sahraoui - Consulting bietet pragmatische DevOps-Lösungen, die Zuverlässigkeit, Sicherheit und langfristige Wartbarkeit Ihrer Systeme stärken.
+                btnText: Mehr über meinen DevOps-Ansatz erfahren
             services:
                 title: Dienstleistungen
-                subtitle: Umfassende Qualitätssicherungs-Lösungen, die auf Ihre Bedürfnisse zugeschnitten sind
+                subtitle: DevOps-, Cloud- und Platform-Engineering-Dienstleistungen
                 qaStrategy:
-                    title: Entwicklung von QA-Strategien
-                    description: Entwicklung umfassender Teststrategien, die auf Ihre Geschäftsziele und Entwicklungsmethodik abgestimmt sind.
+                    title: DevOps-Architektur & Strategie
+                    description: Entwicklung skalierbarer DevOps-Architekturen, GitOps-Workflows und Cloud-nativer Delivery-Modelle.
                 testAutomation:
-                    title: Design von Testautomatisierungsrahmen
-                    description: Aufbau skalierbarer, wartbarer Testautomatisierungsrahmen unter Verwendung branchenführender Tools.
+                    title: Infrastructure-as-Code & Automatisierung
+                    description: Aufbau und Automatisierung von Infrastruktur mit Terraform, Helm, Kubernetes und modernen IaC-Standards.
                 cicdIntegration:
-                    title: Integration von CI/CD-Pipelines
-                    description: Nahtlose Integration von Tests in Ihre CI/CD-Pipelines.
+                    title: CI/CD-Pipeline-Engineering
+                    description: Design sicherer, zuverlässiger CI/CD-Pipelines mit GitLab, Jenkins, Harness und Cloud-Tools.
                 performanceSecurity:
-                    title: Leistungs- und Sicherheitstests
-                    description: Identifizierung von Leistungsengpässen und Sicherheitslücken, bevor sie Auswirkungen auf Ihre Nutzer haben.
+                    title: Cloud-Sicherheit & Zuverlässigkeit
+                    description: Implementierung von Secrets-Management, Governance, Compliance und stabiler Plattformarchitektur.
                 qaLeadership:
-                    title: QA-Teamführung
-                    description: Aufbau und Mentoring von leistungsstarken QA-Teams.
+                    title: Technische Projekt- & Produktleitung
+                    description: Leitung von Plattforminitiativen, Roadmap-Planung, Anforderungsmanagement und Teamabstimmung.
                 testProcessOptimization:
-                    title: Optimierung von Testprozessen
-                    description: Analyse und Verbesserung bestehender Testprozesse zur Steigerung der Effizienz.
+                    title: Observability & Continuous Improvement
+                    description: Einführung von Monitoring, Metriken und Feedback-Schleifen für komplexe Systeme.
             skills:
                 title: Technische Fähigkeiten
-                subtitle: Nutzung einer breiten Palette von Tools und Technologien zur Bereitstellung erstklassiger Test- und Qualitätssicherungs-Dienstleistungen.
+                subtitle: Moderne DevOps-, Cloud- und Platform-Engineering-Technologien
+
                 testingTools:
-                    title: Testtools
+                    title: Automatisierung & QA (Unterstützende Kompetenzen)
                     pytest: Pytest
                     selenium: Selenium
                     cypress: Cypress
                     junit: JUnit
                     postman: Postman
                     testkube: Testkube
+                    apiUiTests: Automatisiertes API/UI-Testing
+
                 cloudDevOps:
                     title: Cloud & DevOps
-                    kubernetes: Kubernetes
+                    kubernetes: Kubernetes (K8s)
                     docker: Docker
+                    helm: Helm
+                    argocd: ArgoCD
+                    kustomize: Kustomize
                     terraform: Terraform
+                    gitops: GitOps
+                    harness: Harness
+                    gitlabCi: GitLab CI
+                    jenkins: Jenkins
+                    bitbucketPipelines: Bitbucket Pipelines
                     aws: AWS
                     gcp: GCP
-                    iaas: IaaS
+                    onPremK8s: On-Premises Kubernetes
+                    iaac: Infrastructure-as-Code (IaC)
                     cicd: CI/CD-Pipelines
+
                 programming:
-                    title: Programmiersprachen
+                    title: Programmierung & Scripting
                     python: Python
+                    bash: Bash
                     linuxCommandLine: Linux-Befehlszeile
+
+                monitoring:
+                    title: Monitoring & Observability
+                    prometheus: Prometheus
+                    grafana: Grafana
+                    sast: SAST (Static Application Security Testing)
+                    dast: DAST (Dynamic Application Security Testing)
+
                 versionControl:
-                    title: Versionskontrolltools
+                    title: Plattform- & Delivery-Tools
                     bitbucket: Bitbucket
                     gitlab: GitLab
-                    jenkins: Jenkins
-                    argocd: ArgoCD
-                    jiraXray: Jira/XRay
                     confluence: Confluence
+                    jira: Jira
+                    jiraXray: Jira/XRay
+                    testrail: TestRail
                     vault: Vault
                     sonarqube: SonarQube
-                    testrail: TestRail
+
+                security:
+                    title: Sicherheit & DevSecOps
+                    secretsManagement: Secrets Management (Vault, KMS)
+                    imageSecurity: Container- & OCI-Image-Sicherheit
+                    supplyChain: Software-Lieferkettensicherheit (SLSA, SBOM)
+                    signing: Artefakt-Signierung (Cosign, Notation)
+                    scanning: Dependency- & Schwachstellen-Scanning (Trivy)
+                    policy: Policy-as-Code (OPA, Kyverno)
+                    compliance: Compliance & Regulierung (Energie, Banken)
+
+
             industries:
-                title: Branchen, in denen wir Erfahrung haben
-                subtitle: Maßgeschneiderte Lösungen für eine Vielzahl von Branchen
+                title: Branchen, die wir unterstützen
+                subtitle: Skalierbare DevOps- und Cloud-Lösungen für verschiedene Sektoren
                 automotive:
                     title: Automobilindustrie
-                    description: Sicherstellung höchster Qualitätsstandards für die Automobilindustrie mit robusten Testlösungen.
+                    description: Modernisierung von Pipelines und Infrastruktur für Automotive- und Embedded-Systeme.
                 banking:
-                    title: Bankwesen & Finanzen
-                    description: Unterstützung von Banken und Finanzinstituten, höchste Sicherheits- und Compliance-Standards durch rigorose Tests zu wahren.
+                    title: Banken & Finanzen
+                    description: Sichere und compliance-konforme CI/CD- und IaC-Lösungen für regulierte Umgebungen.
                 energy:
                     title: Energie
-                    description: Bereitstellung zuverlässiger, skalierbarer Lösungen für den Energiesektor mit Fokus auf Stabilität und Leistung.
+                    description: Zuverlässige DevOps-Architekturen für kritische Energie- und Netz-Infrastrukturen.
             cta:
-                title: Bereit, loszulegen?
-                text1: Wenn Sie einen Experten für Qualitätssicherung, Testautomatisierung und DevOps-Integration suchen, lassen Sie uns in Kontakt treten!
-                text2: Ich bin hier, um Ihnen zu helfen, Ihre Qualitätsziele zu erreichen und Ihre Softwareentwicklungsprozesse zu beschleunigen.
+                title: Bereit für den nächsten Schritt?
+                text1: Wenn Sie DevOps-Expertise, Plattform-Engineering oder CI/CD-Modernisierung suchen — lassen Sie uns sprechen.
+                text2: Ich helfe Teams dabei, sichere, automatisierte und skalierbare Delivery-Ökosysteme aufzubauen.
                 btnText: Kontaktieren Sie mich
 
 services:

@@ -7,86 +7,92 @@ menu:
             icon: profile
 comments: false
 ---
-A seasoned QA Lead with 5+ years of experience in quality assurance and software testing. Currently leading a team of two testers in Germany, specializing in agile DevOps environments and CI/CD integration. Skilled
-in optimizing software quality, analyzing test results, and driving continuous improvement, with expertise in automation tools and programming languages.
 
-## Key Skills
+A DevOps & Platform Engineering specialist with experience across Kubernetes, Infrastructure-as-Code, CI/CD automation, cloud platforms, and product delivery. Currently working as a Product Owner for an enterprise SCM/CI platform, driving DevOps architectures, workflows, IaC standardization, and secure software delivery.
 
-- **Leadership and Team Management**
-- **Strategic Thinking and Planning**
-- **Advanced Problem-Solving and Analytical Skills**
-- **Automation and Tools Expertise**
+With a background as QA Lead and Test Manager in complex environments (Kubernetes, on-prem cloud, banking, and energy sector), I transitioned into a DevOps-oriented career, focusing on platform reliability, automation, GitOps, and developer experience. I bring a strong combination of delivery leadership, system thinking, and hands-on engineering.
+
+---
+
+## Key Strengths
+
+- **DevOps & Platform Engineering**
+- **Kubernetes & IaC Automation**
+- **CI/CD Architecture & Pipeline Design**
+- **Cloud Platforms (AWS, GCP)**
+- **Product Ownership / Technical Project Management**
+- **Cross-functional Leadership & Stakeholder Management**
+- **SRE Mindset (Quality, Reliability, Observability)**
 
 ---
 
 ## Technical Skill Set
 
-- **Testing Tools**: Pytest, Selenium, Cypress, JUnit, Postman, Testkube
-- **Cloud & DevOps**: Kubernetes, Docker, Terraform, AWS, GCP, IaaS, CI/CD
-- **Programming**: Python, Linux command line
-- **Version Control & CI/CD Tools**: Bitbucket, GitLab, Jenkins, ArgoCD, Jira (Xray), Confluence, Vault, Sonarqube,
-Testrail
+- **Containers & Kubernetes**: K8s, Docker, Helm, ArgoCD, Kustomize  
+- **Infrastructure-as-Code**: Terraform, GitOps, Vault, IaC security  
+- **CI/CD & Automation**: GitLab CI, Jenkins, Harness, Bitbucket Pipelines, SonarQube, Testkube  
+- **Cloud Platforms**: AWS, GCP, on-prem K8s clusters  
+- **Programming & Scripting**: Python, Bash, Linux  
+- **Monitoring & Quality Gates**: Prometheus/Grafana basics, SAST/DAST, API/UI automation frameworks  
+- **Collaboration Tools**: Jira, Confluence, Xray, Testrail  
 
 ---
 
 ## Education
 
-- **Bachelor of Science in Electrical Engineering**
-  Technical University of Braunschweig, Germany, September 2019
-- **Master of Science in Electronic Automotive and Aerospace Systems**
-  Technical University of Braunschweig, Germany, May 2021
+- **Bachelor of Science in Electrical Engineering**, TU Braunschweig  
+- **Master of Science in Electronic Automotive & Aerospace Systems**, TU Braunschweig  
 
 ---
 
 ## Professional Experience
 
-### Product Owner – SCM & CI product | Freelancer, Germany | November 2025 to Present
-- Owned the roadmap and release planning for the SCM/CI product.
-- Coordinated with cross-functional stakeholders to gather requirements and define priorities.
-- Managed product specifications, user stories, and acceptance criteria throughout the delivery cycle.
-- Oversaw integration of CI/CD, security, and platform capabilities into the product.
-- Supported onboarding, documentation, and best-practice adoption for internal teams.
-
-### QA Lead and DevOps specialist | Freelancer, Germany | June 2025 to October 2025
-
-- Quality assurance and test management in on-premises Kubernetes environments
-- Automated testing of APIs and user interfaces
-- Optimization of CI/CD pipelines to improve deployment stability
-- Development and maintenance of test frameworks for developer tools
-- Close collaboration with DevOps teams to ensure reliability and monitoring of internal platforms
-
-### QA Lead | Deloitte Consulting GmbH, Düsseldorf, Germany | September 2023 to May 2025
-
-**Energy Sector Project**:
-
-- Led QA efforts, collaborating closely with development engineers.
-- Implemented manual and automated testing in a CI/CD environment.
-- Ensured application scalability and compatibility in Kubernetes clusters.
-- Conducted UI/UX testing to optimize user experience.
-
-**Banking Sector Project**:
-
-- Led automation initiatives as Test Manager.
-- Managed test data preparation for auditing document creation.
-- Enhanced test coverage and optimized test processes for efficiency.
+### **Product Owner – SCM & CI Platform | Freelancer, Germany | Nov 2025 – Present**  
+**(DevOps / Platform Product Management)**  
+- Responsible for the roadmap and architecture of an enterprise-scale SCM & CI platform.  
+- Defined requirements for CI/CD, GitOps, artifact workflows, and Kubernetes-native delivery.  
+- Worked closely with DevOps, architects, and security teams to integrate pipelines, automation, secrets management, and platform governance.  
+- Led cross-team alignment for Kubernetes, Vault, IAM, registry integration, and infrastructure automation.  
+- Managed PRDs, user stories, acceptance criteria, and release communication.  
+- Enabled onboarding of development teams and improved developer experience across the platform.
 
 ---
 
-### System Integration and Test Engineer | Volkswagen Infotainment GmbH, Bochum, Germany | June 2021 to August 2022
-
-- Analyzed requirements and defined software integration and test criteria.
-- Developed and implemented software, integration, and system tests, including test automation.
-- Collaborated with internal and external partners (VW, Continental) and tracked issues in Jira.
+### **DevOps Specialist & QA Lead | Freelancer, Germany | Jun 2025 – Oct 2025**  
+**(Platform Reliability, Pipeline Automation, Kubernetes)**  
+- Improved CI/CD pipelines and automated quality gates for internal platforms.  
+- Worked in on-prem Kubernetes environments, improving deployment stability and scalability.  
+- Automated API and UI testing within GitOps and DevOps workflows.  
+- Ensured monitoring, stability, and reliability of developer tools and internal systems.  
+- Contributed to DevOps transformation efforts at customer sites.
 
 ---
 
-### Internships & Working Student Positions | Wolfsburg, Germany | September 2018 – May 2021
+### **QA Lead (DevOps-Integrated Teams) | Deloitte Consulting GmbH | Sep 2023 – May 2025**
 
-- Conducted test analysis and developed unit/system test cases for the VW HMI Notification Manager and central locking
-system.
-- Performed HiL simulation, test automation, error analysis, and ECU flashing, while troubleshooting issues.
-- Enhanced microcontroller-based CAN simulation and developed a Windows GUI application for controlling the residual
-bus.
+**Energy Sector**  
+- Worked in cloud-native architecture supporting Kubernetes, CI/CD, and observability.  
+- Coordinated closely with DevOps teams to ensure scalable, reliable deployments.  
+- Designed QA automation integrated directly into pipelines and developer workflows.  
+
+**Banking Sector**  
+- Led automation initiatives and enabled pipeline-driven quality checks.  
+- Optimized processes and increased test coverage in compliance-heavy environments.
+
+---
+
+### **System Integration & Test Engineer | Volkswagen Infotainment GmbH | Jun 2021 – Aug 2022**
+
+- Tested complex embedded and cloud-connected systems using automation, CI workflows, and integration pipelines.  
+- Performed system, integration, and automated testing aligned with DevOps principles.  
+- Collaborated with multiple engineering stakeholders (VW, Continental).  
+
+---
+
+### **Working Student & Internships | Wolfsburg | 2018 – 2021**
+
+- Developed automated tests, HiL simulations, residual bus (CAN) tools, and system validation setups.  
+- Built a microcontroller-driven CAN simulation tool and supporting desktop application.  
 
 ---
 
