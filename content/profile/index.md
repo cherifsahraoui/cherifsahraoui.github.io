@@ -48,7 +48,6 @@ With a background as QA Lead and Test Manager in complex environments (Kubernete
 ## Professional Experience
 
 ### **Product Owner – SCM & CI Platform | Freelancer, Germany | Nov 2025 – Present**  
-**(DevOps / Platform Product Management)**  
 - Responsible for the roadmap and architecture of an enterprise-scale SCM & CI platform.  
 - Defined requirements for CI/CD, GitOps, artifact workflows, and Kubernetes-native delivery.  
 - Worked closely with DevOps, architects, and security teams to integrate pipelines, automation, secrets management, and platform governance.  
@@ -59,7 +58,6 @@ With a background as QA Lead and Test Manager in complex environments (Kubernete
 ---
 
 ### **DevOps Specialist & QA Lead | Freelancer, Germany | Jun 2025 – Oct 2025**  
-**(Platform Reliability, Pipeline Automation, Kubernetes)**  
 - Improved CI/CD pipelines and automated quality gates for internal platforms.  
 - Worked in on-prem Kubernetes environments, improving deployment stability and scalability.  
 - Automated API and UI testing within GitOps and DevOps workflows.  
@@ -68,7 +66,7 @@ With a background as QA Lead and Test Manager in complex environments (Kubernete
 
 ---
 
-### **QA Lead (DevOps-Integrated Teams) | Deloitte Consulting GmbH | Sep 2023 – May 2025**
+### **QA Lead | Deloitte Consulting GmbH | Sep 2023 – May 2025**
 
 **Energy Sector**  
 - Worked in cloud-native architecture supporting Kubernetes, CI/CD, and observability.  

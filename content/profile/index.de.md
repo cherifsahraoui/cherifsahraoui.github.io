@@ -50,7 +50,6 @@ Durch meine frühere Tätigkeit als QA Lead in komplexen Umgebungen (Kubernetes,
 ## Berufserfahrung
 
 ### **Product Owner – SCM & CI Plattform | Freelancer, Deutschland | Seit November 2025**  
-*(DevOps / Platform Engineering / CI/CD Produktverantwortung)*  
 - Verantwortung für Roadmap, Architektur und Weiterentwicklung einer SCM/CI-Plattform.  
 - Definition von Anforderungen für CI/CD, GitOps, Secrets-Management und Build-/Deployment-Prozesse.  
 - Enge Zusammenarbeit mit DevOps-Teams, Architekten und Security zur Integration von Pipelines, Automatisierung und Governance.  
@@ -67,7 +66,7 @@ Durch meine frühere Tätigkeit als QA Lead in komplexen Umgebungen (Kubernetes,
 
 ---
 
-### **QA Lead (DevOps-nahe Teams) | Deloitte Consulting GmbH | Sep 2023 – Mai 2025**
+### **QA Lead | Deloitte Consulting GmbH | Sep 2023 – Mai 2025**
 
 **Energiesektor**  
 - Arbeit in Cloud-/Kubernetes-Architekturen mit starker DevOps-Integration.  
