@@ -8,7 +8,7 @@ menu:
 comments: false
 ---
 
-A DevOps & Platform Engineering specialist with experience across Kubernetes, Infrastructure-as-Code, CI/CD automation, cloud platforms, and product delivery. Currently working as a Product Owner for an enterprise SCM/CI platform, driving DevOps architectures, workflows, IaC standardization, and secure software delivery.
+A freelance DevOps & Platform Engineering specialist with experience across Kubernetes, Infrastructure-as-Code, CI/CD automation, cloud platforms, and product delivery. Currently working as a Product Owner for an enterprise SCM/CI platform, driving DevOps architectures, workflows, IaC standardization, and secure software delivery.
 
 With a background as QA Lead and Test Manager in complex environments (Kubernetes, on-prem cloud, banking, and energy sector), I transitioned into a DevOps-oriented career, focusing on platform reliability, automation, GitOps, and developer experience. I bring a strong combination of delivery leadership, system thinking, and hands-on engineering.
 

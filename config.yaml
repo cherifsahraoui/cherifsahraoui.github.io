@@ -28,10 +28,10 @@ languages:
         params:
             reading_speed: 228
             sidebar:
-                subtitle: A DevOps & Platform Engineering consultant specializing in Kubernetes, Infrastructure-as-Code, CI/CD automation, cloud platforms, and secure software delivery.
+                subtitle: A freelance DevOps & Platform Engineering consultant specializing in Kubernetes, Infrastructure-as-Code, CI/CD automation, cloud platforms, and secure software delivery.
             home:
                 title: Your Partner for Reliable DevOps, Cloud Platforms & Modern Delivery
-                subtitle: We help organizations modernize their delivery pipelines, build resilient cloud-native platforms, and automate infrastructure using Kubernetes, Terraform, CI/CD, and GitOps. Sahraoui - Consulting enables teams to ship faster, more securely, and with confidence.
+                subtitle: As a freelance DevOps & Platform Engineering consultant, I help organizations modernize their delivery pipelines, build resilient cloud-native platforms, and automate infrastructure using Kubernetes, Terraform, CI/CD, and GitOps. Sahraoui - Consulting enables teams to ship faster, more securely, and with confidence.
             about:
                 title: About Sahraoui - Consulting
                 subtitle: Empowering teams through DevOps excellence, automation, and scalable delivery
@@ -155,10 +155,10 @@ languages:
         params:
             reading_speed: 228
             sidebar:
-                subtitle: DevOps- und Platform-Engineering-Berater mit Fokus auf Kubernetes, Infrastructure-as-Code, CI/CD-Automatisierung, Cloud-Plattformen und sichere Softwarebereitstellung.
+                subtitle: Freiberuflicher DevOps- und Platform-Engineering-Berater mit Fokus auf Kubernetes, Infrastructure-as-Code, CI/CD-Automatisierung, Cloud-Plattformen und sichere Softwarebereitstellung.
             home:
                 title: Ihr Partner für moderne DevOps-, Cloud- und Plattformlösungen
-                subtitle: Wir unterstützen Unternehmen beim Aufbau zuverlässiger Cloud-Plattformen, automatisierter CI/CD-Pipelines und skalierbarer Infrastrukturen. Sahraoui - Consulting liefert DevOps-Expertise, die Entwicklungsteams schneller, sicherer und stabiler macht.
+                subtitle: Als freiberuflicher DevOps- und Platform-Engineering-Berater unterstütze ich Unternehmen beim Aufbau zuverlässiger Cloud-Plattformen, automatisierter CI/CD-Pipelines und skalierbarer Infrastrukturen. Sahraoui - Consulting liefert DevOps-Expertise, die Entwicklungsteams schneller, sicherer und stabiler macht.
             about:
                 title: Über Sahraoui - Consulting
                 subtitle: Moderne Softwarebereitstellung braucht Automatisierung, Stabilität und Skalierbarkeit

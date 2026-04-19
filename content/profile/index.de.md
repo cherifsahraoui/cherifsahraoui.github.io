@@ -8,7 +8,7 @@ menu:
 comments: false
 ---
 
-Ein DevOps- und Platform-Engineering-Spezialist mit Erfahrung in Kubernetes, Infrastructure-as-Code, CI/CD-Automatisierung, Cloud-Architekturen und technischer Projektleitung. Derzeit als Product Owner für eine unternehmensweite SCM/CI-Plattform tätig, mit Fokus auf DevOps-Architektur, Automatisierung, GitOps, Secrets-Management und sichere Softwarebereitstellung.
+Ein freiberuflicher DevOps- und Platform-Engineering-Spezialist mit Erfahrung in Kubernetes, Infrastructure-as-Code, CI/CD-Automatisierung, Cloud-Architekturen und technischer Projektleitung. Derzeit als Product Owner für eine unternehmensweite SCM/CI-Plattform tätig, mit Fokus auf DevOps-Architektur, Automatisierung, GitOps, Secrets-Management und sichere Softwarebereitstellung.
 
 Durch meine frühere Tätigkeit als QA Lead in komplexen Umgebungen (Kubernetes, On-Prem Cloud, Banken- und Energiesektor) habe ich einen starken Hintergrund in Reliability, Automatisierung und End-to-End-Qualität — kombiniert mit einem klaren Schwerpunkt auf DevOps, Plattformstabilität und Delivery-Optimierung.
 
