@@ -4,8 +4,7 @@
 href="https://sahraoui-it.com" width="200" height="200">
 
 This repository contains the source code for the personal website of
-**Sahraoui - Consulting**, a freelance QA Lead with 5+ years of experience in quality
-assurance, test automation, and DevOps.
+**Sahraoui - Consulting**, a DevOps & Platform Engineering consultant specializing in Kubernetes, Infrastructure-as-Code, CI/CD automation, cloud platforms, and secure software delivery.
 
 ## 🔍 About
 
@@ -13,7 +12,7 @@ The website showcases:
 
 - Professional profile & experience
 - Projects and case studies
-- Blog posts on QA, DevOps, and testing best practices
+- Blog posts on DevOps, Platform Engineering, and cloud-native technologies
 
 ## 🌐 Live Site
 
