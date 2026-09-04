@@ -1,5 +1,5 @@
 ---
-title: "Bankensektor-Projekt"
+title: "Bankensektor: Testautomatisierung & Compliance-Qualität"
 draft: false
 comments: false
 layout: "project_page"
@@ -17,8 +17,10 @@ Dokumentenerstellung zu erhöhen.
 ## Meine Rolle im Bankensektor-Projekt
 
 In meiner Funktion als Testmanager leitete ich abteilungsübergreifende
-Initiativen zur Testautomatisierung und spielte eine Schlüsselrolle bei der
-Vorbereitung von Testdaten für die revisionssichere Erstellung von Dokumenten.
+Initiativen zur Testautomatisierung und verantwortete die Testdatenaufbereitung
+für die Erstellung und Validierung revisionsrelevanter Dokumente. Die Rolle
+verband Qualitätsführung mit praktischer Automatisierung und Delivery-Risikomanagement
+in einer regulierten Umgebung.
 
 ## Hauptaufgaben
 
@@ -26,11 +28,12 @@ Vorbereitung von Testdaten für die revisionssichere Erstellung von Dokumenten.
   reduzieren und die Effizienz zu steigern.
 - **Koordination der Testdatenbereitstellung** für die automatisierte Erstellung
   und Prüfung revisionsrelevanter Dokumente.
-- **Optimierung der Testprozesse** und Erweiterung der **Testabdeckung**, um
-  Risiken frühzeitig zu identifizieren und die Produktqualität zu sichern.
+- **Optimierung der Testprozesse und Erweiterung der Testabdeckung**, um Risiken
+  frühzeitig zu identifizieren und Qualitätskontrollen wiederholbar zu machen.
+- **Abstimmung abteilungsübergreifender Stakeholder** auf zuverlässige
+  Qualitätspraktiken für revisionsrelevante Delivery.
 
 ---
 
-Durch dieses Projekt konnte ich maßgeblich zur Steigerung der Effizienz und
-Verlässlichkeit der Qualitätssicherungsprozesse im stark regulierten
-Bankenumfeld beitragen.
+Durch dieses Projekt trug ich dazu bei, Qualitätssicherung im stark regulierten
+Bankenumfeld effizienter, wiederholbarer und zuverlässiger zu machen.

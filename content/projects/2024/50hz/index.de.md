@@ -1,5 +1,5 @@
 ---
-title: "50 Hz Projekt"
+title: "50Hertz: Cloud-Native Quality Engineering"
 image: "50hz.png"
 draft: false
 comments: false
@@ -19,17 +19,17 @@ erneuerbarer Energien zu managen und die Netzstabilität zu gewährleisten.
 
 ## Meine Rolle im 50Hertz Projekt
 
-Seit Februar 2024 arbeite ich als Quality Assurance (QA) Lead für eine der
-Produktlinien im 50Hertz-Projekt. In dieser Rolle bei Deloitte Consulting
-arbeite ich eng mit Entwicklungsingenieuren und Systemarchitekten zusammen und
-trage zum Erfolg dieser wichtigen Initiative bei.
+Ich arbeitete als Quality Assurance (QA) Lead für eine Produktlinie im
+50Hertz-Projekt. In enger Zusammenarbeit mit Entwicklungsingenieuren und
+Systemarchitekten verband ich Teststrategie, Automatisierung, CI/CD-Feedback und
+Kubernetes-basierte Validierung für ein kritisches Netzleitsystem.
 
 ## Hauptverantwortlichkeiten
 
-- **Leitung der QA-Bemühungen**, um die Softwarezuverlässigkeit und -qualität
-  während des gesamten Entwicklungszyklus sicherzustellen.
-- **Implementierung von manuellen und automatisierten Teststrategien** in einer
-  **CI/CD-Umgebung**.
+- **Leitung von Quality-Engineering-Aktivitäten**, um Softwarezuverlässigkeit
+  und Release-Sicherheit während des gesamten Entwicklungszyklus zu stärken.
+- **Kombination manueller und automatisierter Tests** in einer **CI/CD-Umgebung**
+  für zeitnahes Qualitätsfeedback.
 - **Validierung der Skalierbarkeit und Kompatibilität der Anwendung** innerhalb
   von **Kubernetes-Clustern**.
 - **Durchführung von UI/UX-Tests**, um die Benutzererfahrung zu optimieren und
@@ -37,7 +37,6 @@ trage zum Erfolg dieser wichtigen Initiative bei.
 
 ---
 
-Diese Rolle ermöglicht es mir, direkt zur digitalen Transformation des deutschen
-Energiesektors beizutragen und die Robustheit sowie die Leistung der Anwendungen
-sicherzustellen, die die **Integration von 100% erneuerbaren Energien** in das
-Netz unterstützen werden.
+Dieses Projekt zeigte, wie hands-on QA-Leadership, Testautomatisierung und
+Cloud-native Validierung die Robustheit von Anwendungen für die **Integration
+von 100% erneuerbaren Energien** in das Netz stärken können.

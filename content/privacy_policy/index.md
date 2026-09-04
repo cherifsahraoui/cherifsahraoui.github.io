@@ -3,6 +3,8 @@ title: "Privacy Policy"
 draft: false
 layout: "single"
 comments: false
+sitemap:
+  disable: true
 ---
 
 ## I. Name and Address of the Responsible Entity

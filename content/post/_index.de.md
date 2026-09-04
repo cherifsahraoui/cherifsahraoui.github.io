@@ -2,7 +2,7 @@
 title: Blog
 menu:
     main:
-        weight: 2
+        weight: 4
         params:
             icon: blog
 ---

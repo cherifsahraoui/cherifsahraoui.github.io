@@ -3,6 +3,8 @@ title: "Impressum"
 draft: false
 layout: "single"
 comments: false
+sitemap:
+  disable: true
 ---
 <a href="/"> <svg xmlns="http://www.w3.org/2000/svg" width="150px"
     height="150px" viewBox="0 0 3000 3000"> <path fill="currentColor"
@@ -307,13 +309,12 @@ comments: false
              1851.00,2893.00 1851.00,2893.00 1851.00,2893.00 1859.00,2892.00
            1859.00,2892.00 Z" /> </svg> </a>
 
-<!-- TODO -->
-<!-- ### Umsatzsteuer-ID:  
-Umsatzsteuer-Identifikationsnummer nach §27a Umsatzsteuergesetz: [Your VAT ID] -->
+### Umsatzsteuer-ID:  
+Umsatzsteuer-Identifikationsnummer nach §27a Umsatzsteuergesetz: DE453879276
 
 ## Verantwortlich für den Inhalt (gem. § 55 Abs. 2 RStV)  
 
-**Sahraoui IT**\
+**Sahraoui - Consulting**\
 **Cherif Sahraoui** \
 Niederbeckstraße 33, \
 40472 Düsseldorf, Deutschland

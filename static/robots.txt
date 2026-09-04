@@ -1,4 +1,6 @@
 User-agent: *
+Disallow: /page/
+Disallow: /de/page/
 Disallow: /contact/
 Disallow: /de/contact/
 Disallow: /privacy_policy/

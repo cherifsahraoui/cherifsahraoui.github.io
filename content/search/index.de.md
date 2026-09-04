@@ -5,10 +5,10 @@ layout: "search"
 outputs:
     - html
     - json
-menu:
-    main:
-        weight: 3
-        params:
-            icon: search
+# menu:
+#     main:
+#         weight: 6
+#         params:
+#             icon: search
 comments: false
 ---

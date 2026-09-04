@@ -1,5 +1,5 @@
 ---
-title: "Volkswagen Infotainment Projekt"
+title: "Volkswagen Infotainment: Integration & Testautomatisierung"
 image: "volkswagen_infotainment.png"
 draft: false
 comments: false
@@ -20,15 +20,19 @@ Fahrzeugpalette von Volkswagen bereitzustellen.
 Von Juni 2021 bis August 2022 arbeitete ich als Systemintegrations- und
 Testingenieur im Volkswagen Infotainment Projekt. In dieser Rolle arbeitete ich
 eng mit internen und externen Partnern, darunter Volkswagen und Continental,
-zusammen, um die erfolgreiche Entwicklung und Integration von Software und
-Systemen zu gewährleisten.
+zusammen, um komplexe Embedded- und Cloud-vernetzte Softwaresysteme zu
+integrieren, zu verifizieren und zuverlässig bereitzustellen.
 
 ## Hauptaufgaben
 
-- **Analyse von Anforderungen** und Festlegung der Kriterien für die
-  Softwareintegration und Tests.
+- **Analyse von Anforderungen** und Definition von Integrations- und
+  Testkriterien, um Testbarkeit und Integrationsrisiken frühzeitig sichtbar zu
+  machen.
 - **Entwicklung und Implementierung** von Software-, Integrations- und
-  Systemtests, mit Schwerpunkt auf **Testautomatisierung**.
+  Systemtests mit Schwerpunkt auf **Testautomatisierung** und zuverlässigem
+  Regression-Feedback.
+- **Entwicklung von CI-Workflows und Integrationspipelines** für komplexe
+  Embedded- und Cloud-vernetzte Systeme.
 - **Zusammenarbeit mit internen und externen Partnern** (Volkswagen,
   Continental), um eine reibungslose Integration sicherzustellen und Probleme zu
   lösen.
@@ -37,7 +41,6 @@ Systemen zu gewährleisten.
 
 ---
 
-Diese Rolle ermöglichte es mir, wertvolle Erfahrungen in der Integration und dem
-Testen komplexer Infotainment-Systeme zu sammeln und so zur erfolgreichen
-Bereitstellung fortschrittlicher Technologien für die Automobillösungen von
-Volkswagen beizutragen.
+Diese Arbeit verband System Engineering, Testautomatisierung und CI-gestütztes
+Feedback, um die zuverlässige Bereitstellung fortschrittlicher
+Infotainment-Technologien zu unterstützen.

@@ -97,7 +97,7 @@ Engineer](qa_skills.png)
 
 <dialog id="qa-skills" onmousedown="event.target==this && this.close()">
   <button class="close-btn" onclick="closeDialog('qa-skills')">×</button>
-  <b>Senior Software QA Engineer Skills (2025, 5+ Years Experience)</b>
+  <h3>Senior Software QA Engineer Skills (2025, 5+ Years Experience)</h3>
   <ul>
     <li><strong>Test Case Design & Management</strong><br>
       Proficient in designing clear, comprehensive, and reusable test cases derived from requirements and user stories,

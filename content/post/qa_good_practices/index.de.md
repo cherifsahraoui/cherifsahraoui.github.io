@@ -99,7 +99,7 @@ traditionellen QA Engineer](qa_skills.png)
 
 <dialog id="qa-skills" onmousedown="event.target==this && this.close()">
   <button class="close-btn" onclick="closeDialog('qa-skills').close()">×</button>
-  <b>Senior Software QA Engineer Fähigkeiten (2025, 5+ Jahre Erfahrung)</b>
+  <h3>Senior Software QA Engineer Fähigkeiten (2025, 5+ Jahre Erfahrung)</h3>
   <ul>
     <li><strong>Testfalldesign & -management</strong><br>
       Erfahren im Entwurf klarer, umfassender und wiederverwendbarer Testfälle basierend auf Anforderungen und User Stories,

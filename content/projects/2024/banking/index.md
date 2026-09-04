@@ -1,5 +1,5 @@
 ---
-title: "Banking Sector Project"
+title: "Banking: Test Automation & Compliance Quality"
 draft: false
 comments: false
 layout: "project_page"
@@ -16,8 +16,9 @@ of document generation.
 ## My Role in the Banking Sector Project
 
 As the Test Manager, I led cross-functional initiatives to automate testing
-processes and played a key role in preparing test data for the creation of
-audit-relevant documents.
+processes and managed test-data preparation for the creation and validation of
+audit-relevant documents. The role combined quality leadership with practical
+automation and delivery-risk management in a regulated environment.
 
 ## Key Responsibilities
 
@@ -25,11 +26,12 @@ audit-relevant documents.
   efficiency.
 - **Managed test data preparation** for the automated generation and validation
   of audit-compliant documents.
-- **Enhanced test coverage** and **optimized testing processes** to identify
-  risks early and ensure high product quality.
+- **Enhanced test coverage and optimized test processes** to identify risks
+  early and make quality controls repeatable.
+- **Aligned cross-functional stakeholders** on reliable quality practices for
+  audit-relevant delivery.
 
 ---
 
-Through this project, I contributed significantly to improving the efficiency
-and reliability of quality assurance processes in a highly regulated banking
-environment.
+Through this project, I helped make quality assurance more efficient,
+repeatable, and reliable in a highly regulated banking environment.

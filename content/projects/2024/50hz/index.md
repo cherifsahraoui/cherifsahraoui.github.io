@@ -1,5 +1,5 @@
 ---
-title: "50 Hz Project"
+title: "50Hertz: Cloud-Native Quality Engineering"
 image: "50hz.png"
 draft: false
 comments: false
@@ -19,17 +19,17 @@ grid stability.
 
 ## My Role in the 50Hertz Project
 
-Since February 2024, I have been working as the Quality Assurance (QA) Lead for
-one of the product lines in the 50Hertz project. In this role at Deloitte
-Consulting, I collaborate closely with development engineers and system
-architects, contributing to the success of this critical initiative.
+I worked as the Quality Assurance (QA) Lead for one product line in the
+50Hertz project. Working closely with development engineers and system
+architects, I connected test strategy, automation, CI/CD feedback, and
+Kubernetes-based validation for a critical grid-control product.
 
 ## Key Responsibilities
 
-- **Led QA efforts** to ensure software reliability and quality throughout the
-  development lifecycle.
-- **Implemented both manual and automated testing** strategies in a **CI/CD
-  environment**.
+- **Led quality engineering efforts** to ensure software reliability and
+  delivery confidence throughout the development lifecycle.
+- **Combined manual and automated testing** in a **CI/CD environment** to give
+  teams timely quality feedback.
 - **Validated application scalability and compatibility** within **Kubernetes
   clusters**.
 - **Conducted UI/UX testing** to optimize the user experience and improve
@@ -37,6 +37,6 @@ architects, contributing to the success of this critical initiative.
 
 ---
 
-This role allows me to directly contribute to the digital transformation of
-Germany’s energy sector, ensuring the robustness and performance of the
-applications that will support **100% renewable integration** into the grid.
+This engagement demonstrated how hands-on QA leadership, test automation, and
+cloud-native validation can strengthen the robustness of systems supporting
+**100% renewable integration** into the grid.
