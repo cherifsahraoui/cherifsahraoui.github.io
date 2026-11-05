@@ -1,0 +1,1801 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Sahraoui - Quality Engineering &amp; DevOps Consulting</title><link>https://sahraoui-it.com/</link><description>Recent content in Home on Sahraoui - Quality Engineering &amp; DevOps Consulting</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Cherif Sahraoui / Sahraoui - Consulting</copyright><lastBuildDate>Tue, 15 Apr 2025 11:00:00 +0200</lastBuildDate><atom:link href="https://sahraoui-it.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Beyond Testing: The QA Mindset for Building Better Software</title><link>https://sahraoui-it.com/p/qa-good-practices/</link><pubDate>Tue, 15 Apr 2025 11:00:00 +0200</pubDate><guid>https://sahraoui-it.com/p/qa-good-practices/</guid><description>&lt;img src="https://sahraoui-it.com/p/qa-good-practices/quality_quote.png" alt="Featured image of post Beyond Testing: The QA Mindset for Building Better Software" /&gt;&lt;h2 id="introduction"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;In modern software development, &lt;strong&gt;Quality Assurance (QA)&lt;/strong&gt; has evolved into a
+strategic practice embedded across the entire software lifecycle from initial
+requirements to production monitoring. Gone are the days when QA was a
+late-stage activity; today, quality must be designed in from day one.&lt;/p&gt;
+&lt;p&gt;Defects found late are &lt;strong&gt;exponentially more costly&lt;/strong&gt; and disruptive. Still, many
+teams underestimate the value of integrating QA early, missing out on benefits
+like better testability, risk mitigation, and smarter design decisions. In
+fast-paced &lt;strong&gt;DevOps and cloud-native environments&lt;/strong&gt;, QA must move beyond testing
+and become a key driver of engineering excellence.&lt;/p&gt;
+&lt;p&gt;This article explores why early QA involvement matters, busts common myths, and
+offers practical strategies from test derivation to automation, chaos
+engineering, and the future of AI-driven testing.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/qa-good-practices/qa_phases.png"
+width="1600"
+height="286"
+srcset="https://sahraoui-it.com/p/qa-good-practices/qa_phases_hu_ada027316bde1dc0.png 480w, https://sahraoui-it.com/p/qa-good-practices/qa_phases_hu_63bd24be3c7b3263.png 1024w"
+loading="lazy"
+alt="Early QA Integration Points in the Software Development
+Lifecycle"
+class="gallery-image"
+data-flex-grow="559"
+data-flex-basis="1342px"
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="why-qa-from-day-one"&gt;Why QA from Day One?
+&lt;/h2&gt;&lt;p&gt;QA isn&amp;rsquo;t just about testing it&amp;rsquo;s about &lt;strong&gt;building quality in from the start&lt;/strong&gt;.
+Involving QA engineers early ensures:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Clearer requirements&lt;/strong&gt;&lt;br&gt;
+QA clarifies ambiguities and ensures specifications are testable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Better architecture and design&lt;/strong&gt;&lt;br&gt;
+QA promotes maintainable, testable systems with patterns like feature flags,
+canary releases, and observability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Risk identification&lt;/strong&gt;&lt;br&gt;
+QA spots potential issues in performance, data flows, and security before they
+become blockers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reduced costs&lt;/strong&gt;&lt;br&gt;
+Catching defects early reduces rework, testing cycles, and delivery delays
+delivering strong ROI (Return on Investment).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/qa-good-practices/cost_of_defects.png"
+width="1250"
+height="579"
+srcset="https://sahraoui-it.com/p/qa-good-practices/cost_of_defects_hu_6c2d347e69c3e463.png 480w, https://sahraoui-it.com/p/qa-good-practices/cost_of_defects_hu_cc64bd7c610b2961.png 1024w"
+loading="lazy"
+alt="Cost of Defects at Different Stages of Development"
+class="gallery-image"
+data-flex-grow="215"
+data-flex-basis="518px"
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="common-misconceptions-about-qa"&gt;Common Misconceptions About QA
+&lt;/h2&gt;&lt;h3 id="qa-is-just-about-testing"&gt;QA Is Just About Testing
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: QA involves analysis, planning, risk assessment, and continuous
+improvement.&lt;/p&gt;
+&lt;h3 id="qa-at-the-end-is-enough"&gt;QA at the End Is Enough
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: Fixing issues late is slower and more expensive. Quality must be
+&lt;strong&gt;built-in early&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="qa-doesnt-need-technical-skills"&gt;QA Doesn’t Need Technical Skills
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: Today’s QA engineers need to understand code, APIs, CI/CD, and system
+architecture.&lt;/p&gt;
+&lt;h3 id="qa-is-a-cost-center"&gt;QA Is a Cost Center
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: QA prevents expensive bugs, accelerates delivery, and improves
+customer satisfaction.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="empowering-qa-through-technical-proficiency"&gt;Empowering QA Through Technical Proficiency
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/qa-good-practices/qa_skills.png"
+width="800"
+height="620"
+srcset="https://sahraoui-it.com/p/qa-good-practices/qa_skills_hu_72fdd9881e3054b4.png 480w, https://sahraoui-it.com/p/qa-good-practices/qa_skills_hu_f1170c180bcbbd.png 1024w"
+loading="lazy"
+alt="Technical Profile of a Modern QA Engineer in Comparison to a traditional QA
+Engineer"
+class="gallery-image"
+data-flex-grow="129"
+data-flex-basis="309px"
+&gt;&lt;/p&gt;
+&lt;script&gt;
+let scrollPosition = 0;
+function openDialog(dialogId) {
+scrollPosition = window.scrollY;
+const dialog = document.getElementById(dialogId);
+window.scrollTo(0, 0);
+dialog.showModal();
+dialog.addEventListener('close', () =&gt; {
+window.scrollTo(0, scrollPosition);
+}, { once: true });
+}
+function closeDialog(dialogId) {
+document.getElementById(dialogId).close();
+}
+&lt;/script&gt;
+&lt;p&gt;&lt;button class="btn" onclick="openDialog('qa-skills')" style="width: 50%; display: block; margin: 0 auto;"&gt; Modern QA Engineers: Skills and Tools &lt;/button&gt; &lt;!-- markdownlint-disable MD013 --&gt;&lt;/p&gt;
+&lt;dialog id="qa-skills" onmousedown="event.target==this &amp;&amp; this.close()"&gt;
+&lt;button class="close-btn" onclick="closeDialog('qa-skills')"&gt;×&lt;/button&gt;
+&lt;h3&gt;Senior Software QA Engineer Skills (2025, 5+ Years Experience)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Test Case Design &amp; Management&lt;/strong&gt;&lt;br&gt;
+Proficient in designing clear, comprehensive, and reusable test cases derived from requirements and user stories,
+with hands-on experience using test case management tools such as TestRail, Jira Xray.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Test Automation Skills&lt;/strong&gt;&lt;br&gt;
+Ability to design, develop, and maintain automated tests to improve test coverage and efficiency.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;CI/CD Knowledge&lt;/strong&gt;&lt;br&gt;
+Understanding of Continuous Integration and Continuous Deployment pipelines to integrate testing into development workflows.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Programming Knowledge&lt;/strong&gt;&lt;br&gt;
+Ability to write and understand code for test automation, debugging, and scripting tasks.
+(e.g., Java, Python, JavaScript, Bash, etc.)
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Tools Proficiency&lt;/strong&gt;&lt;br&gt;
+Hands-on experience with modern testing tools and frameworks for web, mobile, and API testing.
+(e.g., Selenium, Appium, Postman, etc.)
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Native Cloud Testing&lt;/strong&gt;&lt;br&gt;
+Familiarity with testing in cloud-native environments, including microservices and serverless architectures.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Agile &amp; DevOps Knowledge&lt;/strong&gt;&lt;br&gt;
+Comfort working in Agile teams and aligning testing strategies with DevOps practices.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Security Testing&lt;/strong&gt;&lt;br&gt;
+Ability to identify vulnerabilities and test security aspects of applications
+(e.g., authentication, authorization, data protection).
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Performance Testing&lt;/strong&gt;&lt;br&gt;
+Skills to assess application performance under various conditions using tools like JMeter, k6, or Gatling.
+(e.g., load testing, chaos testing, etc.)
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;AI &amp; Machine Learning Integration&lt;/strong&gt;&lt;br&gt;
+Basic understanding of how AI/ML features impact testing and awareness of tools leveraging AI for test automation.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Soft Skills&lt;/strong&gt;&lt;br&gt;
+Strong interpersonal skills to work effectively with developers, product managers, and other stakeholders.
+(e.g., communication, collaboration, and problem-solving).
+&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+&lt;/dialog&gt;
+&lt;h3 id="the-role-has-evolved"&gt;The Role Has Evolved
+&lt;/h3&gt;&lt;p&gt;Modern QA engineers are &lt;strong&gt;technical contributors&lt;/strong&gt;, fluent in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Programming and scripting&lt;/li&gt;
+&lt;li&gt;Databases, APIs, and infrastructure&lt;/li&gt;
+&lt;li&gt;CI/CD pipelines and container orchestration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;They bridge development and QA, improving communication and producing
+&lt;strong&gt;high-quality, actionable bug reports&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="collaboration-improves-outcomes"&gt;Collaboration Improves Outcomes
+&lt;/h3&gt;&lt;p&gt;When QA joins early:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Developers and QA share understanding of feature goals and edge cases&lt;/li&gt;
+&lt;li&gt;QA helps design for testability and observability&lt;/li&gt;
+&lt;li&gt;Bug resolution is faster, and team morale improves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Organizations that invest in skilled QA engineers enjoy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Robust systems&lt;/li&gt;
+&lt;li&gt;Faster development cycles&lt;/li&gt;
+&lt;li&gt;Higher quality products&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="effective-testing-strategies"&gt;Effective Testing Strategies
+&lt;/h2&gt;&lt;h3 id="beyond-requirements-based-testing"&gt;Beyond Requirements-Based Testing
+&lt;/h3&gt;&lt;p&gt;Requirements often become outdated or miss user expectations. Instead, QA should
+derive tests from &lt;strong&gt;acceptance criteria&lt;/strong&gt; and &lt;strong&gt;real user behavior&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“We were testing what we specified, not what users needed.”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="best-practices-for-test-derivation"&gt;Best Practices for Test Derivation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Use &lt;strong&gt;Given-When-Then&lt;/strong&gt; format for clarity and automation&lt;/li&gt;
+&lt;li&gt;Cover both happy paths and edge cases&lt;/li&gt;
+&lt;li&gt;Include non-functional tests (e.g., performance, security)&lt;/li&gt;
+&lt;li&gt;Collaborate with developers during test design&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“A 30-minute conversation can save days of bug fixing.”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="balancing-test-documentation"&gt;Balancing Test Documentation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Critical paths&lt;/strong&gt;: Fully documented&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Core features&lt;/strong&gt;: Moderate detail&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edge cases&lt;/strong&gt;: Exploratory or intent-based notes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="automation-and-cicd-best-practices"&gt;Automation and CI/CD Best Practices
+&lt;/h2&gt;&lt;h3 id="strategic-automation"&gt;Strategic Automation
+&lt;/h3&gt;&lt;p&gt;Not everything should be automated. Focus on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;High-value regression tests&lt;/li&gt;
+&lt;li&gt;Stable APIs and core logic&lt;/li&gt;
+&lt;li&gt;Repetitive or error-prone workflows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Avoid over-automating fast-changing UIs or low-impact flows.&lt;/p&gt;
+&lt;h3 id="integrated-cicd-pipelines"&gt;Integrated CI/CD Pipelines
+&lt;/h3&gt;&lt;p&gt;Automation is most effective when integrated with CI/CD:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unit tests&lt;/strong&gt;: Fast feedback at commit / pull request stage&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integration/API tests&lt;/strong&gt;: Validate system behavior post-merge&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UI, security, and performance tests&lt;/strong&gt;: Run selectively and periodically&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="shift-left-and-shift-right-testing"&gt;Shift-Left and Shift-Right Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Shift-Left&lt;/strong&gt;: Run tests earlier using TDD, BDD, and static analysis&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shift-Right&lt;/strong&gt;: Monitor behavior in production using canary releases and
+observability tools&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="smarter-regression-testing"&gt;Smarter Regression Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Prioritize by risk and recent changes&lt;/li&gt;
+&lt;li&gt;Run tests in parallel&lt;/li&gt;
+&lt;li&gt;Remove obsolete or flaky tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="expanding-qa-with-chaos-engineering"&gt;Expanding QA with Chaos Engineering
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Chaos Engineering&lt;/strong&gt; introduces intentional failures to validate a system’s
+resilience especially useful in &lt;strong&gt;microservice and cloud-native&lt;/strong&gt; architectures.&lt;/p&gt;
+&lt;h3 id="why-it-matters"&gt;Why It Matters
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Reveals hidden dependencies and cascading failures&lt;/li&gt;
+&lt;li&gt;Tests &lt;strong&gt;real-world readiness&lt;/strong&gt; of failovers, self-healing, and monitoring&lt;/li&gt;
+&lt;li&gt;Supports recovery planning and operational readiness&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="chaos-in-practice"&gt;Chaos in Practice
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Inject latency, kill services, or simulate network outages&lt;/li&gt;
+&lt;li&gt;Monitor the impact and improve recovery mechanisms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Scale tips&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Enterprise&lt;/strong&gt;: Automate chaos tests with tools like Gremlin or Chaos Monkey&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mid-size teams&lt;/strong&gt;: Focus on critical services&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Smaller teams&lt;/strong&gt;: Run manual chaos &amp;ldquo;game days&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Prerequisite&lt;/strong&gt;: Strong observability is essential to safely run chaos
+experiments.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-future-of-qa-ai-and-self-healing-systems"&gt;The Future of QA: AI and Self-Healing Systems
+&lt;/h2&gt;&lt;p&gt;AI is revolutionizing QA by improving test generation, reducing maintenance, and
+predicting risk.&lt;/p&gt;
+&lt;h3 id="ai-powered-testing"&gt;AI-Powered Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Generate tests from code, requirements, or user behavior&lt;/li&gt;
+&lt;li&gt;Use visual testing, autonomous exploration, and differential comparison&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="self-healing-automation"&gt;Self-Healing Automation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Automatically adapts to UI or API changes&lt;/li&gt;
+&lt;li&gt;Fixes or flags broken tests using machine learning&lt;/li&gt;
+&lt;li&gt;Reduces maintenance by up to 70%&lt;/li&gt;
+&lt;li&gt;Tools like &lt;a class="link" href="https://www.browser-use.com" target="_blank" rel="noopener"
+&gt;browser-use&lt;/a&gt; exemplify adaptive,
+intent-based testing approaches.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="predictive-quality-analytics"&gt;Predictive Quality Analytics
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Analyze test data, code changes, and defect history&lt;/li&gt;
+&lt;li&gt;Predict high-risk changes and prioritize testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="the-human-ai-combo"&gt;The Human-AI Combo
+&lt;/h3&gt;&lt;p&gt;While AI offers speed and coverage, &lt;strong&gt;human testers&lt;/strong&gt; provide creativity,
+intuition, and ethical judgment.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The winning QA formula: Human strategy + AI efficiency&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Quality assurance is no longer an isolated phase it&amp;rsquo;s a strategic enabler of
+software success. When QA is involved from day one, it drives better
+requirements, stronger architectures, faster feedback, and resilient systems.&lt;/p&gt;
+&lt;p&gt;Modern QA is &lt;strong&gt;technical, collaborative, and forward-thinking&lt;/strong&gt;, embracing tools
+like automation, chaos testing, and AI to meet the demands of today’s software
+landscape.&lt;/p&gt;
+&lt;p&gt;Organizations that prioritize QA early, invest in skilled engineers, and align
+quality with business goals won’t just ship faster they’ll ship better.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Quality is not an act, it is a habit.&amp;quot; – Aristotle&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Testing in Production: Risks, Benefits, and Best Practices</title><link>https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/</link><pubDate>Thu, 13 Feb 2025 10:39:00 +0200</pubDate><guid>https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/</guid><description>&lt;img src="https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/prod_testing_img.png" alt="Featured image of post Testing in Production: Risks, Benefits, and Best Practices" /&gt;&lt;p&gt;Testing in production has long been seen as risky, often causing debates among developers, testers, and stakeholders.
+But in today&amp;rsquo;s fast-paced tech world, it&amp;rsquo;s becoming more common. Testing in production does not mean skipping tests in
+lower environments and solely relying on production testing. It simply means that after thorough testing in staging and
+other pre-production environments, we continue to validate in production to ensure real-world reliability and
+performance.&lt;/p&gt;
+&lt;h2 id="understanding-testing-in-production"&gt;Understanding Testing in Production
+&lt;/h2&gt;&lt;p&gt;Production testing means running tests in a live environment. While staging and development environments try to mimic
+production, they often fall short. Testing in production helps bridge this gap, ensuring that applications work as
+expected under real conditions.&lt;/p&gt;
+&lt;h2 id="when-production-testing-is-crucial"&gt;When Production Testing is Crucial
+&lt;/h2&gt;&lt;p&gt;Sometimes, testing in lower environments is not enough. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Third-Party Dependencies&lt;/strong&gt;: Some services, like external APIs, behave differently in production than in staging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Real User Load&lt;/strong&gt;: Performance and scalability issues only become clear when real users interact with the system.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Complex Microservices&lt;/strong&gt;: Staging environments often lack the full set of dependencies that exist in production.
+If the QA team skips even basic manual smoke tests in production, there&amp;rsquo;s a risk of blindly promoting changes that could
+lead to critical failures. Production validation acts as a final safeguard, helping to catch unforeseen issues that
+might not surface in lower environments due to differences in data, traffic patterns, or infrastructure nuances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="risks-of-performing-tests-in-production-and-mitigation-strategies"&gt;Risks of Performing Tests in Production and Mitigation Strategies
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Risk&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Mitigation Strategy&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Unintended User Impact&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Test actions might trigger unintended user-visible changes, such as notifications, emails, or altered UI states.&lt;/td&gt;
+&lt;td&gt;Use test accounts and feature flags, exclude real users from test scenarios, and monitor user-facing effects.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Data Corruption&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Test executions could modify or delete real production data, impacting reporting and business operations.&lt;/td&gt;
+&lt;td&gt;Implement strict data isolation, use synthetic or readonly test data, and ensure proper rollback mechanisms.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Performance Degradation&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Automated or manual tests might introduce additional load, slowing down the system for real users.&lt;/td&gt;
+&lt;td&gt;Schedule tests during low-traffic periods, monitor system load, and set rate limits on test executions.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Security Risks&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Test data or scripts might unintentionally expose sensitive information or trigger security vulnerabilities.&lt;/td&gt;
+&lt;td&gt;Follow security best practices, sanitize test data, and use proper authentication and access controls for testing.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;False Positives/Negatives&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Differences between test and real user behavior might lead to misleading test results, causing unnecessary rollbacks or missed issues.&lt;/td&gt;
+&lt;td&gt;Use A/B testing, shadow testing, and compare test results with historical production data.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="benefits-of-testing-in-production"&gt;Benefits of Testing in Production
+&lt;/h2&gt;&lt;p&gt;Despite its risks, production testing has major benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Real-World Validation&lt;/strong&gt;: Captures real interactions that can&amp;rsquo;t be replicated in lower environments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Early Bug Detection&lt;/strong&gt;: Finds hidden issues before they impact all users.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Better Performance Insights&lt;/strong&gt;: Ensures scalability by testing under real traffic conditions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data-Driven Decisions&lt;/strong&gt;: Enables A/B testing and feature comparison.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="real-world-examples-where-testing-in-production-was-essential"&gt;Real World Examples where Testing in Production was Essential
+&lt;/h2&gt;&lt;p&gt;Testing in production environments can uncover issues that might not surface during pre-production testing. Here are two
+real-world scenarios illustrating this:&lt;/p&gt;
+&lt;h3 id="mobile-app-crashes-due-to-network-variability"&gt;Mobile App Crashes Due to Network Variability
+&lt;/h3&gt;&lt;p&gt;A political campaign&amp;rsquo;s mobile app, &amp;ldquo;Campaign Sidekick,&amp;rdquo; experienced significant issues during field operations. The app,
+designed to track canvassers, relied on high-speed internet connectivity. In rural areas with slow or unreliable
+internet, the app struggled to function properly, leading to data upload failures and task reassignment glitches. This
+resulted in wasted efforts and incomplete voter contact. The issues were exacerbated by the app&amp;rsquo;s inability to operate
+effectively offline, highlighting the importance of testing under diverse real-world conditions.
+&lt;a class="link" href="https://www.tothenew.com/blog/how-network-variability-impacts-mobile-applications" target="_blank" rel="noopener"
+&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="windows-blue-screen-of-death-bsod-from-faulty-update"&gt;Windows Blue Screen of Death (BSOD) from Faulty Update
+&lt;/h3&gt;&lt;p&gt;In August 2014, Microsoft released a security update (MS14-045) intended to address vulnerabilities in the Windows
+kernel. However, the update inadvertently caused some systems to crash, displaying the &amp;ldquo;Blue Screen of Death&amp;rdquo; (BSOD).
+This issue was traced back to a faulty patch that had not been adequately tested in production environments. The
+incident underscores the critical need for thorough testing of updates in production to prevent system instability and
+data loss. &lt;a class="link" href="https://testrigor.com/blog/microsofts-blue-screen-of-death/" target="_blank" rel="noopener"
+&gt;source&lt;/a&gt;
+These examples highlight the importance of testing in production to identify issues that may not be evident in
+controlled testing environments. Implementing robust testing protocols and monitoring systems can help mitigate such
+risks.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Testing in production is no longer a reckless practice, it’s a necessity in modern software development. When done
+right, it helps catch real-world issues early, improves software quality, and enhances user experience. However, it
+requires the right tools, best practices, and a well-prepared team.
+By combining automation, monitoring, and feature flags, companies can safely test in production and deliver high-quality
+software with confidence.&lt;/p&gt;</description></item><item><title>ZeroTier Travel VPN</title><link>https://sahraoui-it.com/p/zerotier-travel-vpn/</link><pubDate>Sun, 09 Feb 2025 14:00:00 +0200</pubDate><guid>https://sahraoui-it.com/p/zerotier-travel-vpn/</guid><description>&lt;img src="https://sahraoui-it.com/p/zerotier-travel-vpn/zerotier.png" alt="Featured image of post ZeroTier Travel VPN" /&gt;&lt;p&gt;In this tutorial, we&amp;rsquo;ll guide you through creating a simple, solution to route
+all traffic through your home network using two Raspberry Pi devices and
+ZeroTier. This setup allows you to securely connect to your home network from
+anywhere and route all your internet traffic through your home network,
+providing an extra layer of security and privacy. You will also get the same IP
+address as you Home network from anywhere in the world. ZeroTier is a powerful
+tool that allows you to create secure virtual networks, enabling your devices to
+communicate as if they&amp;rsquo;re on the same local network, regardless of their
+physical locations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This tutorial is inspired by the &lt;a class="link" href="https://www.digitalocean.com/community/tutorials/getting-started-software-defined-networking-creating-vpn-zerotier-one" target="_blank" rel="noopener"
+&gt;DigitalOcean
+guide&lt;/a&gt;
+and &lt;a class="link" href="https://harivemula.com/2021/09/18/routing-all-traffic-through-home-with-zerotier-on-travel/" target="_blank" rel="noopener"
+&gt;harivemula
+guide&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="prerequisites"&gt;Prerequisites
+&lt;/h2&gt;&lt;p&gt;Before we begin, ensure you have the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Two Raspberry Pi devices with Raspberry Pi OS installed and updated. (I used
+two Raspberry Pi 3 devices with Raspberry Pi OS (64-bit, Kernel version: 6.6)
+for this tutorial.)&lt;/li&gt;
+&lt;li&gt;Internet connectivity for both Raspberry Pi devices.&lt;/li&gt;
+&lt;li&gt;A ZeroTier account. If you don&amp;rsquo;t have one, you can create it for free at
+&lt;a class="link" href="https://my.zerotier.com/" target="_blank" rel="noopener"
+&gt;ZeroTier Central&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="overview-of-the-architecture"&gt;Overview of the Architecture
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/zerotier-travel-vpn/vpn_architecture.png"
+width="1143"
+height="1141"
+srcset="https://sahraoui-it.com/p/zerotier-travel-vpn/vpn_architecture_hu_fd69493b43d0668e.png 480w, https://sahraoui-it.com/p/zerotier-travel-vpn/vpn_architecture_hu_b9802301b03cf16e.png 1024w"
+loading="lazy"
+alt="Architecture"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+&gt;&lt;/p&gt;
+&lt;h2 id="step-1-set-up-a-zerotier-network"&gt;Step 1: Set Up a ZeroTier Network
+&lt;/h2&gt;&lt;h3 id="create-a-zerotier-account"&gt;Create a ZeroTier Account
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Visit &lt;a class="link" href="https://my.zerotier.com/" target="_blank" rel="noopener"
+&gt;ZeroTier Central&lt;/a&gt; and sign up for a free
+account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="create-a-new-network"&gt;Create a New Network
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Once logged in, click on &amp;ldquo;Create A Network.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;A new network will be created, and you&amp;rsquo;ll be provided with a unique Network
+ID. Note this ID, as you&amp;rsquo;ll need it later.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="configure-the-network"&gt;Configure the Network
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Click on your newly created network to access its settings.&lt;/li&gt;
+&lt;li&gt;Here, you can set a name for your network and adjust other settings as
+needed.&lt;/li&gt;
+&lt;li&gt;Ensure that &amp;ldquo;Private&amp;rdquo; is selected under &amp;ldquo;Access Control&amp;rdquo; to keep your network
+secure.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-2-install-zerotier-on-the-raspberry-pi-devices"&gt;Step 2: Install ZeroTier on the Raspberry Pi Devices
+&lt;/h2&gt;&lt;p&gt;Perform the following steps on both Raspberry Pi devices.&lt;/p&gt;
+&lt;h3 id="install-needed-packages"&gt;Install needed packages
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Install the ZeroTier repository and its GPG key:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg &lt;span class="p"&gt;|&lt;/span&gt; gpg --dearmor &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /usr/share/keyrings/zerotierone-archive-keyring.gpg &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;RELEASE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;lsb_release -cs&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;deb [signed-by=/usr/share/keyrings/zerotierone-archive-keyring.gpg] http://download.zerotier.com/debian/&lt;/span&gt;&lt;span class="nv"&gt;$RELEASE&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$RELEASE&lt;/span&gt;&lt;span class="s2"&gt; main&amp;#34;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/zerotier.list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install -y zerotier-one
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Verify the Installation:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli status
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You should see an output indicating that ZeroTier is online.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install additional packages:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install dnsmasq hostapd iptables dhcpcd5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;dnsmasq: A lightweight DNS and DHCP server.&lt;/p&gt;
+&lt;p&gt;iptables: A tool for configuring the Linux kernel firewall.&lt;/p&gt;
+&lt;p&gt;hostapd: A user space daemon for access point and authentication servers.
+(Only needed for the Travel Raspberry Pi for setting up a Wi-Fi access point)&lt;/p&gt;
+&lt;p&gt;dhcpcd5: A DHCP (Dynamic Host Configuration Protocol Client Daemon) client
+and server. (Only needed for the Travel Raspberry Pi for setting up a static
+IP address)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-3-join-your-zerotier-network"&gt;Step 3: Join your ZeroTier Network
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Run the following command on each Raspberry Pi:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli join &lt;span class="o"&gt;[&lt;/span&gt;Your_Network_ID&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Replace &lt;code&gt;[Your_Network_ID]&lt;/code&gt; with the Network ID you noted earlier.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Authorize the Devices:&lt;/p&gt;
+&lt;p&gt;In ZeroTier Central, under your network&amp;rsquo;s settings, scroll down to the
+&amp;ldquo;Members&amp;rdquo; section.&lt;/p&gt;
+&lt;p&gt;You should see the Raspberry Pi devices listed as new devices. Check the
+&amp;ldquo;Auth?&amp;rdquo; box next to each device to authorize them on the network and click
+&amp;ldquo;Authorize&amp;rdquo; button.&lt;/p&gt;
+&lt;p&gt;You can also rename the devices to make them easily identifiable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Verify Connectivity:&lt;/p&gt;
+&lt;p&gt;On each Raspberry Pi, list the networks to confirm they&amp;rsquo;re connected:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli listnetworks
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You should see your network listed with the status &amp;ldquo;OK.&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-4-test-the-vpn-connection"&gt;Step 4: Test the VPN Connection
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Obtain the ZeroTier IP Addresses: In ZeroTier Central, under the &amp;ldquo;Members&amp;rdquo;
+section, note the managed IP addresses assigned to each Raspberry Pi. If no
+IP address is assigned automatically, you can assign one manually. In this
+tutorial, we&amp;rsquo;ll use the ZeroTier IP addresses &lt;code&gt;192.168.191.99&lt;/code&gt; for the Travel
+Raspberry Pi and &lt;code&gt;192.168.191.134&lt;/code&gt; for the Home Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/zerotier_configuration.png"
+loading="lazy"
+alt="ZeroTier Configuration"
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Test Connectivity: You can join the same network on your local machine using
+the ZeroTier client and ping the Raspberry Pi devices to verify connectivity.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ping &lt;span class="o"&gt;[&lt;/span&gt;ZeroTier_IP_of_Raspberry_Pi&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You should receive responses, indicating a successful VPN connection.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-5-configure-home-raspberry-pi"&gt;Step 5: Configure Home Raspberry Pi
+&lt;/h2&gt;&lt;p&gt;To configure the home Raspberry Pi to route all traffic through it, follow these
+steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Enable IP Forwarding:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the sysctl configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/sysctl.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Uncomment or add the following line to enable IP forwarding:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;net.ipv4.ip_forward=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;net.ipv4.conf.all.rp_filter=2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apply the changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo sysctl -p
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;dnsmasq&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;dnsmasq&lt;/code&gt; configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/dnsmasq.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following line to configure the DNS server:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;server=192.168.1.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;rc.local&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;rc.local&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/rc.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines before the &lt;code&gt;exit 0&lt;/code&gt; line to join the ZeroTier
+network and set up NAT:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli join [Your_Network_ID]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo iptables -A FORWARD -i ztc3qulcfx -o eth0 -j ACCEPT
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;PS: The Home Raspberry Pi may also be connected to the internet via Wi-Fi.
+In this case, replace &lt;code&gt;eth0&lt;/code&gt; with the interface name of the internet
+connection (e.g. &lt;code&gt;wlan0&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make &lt;code&gt;rc.local&lt;/code&gt; file executable:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod +x /etc/rc.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure ZeroTier Network Settings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the ZeroTier network configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /var/lib/zerotier-one/networks.d/&lt;span class="o"&gt;[&lt;/span&gt;Your_Network_ID&lt;span class="o"&gt;]&lt;/span&gt;.local.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to allow managed routes and global traffic:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowManaged=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowGlobal=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowDefault=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowDNS=0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot the Raspberry Pi:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot the Raspberry Pi to apply all changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-6-configure-travel-raspberry-pi"&gt;Step 6: Configure Travel Raspberry Pi
+&lt;/h2&gt;&lt;p&gt;This Raspberry Pi should be connected to the internet via Ethernet and will act
+as a Wi-Fi access point for other devices. All traffic from the Wi-Fi clients
+will be routed through the ZeroTier network and the Home Raspberry Pi. PS: If
+you want to connect the Travel Raspberry Pi to the internet via Wi-Fi, you need
+an additional USB Wi-Fi adapter. (not covered in this tutorial) To configure the
+Travel Raspberry Pi, follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Configure Static IP Address:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the DHCP client configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/dhcpcd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to set a static IP address for the &lt;code&gt;wlan0&lt;/code&gt;
+interface:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;interface wlan0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;static ip_address=192.168.1.1/24
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nohook wpa_supplicant
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;dnsmasq&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;dnsmasq&lt;/code&gt; configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/dnsmasq.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to configure DHCP and DNS settings:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;interface=wlan0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;server=8.8.8.8
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;server=8.8.4.4
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;dhcp-range=192.168.1.2,192.168.1.200,255.255.255.0,24h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enable wlan0:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ensure wlan0 is unblocked:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo rfkill unblock wlan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ifconfig wlan0 up
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;hostapd&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;hostapd&lt;/code&gt; configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/hostapd/hostapd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to configure the Wi-Fi access point:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;country_code=DE
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;interface=wlan0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssid=TESTWLAN
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;channel=13
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth_algs=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wpa=2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wpa_passphrase=[passphrase]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wpa_key_mgmt=WPA-PSK
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wpa_pairwise=TKIP CCMP
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rsn_pairwise=CCMP
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Change [passphrase] with your own password for the Wi-Fi access point. The
+Wi-Fi access point name used here is &amp;ldquo;TESTWLAN&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set the correct permissions for the configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod &lt;span class="m"&gt;600&lt;/span&gt; /etc/hostapd/hostapd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Unmask, start and enable &lt;code&gt;hostapd&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl unmask hostapd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start hostapd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; hostapd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure hostapd to run as a background service:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/default/hostapd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Add following lines:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;RUN_DAEMON=yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DAEMON_CONF=&amp;#34;/etc/hostapd/hostapd.conf&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enable IP Forwarding:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the sysctl configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/sysctl.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Uncomment or add the following line to enable IP forwarding:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;net.ipv4.ip_forward=1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apply the changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo sysctl -p
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Test that the Wi-Fi access point can be enabled:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run following command&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo hostapd /etc/hostapd/hostapd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;rc.local&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;rc.local&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/rc.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines before the &lt;code&gt;exit 0&lt;/code&gt; line to join the ZeroTier
+network and start necessary services on boot:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo rfkill unblock wlan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ifconfig wlan0 up
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli join [Your_Network_ID]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start dhcpcd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo iptables -t nat -A POSTROUTING -o ztc3qulcfx -j MASQUERADE
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo hostapd /etc/hostapd/hostapd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;PS: Replace &lt;code&gt;ztc3qulcfx&lt;/code&gt; with the interface name of the ZeroTier network.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make &lt;code&gt;rc.local&lt;/code&gt; file executable:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod +x /etc/rc.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure ZeroTier Network Settings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the ZeroTier network configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /var/lib/zerotier-one/networks.d/&lt;span class="o"&gt;[&lt;/span&gt;Your_Network_ID&lt;span class="o"&gt;]&lt;/span&gt;.local.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to allow managed routes and global traffic:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowManaged=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowGlobal=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowDefault=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowDNS=0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot the Raspberry Pi:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot the Raspberry Pi to apply all changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-7-configure-zerotier-managed-routes"&gt;Step 7: Configure ZeroTier Managed Routes
+&lt;/h2&gt;&lt;p&gt;You should now configure the ZeroTier managed routes to ensure that traffic
+is routed correctly between the Raspberry Pi devices. Following is my
+ZeroTier managed routes configuration:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/zerotier-travel-vpn/zerotier_managed_routes.png"
+width="471"
+height="142"
+srcset="https://sahraoui-it.com/p/zerotier-travel-vpn/zerotier_managed_routes_hu_a0cf194f2576c989.png 480w, https://sahraoui-it.com/p/zerotier-travel-vpn/zerotier_managed_routes_hu_f14a424714ee11e.png 1024w"
+loading="lazy"
+alt="ZeroTier Managed Routes"
+class="gallery-image"
+data-flex-grow="331"
+data-flex-basis="796px"
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The IP address &lt;code&gt;192.168.191.134&lt;/code&gt; is the ZeroTier IP address of the Travel
+Raspberry PI.&lt;/li&gt;
+&lt;li&gt;192.168.191.0/24 (LAN) is the ZeroTier server’s network.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="step-8-test-the-vpn-connection"&gt;Step 8: Test the VPN connection
+&lt;/h2&gt;&lt;p&gt;To test the VPN connection, connect to the Wi-Fi access point of the Travel
+Raspberry Pi and try to access the internet. You should see that all traffic
+is routed through the Home Raspberry Pi. You can verify this by checking your
+public IP address, which should match the public IP address of the Home
+Raspberry Pi.&lt;/p&gt;
+&lt;h2 id="additional-considerations"&gt;Additional Considerations
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security:&lt;/strong&gt; Ensure that you have strong passwords and firewall rules in
+place to secure your network.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Performance:&lt;/strong&gt; The performance of your VPN may vary based on the Raspberry
+Pi model and network conditions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Troubleshooting:&lt;/strong&gt; If you encounter issues, check the logs on both Raspberry
+Pi devices for error messages and investigate accordingly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Desabling the VPN:&lt;/strong&gt; If you want to disable the VPN, you can simply stop the
+ZeroTier service on both Raspberry Pi devices:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl stop zerotier-one
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You can also set allowDefault back to 0:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli &lt;span class="nb"&gt;set&lt;/span&gt; NetworkID &lt;span class="nv"&gt;allowDefault&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>50Hertz: Cloud-Native Quality Engineering</title><link>https://sahraoui-it.com/projects/2024/50hz/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/projects/2024/50hz/</guid><description>&lt;img src="https://sahraoui-it.com/projects/2024/50hz/50hz.png" alt="Featured image of post 50Hertz: Cloud-Native Quality Engineering" /&gt;&lt;h2 id="50hertz-project-background-summary"&gt;50Hertz Project Background Summary
+&lt;/h2&gt;&lt;p&gt;By &lt;strong&gt;2032&lt;/strong&gt;, 50Hertz aims to integrate an annual average of &lt;strong&gt;100 percent
+renewable energies&lt;/strong&gt; safely into the grid and the system. Digital transformation
+plays a &lt;strong&gt;decisive role&lt;/strong&gt; in achieving this ambitious goal.&lt;/p&gt;
+&lt;p&gt;To support this transition, 50Hertz is developing a &lt;strong&gt;new grid control system&lt;/strong&gt;
+designed to manage the complexities of renewable energy integration and ensure
+grid stability.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="my-role-in-the-50hertz-project"&gt;My Role in the 50Hertz Project
+&lt;/h2&gt;&lt;p&gt;I worked as the Quality Assurance (QA) Lead for one product line in the
+50Hertz project. Working closely with development engineers and system
+architects, I connected test strategy, automation, CI/CD feedback, and
+Kubernetes-based validation for a critical grid-control product.&lt;/p&gt;
+&lt;h2 id="key-responsibilities"&gt;Key Responsibilities
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Led quality engineering efforts&lt;/strong&gt; to ensure software reliability and
+delivery confidence throughout the development lifecycle.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combined manual and automated testing&lt;/strong&gt; in a &lt;strong&gt;CI/CD environment&lt;/strong&gt; to give
+teams timely quality feedback.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validated application scalability and compatibility&lt;/strong&gt; within &lt;strong&gt;Kubernetes
+clusters&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Conducted UI/UX testing&lt;/strong&gt; to optimize the user experience and improve
+usability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;This engagement demonstrated how hands-on QA leadership, test automation, and
+cloud-native validation can strengthen the robustness of systems supporting
+&lt;strong&gt;100% renewable integration&lt;/strong&gt; into the grid.&lt;/p&gt;</description></item><item><title>Banking: Test Automation &amp; Compliance Quality</title><link>https://sahraoui-it.com/projects/2024/banking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/projects/2024/banking/</guid><description>&lt;h2 id="banking-sector-project-background"&gt;Banking Sector Project Background
+&lt;/h2&gt;&lt;p&gt;This project was carried out for one of the &lt;strong&gt;largest banks in Germany&lt;/strong&gt;, with a
+strong focus on &lt;strong&gt;quality assurance and test automation&lt;/strong&gt;. The goal was to meet
+regulatory requirements efficiently while improving software quality in the area
+of document generation.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="my-role-in-the-banking-sector-project"&gt;My Role in the Banking Sector Project
+&lt;/h2&gt;&lt;p&gt;As the Test Manager, I led cross-functional initiatives to automate testing
+processes and managed test-data preparation for the creation and validation of
+audit-relevant documents. The role combined quality leadership with practical
+automation and delivery-risk management in a regulated environment.&lt;/p&gt;
+&lt;h2 id="key-responsibilities"&gt;Key Responsibilities
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Led test automation initiatives&lt;/strong&gt; to reduce manual efforts and increase
+efficiency.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Managed test data preparation&lt;/strong&gt; for the automated generation and validation
+of audit-compliant documents.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enhanced test coverage and optimized test processes&lt;/strong&gt; to identify risks
+early and make quality controls repeatable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aligned cross-functional stakeholders&lt;/strong&gt; on reliable quality practices for
+audit-relevant delivery.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Through this project, I helped make quality assurance more efficient,
+repeatable, and reliable in a highly regulated banking environment.&lt;/p&gt;</description></item><item><title>Contact</title><link>https://sahraoui-it.com/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/contact/</guid><description>&lt;div class="contact-container"&gt;
+&lt;p&gt;If you have any questions or would like to get in touch, please feel free to send me a message using the form
+below.&lt;/p&gt;
+&lt;p&gt;I will get back to you as soon as I can.&lt;/p&gt;
+&lt;form target="_blank" action="https://formspree.io/f/xnnpdwkj" method="POST"&gt;
+&lt;div class="form-group"&gt;
+&lt;div class="form-row"&gt;
+&lt;div class="col"&gt;
+&lt;input type="text" name="name" class="form-control" placeholder="Full Name" required&gt;
+&lt;/div&gt;
+&lt;div class="col"&gt;
+&lt;input type="email" name="email" class="form-control" placeholder="Email Address" required&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="form-group"&gt;
+&lt;textarea name="message" class="form-control textarea" placeholder="Your Message" rows="6" required&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;button type="submit" class="btn"&gt;Send message&lt;/button&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Phone:&lt;/strong&gt; &lt;a href="tel:+4917657755284" class="phone-number"&gt;Phone number&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;E-Mail:&lt;/strong&gt; &lt;a href="mailto:contact@sahraoui-it.com" class="email-address"&gt;Email address&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Legal Notice</title><link>https://sahraoui-it.com/legal_notice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/legal_notice/</guid><description>&lt;p&gt;&lt;a href="https://sahraoui-it.com/"&gt; &lt;svg xmlns="http://www.w3.org/2000/svg" width="150px"
+height="150px" viewBox="0 0 3000 3000"&gt; &lt;path fill="currentColor"
+stroke="none" stroke-width="1" d="M 286.00,100.06 C 286.00,100.06
+269.00,102.28 269.00,102.28 252.61,104.61 230.88,111.06 216.00,118.26
+198.11,126.92 181.82,136.78 167.00,150.17 137.20,177.08
+114.92,212.76 105.65,252.00 98.83,280.89 100.00,300.06
+100.00,329.00 100.00,329.00 100.00,417.00 100.00,417.00
+100.00,417.00 100.00,720.00 100.00,720.00 100.00,720.00
+100.00,2044.00 100.00,2044.00 100.00,2044.00 100.00,2706.00
+100.00,2706.00 100.02,2715.65 102.08,2730.42 104.00,2740.00
+119.57,2817.85 180.95,2880.19 259.00,2895.80 269.19,2897.84
+283.70,2899.98 294.00,2900.00 294.00,2900.00 701.00,2900.00
+701.00,2900.00 701.00,2900.00 2038.00,2900.00 2038.00,2900.00
+2038.00,2900.00 2706.00,2900.00 2706.00,2900.00 2716.30,2899.98
+2730.81,2897.84 2741.00,2895.80 2819.05,2880.19 2880.43,2817.85
+2896.00,2740.00 2897.92,2730.42 2899.98,2715.65 2900.00,2706.00
+2900.00,2706.00 2900.00,2299.00 2900.00,2299.00 2900.00,2299.00
+2900.00,962.00 2900.00,962.00 2900.00,962.00 2900.00,294.00
+2900.00,294.00 2899.98,283.70 2897.84,269.19 2895.80,259.00
+2880.19,180.95 2817.85,119.57 2740.00,104.00 2730.42,102.08
+2715.65,100.02 2706.00,100.06 2706.00,100.06 2307.00,100.06
+2307.00,100.06 2307.00,100.06 950.00,100.06 950.00,100.06
+950.00,100.06 506.00,100.06 506.00,100.06 506.00,100.06
+361.00,100.06 361.00,100.06 361.00,100.06 313.00,100.06
+313.00,100.06 313.00,100.06 286.00,100.06 286.00,100.06 Z M
+1223.00,497.06 C 1223.00,497.06 1271.00,497.06 1271.00,497.06
+1271.00,497.06 1363.00,497.06 1363.00,497.06 1363.00,497.06
+1641.00,497.06 1641.00,497.06 1641.00,497.06 2473.00,497.06
+2473.00,497.06 2493.49,497.03 2517.06,501.20 2526.48,522.00
+2536.26,543.57 2526.49,576.48 2522.42,599.00 2522.42,599.00
+2505.65,682.00 2505.65,682.00 2501.50,700.34 2497.24,718.10
+2482.00,730.67 2469.32,741.13 2448.00,743.98 2432.00,744.00
+2432.00,744.00 1290.00,744.00 1290.00,744.00 1290.00,744.00
+1269.00,745.00 1269.00,745.00 1249.70,745.09 1223.83,750.61
+1205.00,755.37 1186.18,760.14 1162.83,769.38 1146.00,779.00
+1114.07,797.25 1085.56,822.59 1066.06,854.00 1044.06,889.45
+1036.29,925.99 1027.79,966.00 1027.79,966.00 1002.00,1092.00
+1002.00,1092.00 1002.00,1092.00 979.00,1210.00 979.00,1210.00
+974.72,1231.76 966.25,1271.04 966.00,1292.00 965.66,1321.13
+974.28,1351.29 996.04,1371.83 1013.00,1387.85 1031.21,1395.70
+1053.00,1402.66 1078.13,1410.68 1122.82,1415.26 1150.00,1418.16
+1150.00,1418.16 1288.00,1431.83 1288.00,1431.83 1288.00,1431.83
+1307.00,1433.17 1307.00,1433.17 1307.00,1433.17 1424.00,1444.17
+1424.00,1444.17 1424.00,1444.17 1466.00,1448.83 1466.00,1448.83
+1466.00,1448.83 1589.00,1461.17 1589.00,1461.17 1589.00,1461.17
+1809.00,1485.83 1809.00,1485.83 1809.00,1485.83 1959.00,1501.84
+1959.00,1501.84 2008.09,1507.09 2050.35,1511.20 2098.00,1526.02
+2149.14,1541.94 2199.94,1573.26 2235.83,1613.00 2264.71,1644.97
+2286.90,1689.70 2295.20,1732.00 2295.20,1732.00 2299.09,1765.00
+2299.09,1765.00 2299.09,1765.00 2300.00,1775.00 2300.00,1775.00
+2300.00,1775.00 2300.00,1803.00 2300.00,1803.00 2300.00,1803.00
+2298.96,1815.00 2298.96,1815.00 2298.96,1815.00 2298.96,1824.00
+2298.96,1824.00 2298.96,1824.00 2288.42,1895.00 2288.42,1895.00
+2288.42,1895.00 2273.20,1978.00 2273.20,1978.00 2273.20,1978.00
+2264.80,2018.00 2264.80,2018.00 2264.80,2018.00 2246.61,2107.00
+2246.61,2107.00 2232.14,2184.18 2219.87,2248.13 2178.55,2317.00
+2157.02,2352.89 2128.77,2384.41 2097.00,2411.57 2077.10,2428.58
+2048.46,2447.46 2025.00,2459.19 1979.32,2482.03 1926.65,2495.10
+1876.00,2500.17 1876.00,2500.17 1860.00,2502.00 1860.00,2502.00
+1860.00,2502.00 1851.00,2502.00 1851.00,2502.00 1851.00,2502.00
+1839.00,2503.00 1839.00,2503.00 1839.00,2503.00 1700.00,2503.00
+1700.00,2503.00 1700.00,2503.00 1214.00,2503.00 1214.00,2503.00
+1214.00,2503.00 1202.00,2502.09 1202.00,2502.09 1202.00,2502.09
+1179.00,2500.16 1179.00,2500.16 1137.20,2495.69 1093.46,2484.18
+1058.00,2460.92 1002.98,2424.83 973.70,2367.19 966.84,2303.00
+966.84,2303.00 965.00,2282.00 965.00,2282.00 965.00,2282.00
+965.00,2245.00 965.00,2245.00 965.00,2245.00 965.91,2233.00
+965.91,2233.00 967.56,2208.94 970.94,2185.72 975.39,2162.00
+975.39,2162.00 994.79,2065.00 994.79,2065.00 994.79,2065.00
+1008.42,1991.00 1008.42,1991.00 1008.42,1991.00 1024.20,1913.00
+1024.20,1913.00 1024.20,1913.00 1031.00,1881.00 1031.00,1881.00
+1031.00,1881.00 1038.13,1847.00 1038.13,1847.00 1042.42,1829.90
+1049.32,1813.71 1066.00,1805.37 1078.73,1799.01 1094.16,1799.84
+1108.00,1800.00 1108.00,1800.00 1118.00,1800.91 1118.00,1800.91
+1118.00,1800.91 1149.00,1803.84 1149.00,1803.84 1149.00,1803.84
+1226.00,1812.85 1226.00,1812.85 1243.99,1815.00 1265.76,1819.03
+1276.78,1835.00 1285.26,1847.30 1285.39,1859.83 1284.07,1874.00
+1284.07,1874.00 1274.20,1929.00 1274.20,1929.00 1274.20,1929.00
+1235.80,2120.00 1235.80,2120.00 1235.80,2120.00 1225.85,2178.00
+1225.85,2178.00 1224.20,2191.79 1222.88,2203.33 1227.04,2217.00
+1228.52,2221.89 1230.69,2226.70 1233.44,2231.00 1245.74,2250.21
+1266.49,2256.77 1288.00,2258.96 1288.00,2258.96 1297.00,2258.96
+1297.00,2258.96 1297.00,2258.96 1309.00,2260.00 1309.00,2260.00
+1309.00,2260.00 1727.00,2260.00 1727.00,2260.00 1727.00,2260.00
+1785.00,2260.00 1785.00,2260.00 1836.95,2260.00 1885.58,2258.11
+1929.00,2225.10 1975.02,2190.12 1985.17,2137.17 1995.80,2084.00
+1995.80,2084.00 2020.00,1965.00 2020.00,1965.00 2020.00,1965.00
+2033.25,1897.00 2033.25,1897.00 2034.89,1887.60 2037.89,1870.10
+2038.00,1861.00 2038.22,1841.78 2037.54,1827.99 2029.56,1810.00
+2017.23,1782.20 1987.37,1762.36 1959.00,1753.72 1924.34,1743.17
+1881.30,1739.46 1845.00,1735.83 1845.00,1735.83 1795.00,1730.17
+1795.00,1730.17 1795.00,1730.17 1674.00,1717.83 1674.00,1717.83
+1674.00,1717.83 1567.00,1706.83 1567.00,1706.83 1567.00,1706.83
+1526.00,1702.17 1526.00,1702.17 1526.00,1702.17 1175.00,1667.16
+1175.00,1667.16 1175.00,1667.16 1043.00,1653.17 1043.00,1653.17
+996.38,1648.51 948.32,1642.08 904.00,1626.31 813.72,1594.18
+738.65,1528.71 710.72,1435.00 705.58,1417.76 699.21,1385.74
+699.00,1368.00 699.00,1368.00 698.04,1353.00 698.04,1353.00
+697.92,1349.22 698.50,1347.47 698.92,1344.00 698.92,1344.00
+698.92,1335.00 698.92,1335.00 698.92,1335.00 699.91,1325.00
+699.91,1325.00 701.98,1296.67 708.54,1268.90 713.58,1241.00
+713.58,1241.00 746.60,1072.00 746.60,1072.00 746.60,1072.00
+777.79,917.00 777.79,917.00 787.47,871.46 793.84,837.17
+811.20,793.00 855.77,679.61 952.19,583.13 1064.00,535.43
+1093.63,522.78 1130.32,511.16 1162.00,505.26 1162.00,505.26
+1202.00,499.16 1202.00,499.16 1202.00,499.16 1223.00,497.06
+1223.00,497.06 Z M 1480.00,881.06 C 1480.00,881.06 1516.00,881.06
+1516.00,881.06 1516.00,881.06 1583.00,881.06 1583.00,881.06
+1583.00,881.06 1785.00,881.06 1785.00,881.06 1785.00,881.06
+2392.00,881.06 2392.00,881.06 2416.16,881.04 2445.18,887.10
+2450.54,915.00 2451.30,918.95 2452.11,925.03 2451.96,929.00
+2451.34,944.93 2441.01,994.11 2437.21,1012.00 2437.21,1012.00
+2428.65,1054.00 2428.65,1054.00 2423.03,1078.81 2416.98,1103.66
+2390.00,1113.30 2381.05,1116.50 2367.53,1117.99 2358.00,1118.00
+2358.00,1118.00 1614.00,1118.00 1614.00,1118.00 1614.00,1118.00
+1602.00,1118.91 1602.00,1118.91 1574.60,1120.79 1550.33,1125.37
+1532.76,1149.00 1523.04,1162.08 1518.04,1180.36 1514.13,1196.00
+1514.13,1196.00 1500.87,1250.00 1500.87,1250.00 1498.25,1260.49
+1495.23,1273.82 1489.53,1283.00 1479.46,1299.24 1461.18,1304.97
+1443.00,1305.00 1443.00,1305.00 1408.00,1303.09 1408.00,1303.09
+1408.00,1303.09 1370.00,1300.91 1370.00,1300.91 1370.00,1300.91
+1339.00,1298.09 1339.00,1298.09 1321.28,1296.85 1290.68,1295.94
+1275.00,1289.55 1261.63,1284.10 1252.36,1272.29 1250.15,1258.00
+1250.15,1258.00 1250.15,1246.00 1250.15,1246.00 1250.13,1234.88
+1255.32,1215.60 1257.79,1204.00 1257.79,1204.00 1272.40,1131.00
+1272.40,1131.00 1272.40,1131.00 1286.58,1064.00 1286.58,1064.00
+1291.83,1040.07 1296.75,1015.62 1306.43,993.00 1318.02,965.88
+1336.12,941.87 1359.00,923.26 1367.64,916.23 1378.96,908.61
+1389.00,903.78 1408.54,894.39 1429.64,888.02 1451.00,884.43
+1451.00,884.43 1480.00,881.06 1480.00,881.06 Z M 558.00,2264.09 C
+558.00,2264.09 630.00,2264.09 630.00,2264.09 630.00,2264.09
+770.00,2264.09 770.00,2264.09 795.54,2264.00 833.13,2260.56
+852.83,2279.30 866.20,2292.02 869.72,2313.62 873.20,2331.00
+877.15,2350.76 882.89,2370.67 891.31,2389.00 898.00,2403.56
+906.56,2416.89 915.72,2430.00 923.22,2440.73 931.83,2452.34
+932.00,2466.00 932.00,2466.00 932.00,2470.00 932.00,2470.00
+931.98,2474.00 932.00,2476.16 930.53,2480.00 920.83,2505.35
+888.22,2503.00 866.00,2503.00 866.00,2503.00 851.00,2503.00
+851.00,2503.00 851.00,2503.00 836.00,2504.00 836.00,2504.00
+836.00,2504.00 726.00,2504.00 726.00,2504.00 726.00,2504.00
+529.00,2504.00 529.00,2504.00 521.57,2503.99 508.11,2502.74
+501.00,2500.85 496.47,2499.64 492.01,2498.01 488.00,2495.53
+468.73,2483.64 467.68,2463.15 469.84,2443.00 469.84,2443.00
+476.40,2403.00 476.40,2403.00 476.40,2403.00 481.12,2381.00
+481.12,2381.00 481.12,2381.00 487.12,2354.00 487.12,2354.00
+491.72,2333.99 496.84,2299.24 510.18,2284.00 525.32,2266.72
+537.38,2267.25 558.00,2264.09 Z M 948.00,2834.00 C 948.00,2834.00
+948.00,2835.00 948.00,2835.00 948.00,2835.00 947.00,2834.00
+947.00,2834.00 947.00,2834.00 948.00,2834.00 948.00,2834.00 Z M
+2097.00,2834.00 C 2097.00,2834.00 2097.00,2835.00 2097.00,2835.00
+2097.00,2835.00 2096.00,2834.00 2096.00,2834.00 2096.00,2834.00
+2097.00,2834.00 2097.00,2834.00 Z M 2095.00,2835.00 C
+2095.00,2835.00 2095.00,2836.00 2095.00,2836.00 2095.00,2836.00
+2094.00,2835.00 2094.00,2835.00 2094.00,2835.00 2095.00,2835.00
+2095.00,2835.00 Z M 953.00,2838.00 C 953.00,2838.00 953.00,2839.00
+953.00,2839.00 953.00,2839.00 952.00,2838.00 952.00,2838.00
+952.00,2838.00 953.00,2838.00 953.00,2838.00 Z M 2084.00,2841.00 C
+2084.00,2841.00 2084.00,2842.00 2084.00,2842.00 2084.00,2842.00
+2083.00,2841.00 2083.00,2841.00 2083.00,2841.00 2084.00,2841.00
+2084.00,2841.00 Z M 2082.00,2842.00 C 2082.00,2842.00
+2082.00,2843.00 2082.00,2843.00 2082.00,2843.00 2081.00,2842.00
+2081.00,2842.00 2081.00,2842.00 2082.00,2842.00 2082.00,2842.00 Z M
+2080.00,2843.00 C 2080.00,2843.00 2080.00,2844.00 2080.00,2844.00
+2080.00,2844.00 2079.00,2843.00 2079.00,2843.00 2079.00,2843.00
+2080.00,2843.00 2080.00,2843.00 Z M 961.00,2844.00 C 961.00,2844.00
+961.00,2845.00 961.00,2845.00 961.00,2845.00 960.00,2844.00
+960.00,2844.00 960.00,2844.00 961.00,2844.00 961.00,2844.00 Z M
+964.00,2846.00 C 964.00,2846.00 964.00,2847.00 964.00,2847.00
+964.00,2847.00 963.00,2846.00 963.00,2846.00 963.00,2846.00
+964.00,2846.00 964.00,2846.00 Z M 967.00,2848.00 C 967.00,2848.00
+967.00,2849.00 967.00,2849.00 967.00,2849.00 966.00,2848.00
+966.00,2848.00 966.00,2848.00 967.00,2848.00 967.00,2848.00 Z M
+2067.00,2849.00 C 2067.00,2849.00 2067.00,2850.00 2067.00,2850.00
+2067.00,2850.00 2066.00,2849.00 2066.00,2849.00 2066.00,2849.00
+2067.00,2849.00 2067.00,2849.00 Z M 970.00,2850.00 C 970.00,2850.00
+970.00,2851.00 970.00,2851.00 970.00,2851.00 969.00,2850.00
+969.00,2850.00 969.00,2850.00 970.00,2850.00 970.00,2850.00 Z M
+2060.00,2852.00 C 2060.00,2852.00 2060.00,2853.00 2060.00,2853.00
+2060.00,2853.00 2059.00,2852.00 2059.00,2852.00 2059.00,2852.00
+2060.00,2852.00 2060.00,2852.00 Z M 975.00,2853.00 C 975.00,2853.00
+975.00,2854.00 975.00,2854.00 975.00,2854.00 974.00,2853.00
+974.00,2853.00 974.00,2853.00 975.00,2853.00 975.00,2853.00 Z M
+2053.00,2855.00 C 2053.00,2855.00 2053.00,2856.00 2053.00,2856.00
+2053.00,2856.00 2052.00,2855.00 2052.00,2855.00 2052.00,2855.00
+2053.00,2855.00 2053.00,2855.00 Z M 982.00,2857.00 C 982.00,2857.00
+982.00,2858.00 982.00,2858.00 982.00,2858.00 981.00,2857.00
+981.00,2857.00 981.00,2857.00 982.00,2857.00 982.00,2857.00 Z M
+2048.00,2857.00 C 2048.00,2857.00 2048.00,2858.00 2048.00,2858.00
+2048.00,2858.00 2047.00,2857.00 2047.00,2857.00 2047.00,2857.00
+2048.00,2857.00 2048.00,2857.00 Z M 984.00,2858.00 C 984.00,2858.00
+984.00,2859.00 984.00,2859.00 984.00,2859.00 983.00,2858.00
+983.00,2858.00 983.00,2858.00 984.00,2858.00 984.00,2858.00 Z M
+986.00,2859.00 C 986.00,2859.00 986.00,2860.00 986.00,2860.00
+986.00,2860.00 985.00,2859.00 985.00,2859.00 985.00,2859.00
+986.00,2859.00 986.00,2859.00 Z M 2043.00,2859.00 C 2043.00,2859.00
+2043.00,2860.00 2043.00,2860.00 2043.00,2860.00 2042.00,2859.00
+2042.00,2859.00 2042.00,2859.00 2043.00,2859.00 2043.00,2859.00 Z M
+988.00,2860.00 C 988.00,2860.00 988.00,2861.00 988.00,2861.00
+988.00,2861.00 987.00,2860.00 987.00,2860.00 987.00,2860.00
+988.00,2860.00 988.00,2860.00 Z M 2040.00,2860.00 C 2040.00,2860.00
+2040.00,2861.00 2040.00,2861.00 2040.00,2861.00 2039.00,2860.00
+2039.00,2860.00 2039.00,2860.00 2040.00,2860.00 2040.00,2860.00 Z M
+990.00,2861.00 C 990.00,2861.00 990.00,2862.00 990.00,2862.00
+990.00,2862.00 989.00,2861.00 989.00,2861.00 989.00,2861.00
+990.00,2861.00 990.00,2861.00 Z M 2035.00,2862.00 C 2035.00,2862.00
+2035.00,2863.00 2035.00,2863.00 2035.00,2863.00 2034.00,2862.00
+2034.00,2862.00 2034.00,2862.00 2035.00,2862.00 2035.00,2862.00 Z M
+2032.00,2863.00 C 2032.00,2863.00 2032.00,2864.00 2032.00,2864.00
+2032.00,2864.00 2031.00,2863.00 2031.00,2863.00 2031.00,2863.00
+2032.00,2863.00 2032.00,2863.00 Z M 997.00,2864.00 C 997.00,2864.00
+997.00,2865.00 997.00,2865.00 997.00,2865.00 996.00,2864.00
+996.00,2864.00 996.00,2864.00 997.00,2864.00 997.00,2864.00 Z M
+2029.00,2864.00 C 2029.00,2864.00 2029.00,2865.00 2029.00,2865.00
+2029.00,2865.00 2028.00,2864.00 2028.00,2864.00 2028.00,2864.00
+2029.00,2864.00 2029.00,2864.00 Z M 999.00,2865.00 C 999.00,2865.00
+999.00,2866.00 999.00,2866.00 999.00,2866.00 998.00,2865.00
+998.00,2865.00 998.00,2865.00 999.00,2865.00 999.00,2865.00 Z M
+1004.00,2867.00 C 1004.00,2867.00 1004.00,2868.00 1004.00,2868.00
+1004.00,2868.00 1003.00,2867.00 1003.00,2867.00 1003.00,2867.00
+1004.00,2867.00 1004.00,2867.00 Z M 2014.00,2869.00 C
+2014.00,2869.00 2014.00,2870.00 2014.00,2870.00 2014.00,2870.00
+2013.00,2869.00 2013.00,2869.00 2013.00,2869.00 2014.00,2869.00
+2014.00,2869.00 Z M 1012.00,2870.00 C 1012.00,2870.00 1012.00,2871.00
+1012.00,2871.00 1012.00,2871.00 1011.00,2870.00 1011.00,2870.00
+1011.00,2870.00 1012.00,2870.00 1012.00,2870.00 Z M 2011.00,2870.00
+C 2011.00,2870.00 2011.00,2871.00 2011.00,2871.00 2011.00,2871.00
+2010.00,2870.00 2010.00,2870.00 2010.00,2870.00 2011.00,2870.00
+2011.00,2870.00 Z M 1015.00,2871.00 C 1015.00,2871.00
+1015.00,2872.00 1015.00,2872.00 1015.00,2872.00 1014.00,2871.00
+1014.00,2871.00 1014.00,2871.00 1015.00,2871.00 1015.00,2871.00 Z M
+1018.00,2872.00 C 1018.00,2872.00 1018.00,2873.00 1018.00,2873.00
+1018.00,2873.00 1017.00,2872.00 1017.00,2872.00 1017.00,2872.00
+1018.00,2872.00 1018.00,2872.00 Z M 2004.00,2872.00 C
+2004.00,2872.00 2004.00,2873.00 2004.00,2873.00 2004.00,2873.00
+2003.00,2872.00 2003.00,2872.00 2003.00,2872.00 2004.00,2872.00
+2004.00,2872.00 Z M 1021.00,2873.00 C 1021.00,2873.00
+1021.00,2874.00 1021.00,2874.00 1021.00,2874.00 1020.00,2873.00
+1020.00,2873.00 1020.00,2873.00 1021.00,2873.00 1021.00,2873.00 Z M
+2000.00,2873.00 C 2000.00,2873.00 2000.00,2874.00 2000.00,2874.00
+2000.00,2874.00 1999.00,2873.00 1999.00,2873.00 1999.00,2873.00
+2000.00,2873.00 2000.00,2873.00 Z M 1024.00,2874.00 C
+1024.00,2874.00 1024.00,2875.00 1024.00,2875.00 1024.00,2875.00
+1023.00,2874.00 1023.00,2874.00 1023.00,2874.00 1024.00,2874.00
+1024.00,2874.00 Z M 1027.00,2875.00 C 1027.00,2875.00
+1027.00,2876.00 1027.00,2876.00 1027.00,2876.00 1026.00,2875.00
+1026.00,2875.00 1026.00,2875.00 1027.00,2875.00 1027.00,2875.00 Z M
+1988.00,2876.00 C 1988.00,2876.00 1988.00,2877.00 1988.00,2877.00
+1988.00,2877.00 1987.00,2876.00 1987.00,2876.00 1987.00,2876.00
+1988.00,2876.00 1988.00,2876.00 Z M 1034.00,2877.00 C
+1034.00,2877.00 1034.00,2878.00 1034.00,2878.00 1034.00,2878.00
+1033.00,2877.00 1033.00,2877.00 1033.00,2877.00 1034.00,2877.00
+1034.00,2877.00 Z M 1984.00,2877.00 C 1984.00,2877.00
+1984.00,2878.00 1984.00,2878.00 1984.00,2878.00 1983.00,2877.00
+1983.00,2877.00 1983.00,2877.00 1984.00,2877.00 1984.00,2877.00 Z M
+1980.00,2878.00 C 1980.00,2878.00 1980.00,2879.00 1980.00,2879.00
+1980.00,2879.00 1979.00,2878.00 1979.00,2878.00 1979.00,2878.00
+1980.00,2878.00 1980.00,2878.00 Z M 1041.00,2879.00 C
+1041.00,2879.00 1041.00,2880.00 1041.00,2880.00 1041.00,2880.00
+1040.00,2879.00 1040.00,2879.00 1040.00,2879.00 1041.00,2879.00
+1041.00,2879.00 Z M 1975.00,2879.00 C 1975.00,2879.00
+1975.00,2880.00 1975.00,2880.00 1975.00,2880.00 1974.00,2879.00
+1974.00,2879.00 1974.00,2879.00 1975.00,2879.00 1975.00,2879.00 Z M
+1045.00,2880.00 C 1045.00,2880.00 1045.00,2881.00 1045.00,2881.00
+1045.00,2881.00 1044.00,2880.00 1044.00,2880.00 1044.00,2880.00
+1045.00,2880.00 1045.00,2880.00 Z M 1049.00,2881.00 C
+1049.00,2881.00 1049.00,2882.00 1049.00,2882.00 1049.00,2882.00
+1048.00,2881.00 1048.00,2881.00 1048.00,2881.00 1049.00,2881.00
+1049.00,2881.00 Z M 1966.00,2881.00 C 1966.00,2881.00
+1966.00,2882.00 1966.00,2882.00 1966.00,2882.00 1965.00,2881.00
+1965.00,2881.00 1965.00,2881.00 1966.00,2881.00 1966.00,2881.00 Z M
+1053.00,2882.00 C 1053.00,2882.00 1053.00,2883.00 1053.00,2883.00
+1053.00,2883.00 1052.00,2882.00 1052.00,2882.00 1052.00,2882.00
+1053.00,2882.00 1053.00,2882.00 Z M 1961.00,2882.00 C
+1961.00,2882.00 1961.00,2883.00 1961.00,2883.00 1961.00,2883.00
+1960.00,2882.00 1960.00,2882.00 1960.00,2882.00 1961.00,2882.00
+1961.00,2882.00 Z M 1058.00,2883.00 C 1058.00,2883.00
+1058.00,2884.00 1058.00,2884.00 1058.00,2884.00 1057.00,2883.00
+1057.00,2883.00 1057.00,2883.00 1058.00,2883.00 1058.00,2883.00 Z M
+1950.00,2884.00 C 1950.00,2884.00 1950.00,2885.00 1950.00,2885.00
+1950.00,2885.00 1949.00,2884.00 1949.00,2884.00 1949.00,2884.00
+1950.00,2884.00 1950.00,2884.00 Z M 1068.00,2885.00 C
+1068.00,2885.00 1068.00,2886.00 1068.00,2886.00 1068.00,2886.00
+1067.00,2885.00 1067.00,2885.00 1067.00,2885.00 1068.00,2885.00
+1068.00,2885.00 Z M 1944.00,2885.00 C 1944.00,2885.00
+1944.00,2886.00 1944.00,2886.00 1944.00,2886.00 1943.00,2885.00
+1943.00,2885.00 1943.00,2885.00 1944.00,2885.00 1944.00,2885.00 Z M
+1074.00,2886.00 C 1074.00,2886.00 1074.00,2887.00 1074.00,2887.00
+1074.00,2887.00 1073.00,2886.00 1073.00,2886.00 1073.00,2886.00
+1074.00,2886.00 1074.00,2886.00 Z M 1938.00,2886.00 C
+1938.00,2886.00 1938.00,2887.00 1938.00,2887.00 1938.00,2887.00
+1937.00,2886.00 1937.00,2886.00 1937.00,2886.00 1938.00,2886.00
+1938.00,2886.00 Z M 1081.00,2887.00 C 1081.00,2887.00
+1081.00,2888.00 1081.00,2888.00 1081.00,2888.00 1080.00,2887.00
+1080.00,2887.00 1080.00,2887.00 1081.00,2887.00 1081.00,2887.00 Z M
+1930.00,2887.00 C 1930.00,2887.00 1930.00,2888.00 1930.00,2888.00
+1930.00,2888.00 1929.00,2887.00 1929.00,2887.00 1929.00,2887.00
+1930.00,2887.00 1930.00,2887.00 Z M 1921.00,2888.00 C
+1921.00,2888.00 1921.00,2889.00 1921.00,2889.00 1921.00,2889.00
+1920.00,2888.00 1920.00,2888.00 1920.00,2888.00 1921.00,2888.00
+1921.00,2888.00 Z M 1859.00,2892.00 C 1859.00,2892.00
+1851.00,2893.00 1851.00,2893.00 1851.00,2893.00 1859.00,2892.00
+1859.00,2892.00 Z" /&gt; &lt;/svg&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="vat-id"&gt;VAT ID:
+&lt;/h3&gt;&lt;p&gt;VAT identification number according to §27a of the German VAT Act: DE453879276&lt;/p&gt;
+&lt;h2 id="responsible-for-content-according-to--55-abs-2-rstv"&gt;Responsible for content (according to § 55 Abs. 2 RStV)
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Sahraoui - Consulting&lt;/strong&gt; &lt;br&gt;
+&lt;strong&gt;Cherif Sahraoui&lt;/strong&gt; &lt;br&gt;
+Niederbeckstraße 33, &lt;br&gt;
+40472 Düsseldorf, Germany&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Phone:&lt;/strong&gt; &lt;a href="tel:+4917657755284" class="phone-number"&gt;Phone number&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;E-Mail:&lt;/strong&gt; &lt;a href="mailto:contact@sahraoui-it.com" class="email-address"&gt;Email
+address&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="legal-information"&gt;Legal Information
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Privacy Policy:&lt;/strong&gt; &lt;a href="https://sahraoui-it.com/privacy_policy"&gt;Privacy Policy&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="-1-disclaimer-for-content"&gt;§ 1 Disclaimer for Content
+&lt;/h3&gt;&lt;p&gt;The free and publicly accessible content of this website has been created with
+the utmost care. However, the provider of this website does not guarantee the
+accuracy and timeliness of the provided free and publicly accessible
+journalistic advice and news. Contributions marked by name reflect the opinion
+of the respective author and not always the opinion of the provider. Simply
+accessing the free and publicly accessible content does not establish any
+contractual relationship between the user and the provider, as there is no
+intent to be legally bound by the provider.&lt;/p&gt;
+&lt;h3 id="-2-external-links"&gt;§ 2 External Links
+&lt;/h3&gt;&lt;p&gt;This website contains links to third-party websites (&amp;ldquo;external links&amp;rdquo;). These
+websites are the responsibility of the respective operators. The provider
+checked the foreign content of the external links for any legal violations when
+the links were first set. At that time, no legal violations were apparent. The
+provider has no influence on the current or future design or content of the
+linked pages. The setting of external links does not imply that the provider
+adopts the content behind the reference or link as its own. A constant control
+of the external links is not reasonable for the provider without specific
+indications of legal violations. However, in case of knowledge of legal
+violations, such external links will be deleted immediately.&lt;/p&gt;
+&lt;h3 id="-3-copyright-and-related-rights"&gt;§ 3 Copyright and Related Rights
+&lt;/h3&gt;&lt;p&gt;The content published on this website is subject to German copyright and related
+protection laws. Any use not permitted by German copyright law requires the
+prior written consent of the provider or the respective rights holder. This
+applies particularly to reproduction, editing, translation, storage, processing,
+or presentation of content in databases or other electronic media and systems.
+Third-party content and rights are marked accordingly. Unauthorized reproduction
+or distribution of individual content or entire pages is prohibited and
+punishable by law. Only the creation of copies and downloads for personal,
+private, and non-commercial use is allowed.&lt;/p&gt;
+&lt;h3 id="-4-special-terms-of-use"&gt;§ 4 Special Terms of Use
+&lt;/h3&gt;&lt;p&gt;Where special conditions deviate from the above paragraphs for the use of
+specific parts of this website, this will be explicitly indicated at the
+relevant place. In such cases, the special terms of use will apply in each
+individual case.&lt;/p&gt;</description></item><item><title>Links</title><link>https://sahraoui-it.com/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/links/</guid><description/></item><item><title>Privacy Policy</title><link>https://sahraoui-it.com/privacy_policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/privacy_policy/</guid><description>&lt;h2 id="i-name-and-address-of-the-responsible-entity"&gt;I. Name and Address of the Responsible Entity
+&lt;/h2&gt;&lt;p&gt;The entity responsible for data processing within the meaning of the General
+Data Protection Regulation (GDPR) and other national data protection laws of the
+member states, as well as other data protection regulations, is:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cherif Sahraoui&lt;/strong&gt;&lt;br&gt;
+Niederbeckstraße 33,&lt;br&gt;
+40472 Düsseldorf, Germany&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Phone:&lt;/strong&gt; &lt;a href="tel:+4917657755284" class="phone-number"&gt;Phone number&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;E-Mail:&lt;/strong&gt; &lt;a href="mailto:contact@sahraoui-it.com" class="email-address"&gt;Email
+address&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="ii-general-information-on-data-processing"&gt;II. General Information on Data Processing
+&lt;/h2&gt;&lt;h3 id="1-scope-of-processing-personal-data"&gt;1. Scope of Processing Personal Data
+&lt;/h3&gt;&lt;p&gt;We process personal data of our users only to the extent necessary to provide a
+functional website as well as our content and services. The processing of
+personal data of our users is generally carried out only with the consent of the
+user. An exception applies in cases where obtaining prior consent is not
+possible for factual reasons and the processing of the data is permitted by
+legal provisions.&lt;/p&gt;
+&lt;h3 id="2-legal-basis-for-processing-personal-data"&gt;2. Legal Basis for Processing Personal Data
+&lt;/h3&gt;&lt;p&gt;If we obtain consent from the data subject for processing personal data, Art. 6
+(1) lit. a of the GDPR serves as the legal basis.&lt;br&gt;
+When processing personal data necessary for the performance of a contract to
+which the data subject is a party, Art. 6 (1) lit. b of the GDPR serves as the
+legal basis. This also applies to processing activities required for the
+performance of pre-contractual measures.&lt;br&gt;
+If processing personal data is necessary to fulfill a legal obligation to which
+our company is subject, Art. 6 (1) lit. c of the GDPR serves as the legal basis.&lt;br&gt;
+In cases where the processing of personal data is necessary to protect the vital
+interests of the data subject or another natural person, Art. 6 (1) lit. d of
+the GDPR serves as the legal basis.&lt;/p&gt;
+&lt;p&gt;If the processing is necessary for the protection of a legitimate interest of
+our company or a third party and the interests, fundamental rights, and freedoms
+of the data subject do not override the first-mentioned interest, Art. 6 (1)
+lit. f of the GDPR serves as the legal basis for the processing.&lt;/p&gt;
+&lt;h3 id="3-data-deletion-and-storage-duration"&gt;3. Data Deletion and Storage Duration
+&lt;/h3&gt;&lt;p&gt;Personal data of data subjects will be deleted or blocked as soon as the purpose
+of the storage no longer applies. Further storage may occur if required by
+European or national legislations, regulations, or other provisions to which the
+responsible entity is subject.&lt;/p&gt;
+&lt;h2 id="iii-log-files-statistic-files-cookies"&gt;III. Log Files, Statistic Files, Cookies
+&lt;/h2&gt;&lt;p&gt;When using our website, no log files or statistic files are created.&lt;br&gt;
+IP addresses of users are not stored or processed.&lt;br&gt;
+This website does not use cookies.&lt;br&gt;
+No user profiles are created, and no data is shared with third parties.&lt;/p&gt;
+&lt;h2 id="iv-e-mail-contact"&gt;IV. E-Mail Contact
+&lt;/h2&gt;&lt;h3 id="1-description-and-scope-of-data-processing"&gt;1. Description and Scope of Data Processing
+&lt;/h3&gt;&lt;p&gt;It is possible to contact us via the provided e-mail address. In this case, the
+personal data transmitted with the e-mail will be stored.&lt;/p&gt;
+&lt;p&gt;In this context, no data is shared with third parties. The data will be used
+solely for processing the conversation.&lt;/p&gt;
+&lt;h3 id="2-legal-basis-for-data-processing"&gt;2. Legal Basis for Data Processing
+&lt;/h3&gt;&lt;p&gt;The legal basis for processing the data transmitted in the course of sending an
+e-mail is Art. 6 (1) lit. f of the GDPR. If the e-mail contact aims at the
+conclusion of a contract, the additional legal basis for processing is Art. 6
+(1) lit. b of the GDPR.&lt;/p&gt;
+&lt;h3 id="3-purpose-of-data-processing"&gt;3. Purpose of Data Processing
+&lt;/h3&gt;&lt;p&gt;The legitimate interest in processing personal data lies in handling the e-mail
+contact.&lt;/p&gt;
+&lt;h3 id="4-duration-of-storage"&gt;4. Duration of Storage
+&lt;/h3&gt;&lt;p&gt;The data will be deleted as soon as it is no longer necessary to achieve the
+purpose for which it was collected. For personal data sent via e-mail, this is
+the case when the respective conversation with the user has ended.&lt;/p&gt;
+&lt;h3 id="5-possibility-of-objection-and-removal"&gt;5. Possibility of Objection and Removal
+&lt;/h3&gt;&lt;p&gt;The user has the right to withdraw consent to the processing of personal data at
+any time. If the user contacts us via e-mail, they can object to the storage of
+their personal data at any time. In such cases, the conversation cannot be
+continued.&lt;/p&gt;
+&lt;h2 id="v-rights-of-the-data-subject"&gt;V. Rights of the Data Subject
+&lt;/h2&gt;&lt;p&gt;If personal data is processed about you, you are a data subject within the
+meaning of the GDPR, and you have the following rights regarding the responsible
+entity:&lt;/p&gt;
+&lt;h3 id="1-right-to-information"&gt;1. Right to Information
+&lt;/h3&gt;&lt;p&gt;You can request confirmation from the responsible entity as to whether personal
+data concerning you is being processed.&lt;/p&gt;
+&lt;h3 id="2-right-to-rectification"&gt;2. Right to Rectification
+&lt;/h3&gt;&lt;p&gt;You have the right to request the rectification and/or completion of incorrect
+or incomplete personal data concerning you.&lt;/p&gt;
+&lt;h3 id="3-right-to-restrict-processing"&gt;3. Right to Restrict Processing
+&lt;/h3&gt;&lt;p&gt;Under certain circumstances, you may request the restriction of processing of
+personal data concerning you.&lt;/p&gt;
+&lt;h3 id="4-right-to-deletion"&gt;4. Right to Deletion
+&lt;/h3&gt;&lt;p&gt;You can request the responsible entity to immediately delete personal data
+concerning you.&lt;/p&gt;
+&lt;h3 id="5-right-to-notification"&gt;5. Right to Notification
+&lt;/h3&gt;&lt;p&gt;If you have asserted the right to rectification, deletion, or restriction of
+processing, the responsible entity is obliged to notify all recipients to whom
+the personal data concerning you has been disclosed of the rectification,
+deletion, or restriction of processing unless this proves impossible or involves
+disproportionate effort.&lt;/p&gt;
+&lt;h3 id="6-right-to-object"&gt;6. Right to Object
+&lt;/h3&gt;&lt;p&gt;You have the right to object at any time to the processing of personal data
+concerning you.&lt;/p&gt;
+&lt;h3 id="7-right-to-withdraw-consent"&gt;7. Right to Withdraw Consent
+&lt;/h3&gt;&lt;p&gt;You have the right to withdraw your consent to the processing of your personal
+data at any time.&lt;/p&gt;
+&lt;h3 id="8-right-to-lodge-a-complaint-with-a-supervisory-authority"&gt;8. Right to Lodge a Complaint with a Supervisory Authority
+&lt;/h3&gt;&lt;p&gt;Without prejudice to any other administrative or judicial remedy, you have the
+right to lodge a complaint with a supervisory authority, especially in the
+member state of your residence, place of work, or the place of the alleged
+infringement, if you believe that the processing of your personal data violates
+the GDPR.&lt;/p&gt;</description></item><item><title>Quality Engineering, Test Automation &amp; DevOps</title><link>https://sahraoui-it.com/profile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/profile/</guid><description>&lt;h2 id="quality-engineering-test-automation--devops-consultant"&gt;Quality Engineering, Test Automation &amp;amp; DevOps Consultant
+&lt;/h2&gt;&lt;p&gt;A hands-on Quality Engineering, Test Automation, and DevOps consultant who works across the delivery lifecycle: from test strategy and automated API/UI testing to CI/CD, Kubernetes, GitOps, and secure platform engineering. I help teams build quality into their pipelines, infrastructure, and release processes across AWS, GCP, and on-prem environments.&lt;/p&gt;
+&lt;p&gt;I combine QA leadership and test-management expertise with practical implementation skills in Python, Bash, GitLab CI, Jenkins, ArgoCD, Docker, Helm, Terraform, Vault, and cloud-native tooling. This enables me to bridge development, operations, security, and quality teams while improving delivery speed, reliability, compliance, and observability.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="key-strengths"&gt;Key Strengths
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Quality Engineering &amp;amp; QA Leadership&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Automation &amp;amp; Automated API/UI Testing&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CI/CD Quality Engineering, GitOps &amp;amp; Release Workflows&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kubernetes, Cloud &amp;amp; Infrastructure-as-Code Automation&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DevSecOps, Vault, IAM, RBAC &amp;amp; Compliance&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Quality Gates, Reliability &amp;amp; Observability&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cross-functional Technical Leadership&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="technical-skill-set"&gt;Technical Skill Set
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Quality Engineering &amp;amp; Test Automation&lt;/strong&gt;: Test strategy, QA leadership, ATDD/BDD, Selenium, Cucumber, SoapUI, automated API/UI testing&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CI/CD, GitOps &amp;amp; Release Engineering&lt;/strong&gt;: GitLab CI, Jenkins, GitHub, Bitbucket Pipelines, ArgoCD, Helm, Docker, SonarQube&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloud, Kubernetes &amp;amp; Infrastructure&lt;/strong&gt;: Kubernetes, Terraform, GitOps, AWS, GCP, on-prem clusters, MongoDB, PostgreSQL&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security &amp;amp; Delivery Governance&lt;/strong&gt;: HashiCorp Vault, IAM, RBAC, PKI, audit logging, IaC security, SAST/DAST&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Monitoring &amp;amp; Reliability&lt;/strong&gt;: Prometheus/Grafana basics, quality gates, deployment stability, scalability, observability&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Programming &amp;amp; Scripting&lt;/strong&gt;: Python, Bash, Linux, Java/Groovy familiarity&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Management &amp;amp; Collaboration&lt;/strong&gt;: Jira, Xray, TestRail, TFS, ALM Octane, Confluence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="education"&gt;Education
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bachelor of Science in Electrical Engineering&lt;/strong&gt;, TU Braunschweig&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Master of Science in Electronic Automotive &amp;amp; Aerospace Systems&lt;/strong&gt;, TU Braunschweig&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="professional-experience"&gt;Professional Experience
+&lt;/h2&gt;&lt;h3 id="product-owner---scm--ci-platform--freelancer-germany--nov-2025---present"&gt;&lt;strong&gt;Product Owner - SCM &amp;amp; CI Platform | Freelancer, Germany | Nov 2025 - Present&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Defined the roadmap and architecture for an enterprise SCM and CI platform, enabling Kubernetes-native delivery, GitOps workflows, and rigorous pipeline testing.&lt;/li&gt;
+&lt;li&gt;Built delivery quality into platform capabilities through testable pipelines, standardized artifact workflows, and engineering controls.&lt;/li&gt;
+&lt;li&gt;Bridged development, security, and testing teams to improve release communication, onboarding, and platform adoption.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="devops-specialist--qa-lead--freelancer-germany--jun-2025---oct-2025"&gt;&lt;strong&gt;DevOps Specialist &amp;amp; QA Lead | Freelancer, Germany | Jun 2025 - Oct 2025&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Optimized CI/CD pipelines and on-prem Kubernetes clusters for deployment stability, scalability, and monitoring.&lt;/li&gt;
+&lt;li&gt;Engineered automated API and UI test execution within GitOps workflows, creating faster feedback for internal platform releases.&lt;/li&gt;
+&lt;li&gt;Collaborated with security teams to ensure resilience, compliance, and observability of platform services.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="qa-lead--deloitte-consulting-gmbh--sep-2023---may-2025"&gt;&lt;strong&gt;QA Lead | Deloitte Consulting GmbH | Sep 2023 - May 2025&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Energy and banking sectors: led cloud-native QA automation and pipeline compliance in Kubernetes environments.&lt;/li&gt;
+&lt;li&gt;Validated PKI workflows, certificate lifecycles, and HashiCorp Vault implementations, including tokens, policies, and secret engines.&lt;/li&gt;
+&lt;li&gt;Supported security compliance through RBAC, MFA, and audit logging for sensitive infrastructure.&lt;/li&gt;
+&lt;li&gt;Integrated automated test suites into CI/CD pipelines using GitLab CI and ArgoCD.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="system-integration--test-engineer--volkswagen-infotainment-gmbh--jun-2021--aug-2022"&gt;&lt;strong&gt;System Integration &amp;amp; Test Engineer | Volkswagen Infotainment GmbH | Jun 2021 – Aug 2022&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Developed automated CI workflows and integration pipelines for complex embedded and cloud-connected systems.&lt;/li&gt;
+&lt;li&gt;Performed system, integration, and automated testing aligned with DevOps principles.&lt;/li&gt;
+&lt;li&gt;Collaborated with multiple engineering stakeholders (VW, Continental).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="working-student--internships--wolfsburg--2018--2021"&gt;&lt;strong&gt;Working Student &amp;amp; Internships | Wolfsburg | 2018 – 2021&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Supported automotive DevOps projects and developed automated tests, HiL simulations, CAN tools, and system-validation setups.&lt;/li&gt;
+&lt;li&gt;Built a microcontroller-driven CAN simulation tool and supporting desktop application.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="certifications"&gt;Certifications
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class="link" href="https://www.credly.com/badges/36866d3e-0abf-413d-bf64-014f4846d209" target="_blank" rel="noopener"
+&gt;Professional Cloud Architect
+Certification&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class="link" href="http://scr.istqb.org/?name=sahraoui&amp;amp;number=105833" target="_blank" rel="noopener"
+&gt;ISTQB Certified Tester Foundation Level&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class="link" href="https://www.credly.com/badges/c39efa09-170b-4d19-bea9-e8a0e136c53e" target="_blank" rel="noopener"
+&gt;AWS Certified Cloud Practitioner&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a class="link" href="https://www.credly.com/badges/b8d14f21-a729-4828-a475-59c15aca6730" target="_blank" rel="noopener"
+&gt;Certified SAFe® 6 Agilist&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;div class="contact-me" style="text-align: center;"&gt;
+&lt;a href="https://sahraoui-it.com/contact" class="btn btn-primary"&gt;Contact Me&lt;/a&gt;
+&lt;/div&gt;</description></item><item><title>Quorivell: Local-First Decisions with On-Device AI</title><link>https://sahraoui-it.com/projects/2026/quorivell/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/projects/2026/quorivell/</guid><description>&lt;img src="https://sahraoui-it.com/projects/2026/quorivell/quorivell.png" alt="Featured image of post Quorivell: Local-First Decisions with On-Device AI" /&gt;&lt;h2 id="hobby-project"&gt;Hobby project
+&lt;/h2&gt;&lt;p&gt;I work as a freelance DevOps / quality engineering consultant by day. &lt;strong&gt;Quorivell&lt;/strong&gt; is a
+personal Flutter side project: a private, local-first app that turns messy conversation
+text into reviewable decisions and commitments — with evidence kept on the device.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tagline:&lt;/strong&gt; Decisions, with evidence — on your device.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-it-does"&gt;What it does
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Capture&lt;/strong&gt; conversation text as source records&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Extract&lt;/strong&gt; candidates on-device with a local GGUF model (llama.cpp)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Review&lt;/strong&gt; before anything is saved — nothing auto-writes the ledger&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ledger&lt;/strong&gt; for decisions, commitments, owners, and due dates you can audit&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chat&lt;/strong&gt; in free-form threads on the same local model&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Locales:&lt;/strong&gt; English, German, and Arabic (Material 3)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Privacy is the product: Drift SQLite on device is canonical, inference stays local, and
+source content does not leave the phone unless you later opt into an explicit remote flow.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="stack-short"&gt;Stack (short)
+&lt;/h2&gt;&lt;p&gt;Flutter · Riverpod · GoRouter · Drift · Freezed · llama.cpp (&lt;code&gt;llama_cpp_dart&lt;/code&gt;) ·
+Firebase Auth foundation (no cloud AI for capture/extract)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="links"&gt;Links
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a class="link" href="https://github.com/cherifsahraoui/Quorivell" target="_blank" rel="noopener"
+&gt;cherifsahraoui/Quorivell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google Play (closed testing):&lt;/strong&gt; &lt;a class="link" href="https://play.google.com/store/apps/details?id=com.quorivell.app" target="_blank" rel="noopener"
+&gt;com.quorivell.app&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Under active development — expect sharp edges, especially around large on-device model
+downloads.&lt;/p&gt;</description></item><item><title>Search</title><link>https://sahraoui-it.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/search/</guid><description/></item><item><title>Volkswagen Infotainment: Integration &amp; Test Automation</title><link>https://sahraoui-it.com/projects/2021/vw_infotainment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/projects/2021/vw_infotainment/</guid><description>&lt;img src="https://sahraoui-it.com/projects/2021/vw_infotainment/volkswagen_infotainment.png" alt="Featured image of post Volkswagen Infotainment: Integration &amp; Test Automation" /&gt;&lt;h2 id="volkswagen-infotainment-project-background-summary"&gt;Volkswagen Infotainment Project Background Summary
+&lt;/h2&gt;&lt;p&gt;Volkswagen Infotainment GmbH, located in Bochum, Germany, is responsible for
+delivering advanced infotainment systems that enhance the driving experience.
+These systems integrate cutting-edge technologies to provide seamless
+connectivity, entertainment, and navigation features for Volkswagen&amp;rsquo;s range of
+vehicles.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="my-role-in-the-volkswagen-infotainment-project"&gt;My Role in the Volkswagen Infotainment Project
+&lt;/h2&gt;&lt;p&gt;From June 2021 to August 2022, I worked as a System Integration and Test
+Engineer for the Volkswagen Infotainment project. In this role, I collaborated
+closely with internal and external partners, including Volkswagen and
+Continental, to integrate, verify, and deliver complex embedded and
+cloud-connected software systems.&lt;/p&gt;
+&lt;h2 id="key-responsibilities"&gt;Key Responsibilities
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Analyzed requirements&lt;/strong&gt; and defined software-integration and test criteria,
+identifying testability and integration risks early.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Developed and implemented&lt;/strong&gt; software, integration, and system tests with a
+focus on &lt;strong&gt;test automation&lt;/strong&gt; and reliable regression feedback.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Developed CI workflows and integration pipelines&lt;/strong&gt; for complex embedded and
+cloud-connected systems.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collaborated with internal and external partners&lt;/strong&gt; (Volkswagen, Continental)
+to ensure smooth integration and resolve issues.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tracked issues&lt;/strong&gt; and progress in &lt;strong&gt;Jira&lt;/strong&gt;, ensuring timely resolutions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;This work combined systems engineering, test automation, and CI-enabled
+feedback to support the reliable delivery of advanced infotainment technology.&lt;/p&gt;</description></item></channel></rss>

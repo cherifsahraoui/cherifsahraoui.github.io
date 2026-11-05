@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Sahraoui - Quality Engineering &amp; DevOps Consulting</title><link>https://sahraoui-it.com/post/</link><description>Recent content in Blog on Sahraoui - Quality Engineering &amp; DevOps Consulting</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Cherif Sahraoui / Sahraoui - Consulting</copyright><lastBuildDate>Tue, 15 Apr 2025 11:00:00 +0200</lastBuildDate><atom:link href="https://sahraoui-it.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Beyond Testing: The QA Mindset for Building Better Software</title><link>https://sahraoui-it.com/p/qa-good-practices/</link><pubDate>Tue, 15 Apr 2025 11:00:00 +0200</pubDate><guid>https://sahraoui-it.com/p/qa-good-practices/</guid><description>&lt;img src="https://sahraoui-it.com/p/qa-good-practices/quality_quote.png" alt="Featured image of post Beyond Testing: The QA Mindset for Building Better Software" /&gt;&lt;h2 id="introduction"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;In modern software development, &lt;strong&gt;Quality Assurance (QA)&lt;/strong&gt; has evolved into a
+strategic practice embedded across the entire software lifecycle from initial
+requirements to production monitoring. Gone are the days when QA was a
+late-stage activity; today, quality must be designed in from day one.&lt;/p&gt;
+&lt;p&gt;Defects found late are &lt;strong&gt;exponentially more costly&lt;/strong&gt; and disruptive. Still, many
+teams underestimate the value of integrating QA early, missing out on benefits
+like better testability, risk mitigation, and smarter design decisions. In
+fast-paced &lt;strong&gt;DevOps and cloud-native environments&lt;/strong&gt;, QA must move beyond testing
+and become a key driver of engineering excellence.&lt;/p&gt;
+&lt;p&gt;This article explores why early QA involvement matters, busts common myths, and
+offers practical strategies from test derivation to automation, chaos
+engineering, and the future of AI-driven testing.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/qa-good-practices/qa_phases.png"
+width="1600"
+height="286"
+srcset="https://sahraoui-it.com/p/qa-good-practices/qa_phases_hu_ada027316bde1dc0.png 480w, https://sahraoui-it.com/p/qa-good-practices/qa_phases_hu_63bd24be3c7b3263.png 1024w"
+loading="lazy"
+alt="Early QA Integration Points in the Software Development
+Lifecycle"
+class="gallery-image"
+data-flex-grow="559"
+data-flex-basis="1342px"
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="why-qa-from-day-one"&gt;Why QA from Day One?
+&lt;/h2&gt;&lt;p&gt;QA isn&amp;rsquo;t just about testing it&amp;rsquo;s about &lt;strong&gt;building quality in from the start&lt;/strong&gt;.
+Involving QA engineers early ensures:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Clearer requirements&lt;/strong&gt;&lt;br&gt;
+QA clarifies ambiguities and ensures specifications are testable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Better architecture and design&lt;/strong&gt;&lt;br&gt;
+QA promotes maintainable, testable systems with patterns like feature flags,
+canary releases, and observability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Risk identification&lt;/strong&gt;&lt;br&gt;
+QA spots potential issues in performance, data flows, and security before they
+become blockers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reduced costs&lt;/strong&gt;&lt;br&gt;
+Catching defects early reduces rework, testing cycles, and delivery delays
+delivering strong ROI (Return on Investment).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/qa-good-practices/cost_of_defects.png"
+width="1250"
+height="579"
+srcset="https://sahraoui-it.com/p/qa-good-practices/cost_of_defects_hu_6c2d347e69c3e463.png 480w, https://sahraoui-it.com/p/qa-good-practices/cost_of_defects_hu_cc64bd7c610b2961.png 1024w"
+loading="lazy"
+alt="Cost of Defects at Different Stages of Development"
+class="gallery-image"
+data-flex-grow="215"
+data-flex-basis="518px"
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="common-misconceptions-about-qa"&gt;Common Misconceptions About QA
+&lt;/h2&gt;&lt;h3 id="qa-is-just-about-testing"&gt;QA Is Just About Testing
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: QA involves analysis, planning, risk assessment, and continuous
+improvement.&lt;/p&gt;
+&lt;h3 id="qa-at-the-end-is-enough"&gt;QA at the End Is Enough
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: Fixing issues late is slower and more expensive. Quality must be
+&lt;strong&gt;built-in early&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="qa-doesnt-need-technical-skills"&gt;QA Doesn’t Need Technical Skills
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: Today’s QA engineers need to understand code, APIs, CI/CD, and system
+architecture.&lt;/p&gt;
+&lt;h3 id="qa-is-a-cost-center"&gt;QA Is a Cost Center
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: QA prevents expensive bugs, accelerates delivery, and improves
+customer satisfaction.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="empowering-qa-through-technical-proficiency"&gt;Empowering QA Through Technical Proficiency
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/qa-good-practices/qa_skills.png"
+width="800"
+height="620"
+srcset="https://sahraoui-it.com/p/qa-good-practices/qa_skills_hu_72fdd9881e3054b4.png 480w, https://sahraoui-it.com/p/qa-good-practices/qa_skills_hu_f1170c180bcbbd.png 1024w"
+loading="lazy"
+alt="Technical Profile of a Modern QA Engineer in Comparison to a traditional QA
+Engineer"
+class="gallery-image"
+data-flex-grow="129"
+data-flex-basis="309px"
+&gt;&lt;/p&gt;
+&lt;script&gt;
+let scrollPosition = 0;
+function openDialog(dialogId) {
+scrollPosition = window.scrollY;
+const dialog = document.getElementById(dialogId);
+window.scrollTo(0, 0);
+dialog.showModal();
+dialog.addEventListener('close', () =&gt; {
+window.scrollTo(0, scrollPosition);
+}, { once: true });
+}
+function closeDialog(dialogId) {
+document.getElementById(dialogId).close();
+}
+&lt;/script&gt;
+&lt;p&gt;&lt;button class="btn" onclick="openDialog('qa-skills')" style="width: 50%; display: block; margin: 0 auto;"&gt; Modern QA Engineers: Skills and Tools &lt;/button&gt; &lt;!-- markdownlint-disable MD013 --&gt;&lt;/p&gt;
+&lt;dialog id="qa-skills" onmousedown="event.target==this &amp;&amp; this.close()"&gt;
+&lt;button class="close-btn" onclick="closeDialog('qa-skills')"&gt;×&lt;/button&gt;
+&lt;h3&gt;Senior Software QA Engineer Skills (2025, 5+ Years Experience)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Test Case Design &amp; Management&lt;/strong&gt;&lt;br&gt;
+Proficient in designing clear, comprehensive, and reusable test cases derived from requirements and user stories,
+with hands-on experience using test case management tools such as TestRail, Jira Xray.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Test Automation Skills&lt;/strong&gt;&lt;br&gt;
+Ability to design, develop, and maintain automated tests to improve test coverage and efficiency.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;CI/CD Knowledge&lt;/strong&gt;&lt;br&gt;
+Understanding of Continuous Integration and Continuous Deployment pipelines to integrate testing into development workflows.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Programming Knowledge&lt;/strong&gt;&lt;br&gt;
+Ability to write and understand code for test automation, debugging, and scripting tasks.
+(e.g., Java, Python, JavaScript, Bash, etc.)
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Tools Proficiency&lt;/strong&gt;&lt;br&gt;
+Hands-on experience with modern testing tools and frameworks for web, mobile, and API testing.
+(e.g., Selenium, Appium, Postman, etc.)
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Native Cloud Testing&lt;/strong&gt;&lt;br&gt;
+Familiarity with testing in cloud-native environments, including microservices and serverless architectures.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Agile &amp; DevOps Knowledge&lt;/strong&gt;&lt;br&gt;
+Comfort working in Agile teams and aligning testing strategies with DevOps practices.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Security Testing&lt;/strong&gt;&lt;br&gt;
+Ability to identify vulnerabilities and test security aspects of applications
+(e.g., authentication, authorization, data protection).
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Performance Testing&lt;/strong&gt;&lt;br&gt;
+Skills to assess application performance under various conditions using tools like JMeter, k6, or Gatling.
+(e.g., load testing, chaos testing, etc.)
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;AI &amp; Machine Learning Integration&lt;/strong&gt;&lt;br&gt;
+Basic understanding of how AI/ML features impact testing and awareness of tools leveraging AI for test automation.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Soft Skills&lt;/strong&gt;&lt;br&gt;
+Strong interpersonal skills to work effectively with developers, product managers, and other stakeholders.
+(e.g., communication, collaboration, and problem-solving).
+&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+&lt;/dialog&gt;
+&lt;h3 id="the-role-has-evolved"&gt;The Role Has Evolved
+&lt;/h3&gt;&lt;p&gt;Modern QA engineers are &lt;strong&gt;technical contributors&lt;/strong&gt;, fluent in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Programming and scripting&lt;/li&gt;
+&lt;li&gt;Databases, APIs, and infrastructure&lt;/li&gt;
+&lt;li&gt;CI/CD pipelines and container orchestration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;They bridge development and QA, improving communication and producing
+&lt;strong&gt;high-quality, actionable bug reports&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="collaboration-improves-outcomes"&gt;Collaboration Improves Outcomes
+&lt;/h3&gt;&lt;p&gt;When QA joins early:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Developers and QA share understanding of feature goals and edge cases&lt;/li&gt;
+&lt;li&gt;QA helps design for testability and observability&lt;/li&gt;
+&lt;li&gt;Bug resolution is faster, and team morale improves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Organizations that invest in skilled QA engineers enjoy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Robust systems&lt;/li&gt;
+&lt;li&gt;Faster development cycles&lt;/li&gt;
+&lt;li&gt;Higher quality products&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="effective-testing-strategies"&gt;Effective Testing Strategies
+&lt;/h2&gt;&lt;h3 id="beyond-requirements-based-testing"&gt;Beyond Requirements-Based Testing
+&lt;/h3&gt;&lt;p&gt;Requirements often become outdated or miss user expectations. Instead, QA should
+derive tests from &lt;strong&gt;acceptance criteria&lt;/strong&gt; and &lt;strong&gt;real user behavior&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“We were testing what we specified, not what users needed.”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="best-practices-for-test-derivation"&gt;Best Practices for Test Derivation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Use &lt;strong&gt;Given-When-Then&lt;/strong&gt; format for clarity and automation&lt;/li&gt;
+&lt;li&gt;Cover both happy paths and edge cases&lt;/li&gt;
+&lt;li&gt;Include non-functional tests (e.g., performance, security)&lt;/li&gt;
+&lt;li&gt;Collaborate with developers during test design&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“A 30-minute conversation can save days of bug fixing.”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="balancing-test-documentation"&gt;Balancing Test Documentation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Critical paths&lt;/strong&gt;: Fully documented&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Core features&lt;/strong&gt;: Moderate detail&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edge cases&lt;/strong&gt;: Exploratory or intent-based notes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="automation-and-cicd-best-practices"&gt;Automation and CI/CD Best Practices
+&lt;/h2&gt;&lt;h3 id="strategic-automation"&gt;Strategic Automation
+&lt;/h3&gt;&lt;p&gt;Not everything should be automated. Focus on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;High-value regression tests&lt;/li&gt;
+&lt;li&gt;Stable APIs and core logic&lt;/li&gt;
+&lt;li&gt;Repetitive or error-prone workflows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Avoid over-automating fast-changing UIs or low-impact flows.&lt;/p&gt;
+&lt;h3 id="integrated-cicd-pipelines"&gt;Integrated CI/CD Pipelines
+&lt;/h3&gt;&lt;p&gt;Automation is most effective when integrated with CI/CD:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unit tests&lt;/strong&gt;: Fast feedback at commit / pull request stage&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integration/API tests&lt;/strong&gt;: Validate system behavior post-merge&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UI, security, and performance tests&lt;/strong&gt;: Run selectively and periodically&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="shift-left-and-shift-right-testing"&gt;Shift-Left and Shift-Right Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Shift-Left&lt;/strong&gt;: Run tests earlier using TDD, BDD, and static analysis&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shift-Right&lt;/strong&gt;: Monitor behavior in production using canary releases and
+observability tools&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="smarter-regression-testing"&gt;Smarter Regression Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Prioritize by risk and recent changes&lt;/li&gt;
+&lt;li&gt;Run tests in parallel&lt;/li&gt;
+&lt;li&gt;Remove obsolete or flaky tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="expanding-qa-with-chaos-engineering"&gt;Expanding QA with Chaos Engineering
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Chaos Engineering&lt;/strong&gt; introduces intentional failures to validate a system’s
+resilience especially useful in &lt;strong&gt;microservice and cloud-native&lt;/strong&gt; architectures.&lt;/p&gt;
+&lt;h3 id="why-it-matters"&gt;Why It Matters
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Reveals hidden dependencies and cascading failures&lt;/li&gt;
+&lt;li&gt;Tests &lt;strong&gt;real-world readiness&lt;/strong&gt; of failovers, self-healing, and monitoring&lt;/li&gt;
+&lt;li&gt;Supports recovery planning and operational readiness&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="chaos-in-practice"&gt;Chaos in Practice
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Inject latency, kill services, or simulate network outages&lt;/li&gt;
+&lt;li&gt;Monitor the impact and improve recovery mechanisms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Scale tips&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Enterprise&lt;/strong&gt;: Automate chaos tests with tools like Gremlin or Chaos Monkey&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mid-size teams&lt;/strong&gt;: Focus on critical services&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Smaller teams&lt;/strong&gt;: Run manual chaos &amp;ldquo;game days&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Prerequisite&lt;/strong&gt;: Strong observability is essential to safely run chaos
+experiments.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-future-of-qa-ai-and-self-healing-systems"&gt;The Future of QA: AI and Self-Healing Systems
+&lt;/h2&gt;&lt;p&gt;AI is revolutionizing QA by improving test generation, reducing maintenance, and
+predicting risk.&lt;/p&gt;
+&lt;h3 id="ai-powered-testing"&gt;AI-Powered Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Generate tests from code, requirements, or user behavior&lt;/li&gt;
+&lt;li&gt;Use visual testing, autonomous exploration, and differential comparison&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="self-healing-automation"&gt;Self-Healing Automation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Automatically adapts to UI or API changes&lt;/li&gt;
+&lt;li&gt;Fixes or flags broken tests using machine learning&lt;/li&gt;
+&lt;li&gt;Reduces maintenance by up to 70%&lt;/li&gt;
+&lt;li&gt;Tools like &lt;a class="link" href="https://www.browser-use.com" target="_blank" rel="noopener"
+&gt;browser-use&lt;/a&gt; exemplify adaptive,
+intent-based testing approaches.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="predictive-quality-analytics"&gt;Predictive Quality Analytics
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Analyze test data, code changes, and defect history&lt;/li&gt;
+&lt;li&gt;Predict high-risk changes and prioritize testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="the-human-ai-combo"&gt;The Human-AI Combo
+&lt;/h3&gt;&lt;p&gt;While AI offers speed and coverage, &lt;strong&gt;human testers&lt;/strong&gt; provide creativity,
+intuition, and ethical judgment.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The winning QA formula: Human strategy + AI efficiency&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Quality assurance is no longer an isolated phase it&amp;rsquo;s a strategic enabler of
+software success. When QA is involved from day one, it drives better
+requirements, stronger architectures, faster feedback, and resilient systems.&lt;/p&gt;
+&lt;p&gt;Modern QA is &lt;strong&gt;technical, collaborative, and forward-thinking&lt;/strong&gt;, embracing tools
+like automation, chaos testing, and AI to meet the demands of today’s software
+landscape.&lt;/p&gt;
+&lt;p&gt;Organizations that prioritize QA early, invest in skilled engineers, and align
+quality with business goals won’t just ship faster they’ll ship better.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Quality is not an act, it is a habit.&amp;quot; – Aristotle&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Testing in Production: Risks, Benefits, and Best Practices</title><link>https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/</link><pubDate>Thu, 13 Feb 2025 10:39:00 +0200</pubDate><guid>https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/</guid><description>&lt;img src="https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/prod_testing_img.png" alt="Featured image of post Testing in Production: Risks, Benefits, and Best Practices" /&gt;&lt;p&gt;Testing in production has long been seen as risky, often causing debates among developers, testers, and stakeholders.
+But in today&amp;rsquo;s fast-paced tech world, it&amp;rsquo;s becoming more common. Testing in production does not mean skipping tests in
+lower environments and solely relying on production testing. It simply means that after thorough testing in staging and
+other pre-production environments, we continue to validate in production to ensure real-world reliability and
+performance.&lt;/p&gt;
+&lt;h2 id="understanding-testing-in-production"&gt;Understanding Testing in Production
+&lt;/h2&gt;&lt;p&gt;Production testing means running tests in a live environment. While staging and development environments try to mimic
+production, they often fall short. Testing in production helps bridge this gap, ensuring that applications work as
+expected under real conditions.&lt;/p&gt;
+&lt;h2 id="when-production-testing-is-crucial"&gt;When Production Testing is Crucial
+&lt;/h2&gt;&lt;p&gt;Sometimes, testing in lower environments is not enough. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Third-Party Dependencies&lt;/strong&gt;: Some services, like external APIs, behave differently in production than in staging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Real User Load&lt;/strong&gt;: Performance and scalability issues only become clear when real users interact with the system.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Complex Microservices&lt;/strong&gt;: Staging environments often lack the full set of dependencies that exist in production.
+If the QA team skips even basic manual smoke tests in production, there&amp;rsquo;s a risk of blindly promoting changes that could
+lead to critical failures. Production validation acts as a final safeguard, helping to catch unforeseen issues that
+might not surface in lower environments due to differences in data, traffic patterns, or infrastructure nuances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="risks-of-performing-tests-in-production-and-mitigation-strategies"&gt;Risks of Performing Tests in Production and Mitigation Strategies
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Risk&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Mitigation Strategy&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Unintended User Impact&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Test actions might trigger unintended user-visible changes, such as notifications, emails, or altered UI states.&lt;/td&gt;
+&lt;td&gt;Use test accounts and feature flags, exclude real users from test scenarios, and monitor user-facing effects.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Data Corruption&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Test executions could modify or delete real production data, impacting reporting and business operations.&lt;/td&gt;
+&lt;td&gt;Implement strict data isolation, use synthetic or readonly test data, and ensure proper rollback mechanisms.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Performance Degradation&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Automated or manual tests might introduce additional load, slowing down the system for real users.&lt;/td&gt;
+&lt;td&gt;Schedule tests during low-traffic periods, monitor system load, and set rate limits on test executions.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Security Risks&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Test data or scripts might unintentionally expose sensitive information or trigger security vulnerabilities.&lt;/td&gt;
+&lt;td&gt;Follow security best practices, sanitize test data, and use proper authentication and access controls for testing.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;False Positives/Negatives&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Differences between test and real user behavior might lead to misleading test results, causing unnecessary rollbacks or missed issues.&lt;/td&gt;
+&lt;td&gt;Use A/B testing, shadow testing, and compare test results with historical production data.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="benefits-of-testing-in-production"&gt;Benefits of Testing in Production
+&lt;/h2&gt;&lt;p&gt;Despite its risks, production testing has major benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Real-World Validation&lt;/strong&gt;: Captures real interactions that can&amp;rsquo;t be replicated in lower environments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Early Bug Detection&lt;/strong&gt;: Finds hidden issues before they impact all users.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Better Performance Insights&lt;/strong&gt;: Ensures scalability by testing under real traffic conditions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data-Driven Decisions&lt;/strong&gt;: Enables A/B testing and feature comparison.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="real-world-examples-where-testing-in-production-was-essential"&gt;Real World Examples where Testing in Production was Essential
+&lt;/h2&gt;&lt;p&gt;Testing in production environments can uncover issues that might not surface during pre-production testing. Here are two
+real-world scenarios illustrating this:&lt;/p&gt;
+&lt;h3 id="mobile-app-crashes-due-to-network-variability"&gt;Mobile App Crashes Due to Network Variability
+&lt;/h3&gt;&lt;p&gt;A political campaign&amp;rsquo;s mobile app, &amp;ldquo;Campaign Sidekick,&amp;rdquo; experienced significant issues during field operations. The app,
+designed to track canvassers, relied on high-speed internet connectivity. In rural areas with slow or unreliable
+internet, the app struggled to function properly, leading to data upload failures and task reassignment glitches. This
+resulted in wasted efforts and incomplete voter contact. The issues were exacerbated by the app&amp;rsquo;s inability to operate
+effectively offline, highlighting the importance of testing under diverse real-world conditions.
+&lt;a class="link" href="https://www.tothenew.com/blog/how-network-variability-impacts-mobile-applications" target="_blank" rel="noopener"
+&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="windows-blue-screen-of-death-bsod-from-faulty-update"&gt;Windows Blue Screen of Death (BSOD) from Faulty Update
+&lt;/h3&gt;&lt;p&gt;In August 2014, Microsoft released a security update (MS14-045) intended to address vulnerabilities in the Windows
+kernel. However, the update inadvertently caused some systems to crash, displaying the &amp;ldquo;Blue Screen of Death&amp;rdquo; (BSOD).
+This issue was traced back to a faulty patch that had not been adequately tested in production environments. The
+incident underscores the critical need for thorough testing of updates in production to prevent system instability and
+data loss. &lt;a class="link" href="https://testrigor.com/blog/microsofts-blue-screen-of-death/" target="_blank" rel="noopener"
+&gt;source&lt;/a&gt;
+These examples highlight the importance of testing in production to identify issues that may not be evident in
+controlled testing environments. Implementing robust testing protocols and monitoring systems can help mitigate such
+risks.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Testing in production is no longer a reckless practice, it’s a necessity in modern software development. When done
+right, it helps catch real-world issues early, improves software quality, and enhances user experience. However, it
+requires the right tools, best practices, and a well-prepared team.
+By combining automation, monitoring, and feature flags, companies can safely test in production and deliver high-quality
+software with confidence.&lt;/p&gt;</description></item><item><title>ZeroTier Travel VPN</title><link>https://sahraoui-it.com/p/zerotier-travel-vpn/</link><pubDate>Sun, 09 Feb 2025 14:00:00 +0200</pubDate><guid>https://sahraoui-it.com/p/zerotier-travel-vpn/</guid><description>&lt;img src="https://sahraoui-it.com/p/zerotier-travel-vpn/zerotier.png" alt="Featured image of post ZeroTier Travel VPN" /&gt;&lt;p&gt;In this tutorial, we&amp;rsquo;ll guide you through creating a simple, solution to route
+all traffic through your home network using two Raspberry Pi devices and
+ZeroTier. This setup allows you to securely connect to your home network from
+anywhere and route all your internet traffic through your home network,
+providing an extra layer of security and privacy. You will also get the same IP
+address as you Home network from anywhere in the world. ZeroTier is a powerful
+tool that allows you to create secure virtual networks, enabling your devices to
+communicate as if they&amp;rsquo;re on the same local network, regardless of their
+physical locations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This tutorial is inspired by the &lt;a class="link" href="https://www.digitalocean.com/community/tutorials/getting-started-software-defined-networking-creating-vpn-zerotier-one" target="_blank" rel="noopener"
+&gt;DigitalOcean
+guide&lt;/a&gt;
+and &lt;a class="link" href="https://harivemula.com/2021/09/18/routing-all-traffic-through-home-with-zerotier-on-travel/" target="_blank" rel="noopener"
+&gt;harivemula
+guide&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="prerequisites"&gt;Prerequisites
+&lt;/h2&gt;&lt;p&gt;Before we begin, ensure you have the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Two Raspberry Pi devices with Raspberry Pi OS installed and updated. (I used
+two Raspberry Pi 3 devices with Raspberry Pi OS (64-bit, Kernel version: 6.6)
+for this tutorial.)&lt;/li&gt;
+&lt;li&gt;Internet connectivity for both Raspberry Pi devices.&lt;/li&gt;
+&lt;li&gt;A ZeroTier account. If you don&amp;rsquo;t have one, you can create it for free at
+&lt;a class="link" href="https://my.zerotier.com/" target="_blank" rel="noopener"
+&gt;ZeroTier Central&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="overview-of-the-architecture"&gt;Overview of the Architecture
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/zerotier-travel-vpn/vpn_architecture.png"
+width="1143"
+height="1141"
+srcset="https://sahraoui-it.com/p/zerotier-travel-vpn/vpn_architecture_hu_fd69493b43d0668e.png 480w, https://sahraoui-it.com/p/zerotier-travel-vpn/vpn_architecture_hu_b9802301b03cf16e.png 1024w"
+loading="lazy"
+alt="Architecture"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+&gt;&lt;/p&gt;
+&lt;h2 id="step-1-set-up-a-zerotier-network"&gt;Step 1: Set Up a ZeroTier Network
+&lt;/h2&gt;&lt;h3 id="create-a-zerotier-account"&gt;Create a ZeroTier Account
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Visit &lt;a class="link" href="https://my.zerotier.com/" target="_blank" rel="noopener"
+&gt;ZeroTier Central&lt;/a&gt; and sign up for a free
+account.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="create-a-new-network"&gt;Create a New Network
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Once logged in, click on &amp;ldquo;Create A Network.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;A new network will be created, and you&amp;rsquo;ll be provided with a unique Network
+ID. Note this ID, as you&amp;rsquo;ll need it later.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="configure-the-network"&gt;Configure the Network
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Click on your newly created network to access its settings.&lt;/li&gt;
+&lt;li&gt;Here, you can set a name for your network and adjust other settings as
+needed.&lt;/li&gt;
+&lt;li&gt;Ensure that &amp;ldquo;Private&amp;rdquo; is selected under &amp;ldquo;Access Control&amp;rdquo; to keep your network
+secure.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-2-install-zerotier-on-the-raspberry-pi-devices"&gt;Step 2: Install ZeroTier on the Raspberry Pi Devices
+&lt;/h2&gt;&lt;p&gt;Perform the following steps on both Raspberry Pi devices.&lt;/p&gt;
+&lt;h3 id="install-needed-packages"&gt;Install needed packages
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Install the ZeroTier repository and its GPG key:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg &lt;span class="p"&gt;|&lt;/span&gt; gpg --dearmor &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /usr/share/keyrings/zerotierone-archive-keyring.gpg &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;RELEASE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;lsb_release -cs&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;deb [signed-by=/usr/share/keyrings/zerotierone-archive-keyring.gpg] http://download.zerotier.com/debian/&lt;/span&gt;&lt;span class="nv"&gt;$RELEASE&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$RELEASE&lt;/span&gt;&lt;span class="s2"&gt; main&amp;#34;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/zerotier.list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install -y zerotier-one
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Verify the Installation:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli status
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You should see an output indicating that ZeroTier is online.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install additional packages:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install dnsmasq hostapd iptables dhcpcd5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;dnsmasq: A lightweight DNS and DHCP server.&lt;/p&gt;
+&lt;p&gt;iptables: A tool for configuring the Linux kernel firewall.&lt;/p&gt;
+&lt;p&gt;hostapd: A user space daemon for access point and authentication servers.
+(Only needed for the Travel Raspberry Pi for setting up a Wi-Fi access point)&lt;/p&gt;
+&lt;p&gt;dhcpcd5: A DHCP (Dynamic Host Configuration Protocol Client Daemon) client
+and server. (Only needed for the Travel Raspberry Pi for setting up a static
+IP address)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-3-join-your-zerotier-network"&gt;Step 3: Join your ZeroTier Network
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Run the following command on each Raspberry Pi:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli join &lt;span class="o"&gt;[&lt;/span&gt;Your_Network_ID&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Replace &lt;code&gt;[Your_Network_ID]&lt;/code&gt; with the Network ID you noted earlier.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Authorize the Devices:&lt;/p&gt;
+&lt;p&gt;In ZeroTier Central, under your network&amp;rsquo;s settings, scroll down to the
+&amp;ldquo;Members&amp;rdquo; section.&lt;/p&gt;
+&lt;p&gt;You should see the Raspberry Pi devices listed as new devices. Check the
+&amp;ldquo;Auth?&amp;rdquo; box next to each device to authorize them on the network and click
+&amp;ldquo;Authorize&amp;rdquo; button.&lt;/p&gt;
+&lt;p&gt;You can also rename the devices to make them easily identifiable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Verify Connectivity:&lt;/p&gt;
+&lt;p&gt;On each Raspberry Pi, list the networks to confirm they&amp;rsquo;re connected:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli listnetworks
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You should see your network listed with the status &amp;ldquo;OK.&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-4-test-the-vpn-connection"&gt;Step 4: Test the VPN Connection
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Obtain the ZeroTier IP Addresses: In ZeroTier Central, under the &amp;ldquo;Members&amp;rdquo;
+section, note the managed IP addresses assigned to each Raspberry Pi. If no
+IP address is assigned automatically, you can assign one manually. In this
+tutorial, we&amp;rsquo;ll use the ZeroTier IP addresses &lt;code&gt;192.168.191.99&lt;/code&gt; for the Travel
+Raspberry Pi and &lt;code&gt;192.168.191.134&lt;/code&gt; for the Home Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/zerotier_configuration.png"
+loading="lazy"
+alt="ZeroTier Configuration"
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Test Connectivity: You can join the same network on your local machine using
+the ZeroTier client and ping the Raspberry Pi devices to verify connectivity.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ping &lt;span class="o"&gt;[&lt;/span&gt;ZeroTier_IP_of_Raspberry_Pi&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You should receive responses, indicating a successful VPN connection.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-5-configure-home-raspberry-pi"&gt;Step 5: Configure Home Raspberry Pi
+&lt;/h2&gt;&lt;p&gt;To configure the home Raspberry Pi to route all traffic through it, follow these
+steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Enable IP Forwarding:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the sysctl configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/sysctl.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Uncomment or add the following line to enable IP forwarding:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;net.ipv4.ip_forward=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;net.ipv4.conf.all.rp_filter=2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apply the changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo sysctl -p
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;dnsmasq&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;dnsmasq&lt;/code&gt; configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/dnsmasq.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following line to configure the DNS server:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;server=192.168.1.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;rc.local&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;rc.local&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/rc.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines before the &lt;code&gt;exit 0&lt;/code&gt; line to join the ZeroTier
+network and set up NAT:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli join [Your_Network_ID]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo iptables -A FORWARD -i ztc3qulcfx -o eth0 -j ACCEPT
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;PS: The Home Raspberry Pi may also be connected to the internet via Wi-Fi.
+In this case, replace &lt;code&gt;eth0&lt;/code&gt; with the interface name of the internet
+connection (e.g. &lt;code&gt;wlan0&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make &lt;code&gt;rc.local&lt;/code&gt; file executable:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod +x /etc/rc.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure ZeroTier Network Settings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the ZeroTier network configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /var/lib/zerotier-one/networks.d/&lt;span class="o"&gt;[&lt;/span&gt;Your_Network_ID&lt;span class="o"&gt;]&lt;/span&gt;.local.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to allow managed routes and global traffic:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowManaged=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowGlobal=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowDefault=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowDNS=0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot the Raspberry Pi:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot the Raspberry Pi to apply all changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-6-configure-travel-raspberry-pi"&gt;Step 6: Configure Travel Raspberry Pi
+&lt;/h2&gt;&lt;p&gt;This Raspberry Pi should be connected to the internet via Ethernet and will act
+as a Wi-Fi access point for other devices. All traffic from the Wi-Fi clients
+will be routed through the ZeroTier network and the Home Raspberry Pi. PS: If
+you want to connect the Travel Raspberry Pi to the internet via Wi-Fi, you need
+an additional USB Wi-Fi adapter. (not covered in this tutorial) To configure the
+Travel Raspberry Pi, follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Configure Static IP Address:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the DHCP client configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/dhcpcd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to set a static IP address for the &lt;code&gt;wlan0&lt;/code&gt;
+interface:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;interface wlan0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;static ip_address=192.168.1.1/24
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nohook wpa_supplicant
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;dnsmasq&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;dnsmasq&lt;/code&gt; configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/dnsmasq.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to configure DHCP and DNS settings:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;interface=wlan0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;server=8.8.8.8
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;server=8.8.4.4
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;dhcp-range=192.168.1.2,192.168.1.200,255.255.255.0,24h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enable wlan0:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ensure wlan0 is unblocked:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo rfkill unblock wlan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ifconfig wlan0 up
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;hostapd&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;hostapd&lt;/code&gt; configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/hostapd/hostapd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to configure the Wi-Fi access point:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;country_code=DE
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;interface=wlan0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssid=TESTWLAN
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;channel=13
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;auth_algs=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wpa=2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wpa_passphrase=[passphrase]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wpa_key_mgmt=WPA-PSK
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wpa_pairwise=TKIP CCMP
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rsn_pairwise=CCMP
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Change [passphrase] with your own password for the Wi-Fi access point. The
+Wi-Fi access point name used here is &amp;ldquo;TESTWLAN&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set the correct permissions for the configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod &lt;span class="m"&gt;600&lt;/span&gt; /etc/hostapd/hostapd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Unmask, start and enable &lt;code&gt;hostapd&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl unmask hostapd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start hostapd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; hostapd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure hostapd to run as a background service:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/default/hostapd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Add following lines:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;RUN_DAEMON=yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DAEMON_CONF=&amp;#34;/etc/hostapd/hostapd.conf&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enable IP Forwarding:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the sysctl configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/sysctl.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Uncomment or add the following line to enable IP forwarding:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;net.ipv4.ip_forward=1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apply the changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo sysctl -p
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Test that the Wi-Fi access point can be enabled:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run following command&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo hostapd /etc/hostapd/hostapd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure &lt;code&gt;rc.local&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;rc.local&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/rc.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines before the &lt;code&gt;exit 0&lt;/code&gt; line to join the ZeroTier
+network and start necessary services on boot:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo rfkill unblock wlan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ifconfig wlan0 up
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli join [Your_Network_ID]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start dhcpcd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo iptables -t nat -A POSTROUTING -o ztc3qulcfx -j MASQUERADE
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo hostapd /etc/hostapd/hostapd.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;PS: Replace &lt;code&gt;ztc3qulcfx&lt;/code&gt; with the interface name of the ZeroTier network.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make &lt;code&gt;rc.local&lt;/code&gt; file executable:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod +x /etc/rc.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configure ZeroTier Network Settings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open the ZeroTier network configuration file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /var/lib/zerotier-one/networks.d/&lt;span class="o"&gt;[&lt;/span&gt;Your_Network_ID&lt;span class="o"&gt;]&lt;/span&gt;.local.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following lines to allow managed routes and global traffic:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-plaintext" data-lang="plaintext"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowManaged=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowGlobal=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowDefault=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;allowDNS=0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot the Raspberry Pi:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reboot the Raspberry Pi to apply all changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="step-7-configure-zerotier-managed-routes"&gt;Step 7: Configure ZeroTier Managed Routes
+&lt;/h2&gt;&lt;p&gt;You should now configure the ZeroTier managed routes to ensure that traffic
+is routed correctly between the Raspberry Pi devices. Following is my
+ZeroTier managed routes configuration:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/zerotier-travel-vpn/zerotier_managed_routes.png"
+width="471"
+height="142"
+srcset="https://sahraoui-it.com/p/zerotier-travel-vpn/zerotier_managed_routes_hu_a0cf194f2576c989.png 480w, https://sahraoui-it.com/p/zerotier-travel-vpn/zerotier_managed_routes_hu_f14a424714ee11e.png 1024w"
+loading="lazy"
+alt="ZeroTier Managed Routes"
+class="gallery-image"
+data-flex-grow="331"
+data-flex-basis="796px"
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The IP address &lt;code&gt;192.168.191.134&lt;/code&gt; is the ZeroTier IP address of the Travel
+Raspberry PI.&lt;/li&gt;
+&lt;li&gt;192.168.191.0/24 (LAN) is the ZeroTier server’s network.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="step-8-test-the-vpn-connection"&gt;Step 8: Test the VPN connection
+&lt;/h2&gt;&lt;p&gt;To test the VPN connection, connect to the Wi-Fi access point of the Travel
+Raspberry Pi and try to access the internet. You should see that all traffic
+is routed through the Home Raspberry Pi. You can verify this by checking your
+public IP address, which should match the public IP address of the Home
+Raspberry Pi.&lt;/p&gt;
+&lt;h2 id="additional-considerations"&gt;Additional Considerations
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Security:&lt;/strong&gt; Ensure that you have strong passwords and firewall rules in
+place to secure your network.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Performance:&lt;/strong&gt; The performance of your VPN may vary based on the Raspberry
+Pi model and network conditions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Troubleshooting:&lt;/strong&gt; If you encounter issues, check the logs on both Raspberry
+Pi devices for error messages and investigate accordingly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Desabling the VPN:&lt;/strong&gt; If you want to disable the VPN, you can simply stop the
+ZeroTier service on both Raspberry Pi devices:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl stop zerotier-one
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;You can also set allowDefault back to 0:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo zerotier-cli &lt;span class="nb"&gt;set&lt;/span&gt; NetworkID &lt;span class="nv"&gt;allowDefault&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevOps on Sahraoui - Quality Engineering &amp; DevOps Consulting</title><link>https://sahraoui-it.com/tags/devops/</link><description>Recent content in DevOps on Sahraoui - Quality Engineering &amp; DevOps Consulting</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Cherif Sahraoui / Sahraoui - Consulting</copyright><lastBuildDate>Tue, 15 Apr 2025 11:00:00 +0200</lastBuildDate><atom:link href="https://sahraoui-it.com/tags/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>Beyond Testing: The QA Mindset for Building Better Software</title><link>https://sahraoui-it.com/p/qa-good-practices/</link><pubDate>Tue, 15 Apr 2025 11:00:00 +0200</pubDate><guid>https://sahraoui-it.com/p/qa-good-practices/</guid><description>&lt;img src="https://sahraoui-it.com/p/qa-good-practices/quality_quote.png" alt="Featured image of post Beyond Testing: The QA Mindset for Building Better Software" /&gt;&lt;h2 id="introduction"&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;In modern software development, &lt;strong&gt;Quality Assurance (QA)&lt;/strong&gt; has evolved into a
+strategic practice embedded across the entire software lifecycle from initial
+requirements to production monitoring. Gone are the days when QA was a
+late-stage activity; today, quality must be designed in from day one.&lt;/p&gt;
+&lt;p&gt;Defects found late are &lt;strong&gt;exponentially more costly&lt;/strong&gt; and disruptive. Still, many
+teams underestimate the value of integrating QA early, missing out on benefits
+like better testability, risk mitigation, and smarter design decisions. In
+fast-paced &lt;strong&gt;DevOps and cloud-native environments&lt;/strong&gt;, QA must move beyond testing
+and become a key driver of engineering excellence.&lt;/p&gt;
+&lt;p&gt;This article explores why early QA involvement matters, busts common myths, and
+offers practical strategies from test derivation to automation, chaos
+engineering, and the future of AI-driven testing.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/qa-good-practices/qa_phases.png"
+width="1600"
+height="286"
+srcset="https://sahraoui-it.com/p/qa-good-practices/qa_phases_hu_ada027316bde1dc0.png 480w, https://sahraoui-it.com/p/qa-good-practices/qa_phases_hu_63bd24be3c7b3263.png 1024w"
+loading="lazy"
+alt="Early QA Integration Points in the Software Development
+Lifecycle"
+class="gallery-image"
+data-flex-grow="559"
+data-flex-basis="1342px"
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="why-qa-from-day-one"&gt;Why QA from Day One?
+&lt;/h2&gt;&lt;p&gt;QA isn&amp;rsquo;t just about testing it&amp;rsquo;s about &lt;strong&gt;building quality in from the start&lt;/strong&gt;.
+Involving QA engineers early ensures:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Clearer requirements&lt;/strong&gt;&lt;br&gt;
+QA clarifies ambiguities and ensures specifications are testable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Better architecture and design&lt;/strong&gt;&lt;br&gt;
+QA promotes maintainable, testable systems with patterns like feature flags,
+canary releases, and observability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Risk identification&lt;/strong&gt;&lt;br&gt;
+QA spots potential issues in performance, data flows, and security before they
+become blockers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reduced costs&lt;/strong&gt;&lt;br&gt;
+Catching defects early reduces rework, testing cycles, and delivery delays
+delivering strong ROI (Return on Investment).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/qa-good-practices/cost_of_defects.png"
+width="1250"
+height="579"
+srcset="https://sahraoui-it.com/p/qa-good-practices/cost_of_defects_hu_6c2d347e69c3e463.png 480w, https://sahraoui-it.com/p/qa-good-practices/cost_of_defects_hu_cc64bd7c610b2961.png 1024w"
+loading="lazy"
+alt="Cost of Defects at Different Stages of Development"
+class="gallery-image"
+data-flex-grow="215"
+data-flex-basis="518px"
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="common-misconceptions-about-qa"&gt;Common Misconceptions About QA
+&lt;/h2&gt;&lt;h3 id="qa-is-just-about-testing"&gt;QA Is Just About Testing
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: QA involves analysis, planning, risk assessment, and continuous
+improvement.&lt;/p&gt;
+&lt;h3 id="qa-at-the-end-is-enough"&gt;QA at the End Is Enough
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: Fixing issues late is slower and more expensive. Quality must be
+&lt;strong&gt;built-in early&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="qa-doesnt-need-technical-skills"&gt;QA Doesn’t Need Technical Skills
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: Today’s QA engineers need to understand code, APIs, CI/CD, and system
+architecture.&lt;/p&gt;
+&lt;h3 id="qa-is-a-cost-center"&gt;QA Is a Cost Center
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;False&lt;/strong&gt;: QA prevents expensive bugs, accelerates delivery, and improves
+customer satisfaction.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="empowering-qa-through-technical-proficiency"&gt;Empowering QA Through Technical Proficiency
+&lt;/h2&gt;&lt;p&gt;&lt;img src="https://sahraoui-it.com/p/qa-good-practices/qa_skills.png"
+width="800"
+height="620"
+srcset="https://sahraoui-it.com/p/qa-good-practices/qa_skills_hu_72fdd9881e3054b4.png 480w, https://sahraoui-it.com/p/qa-good-practices/qa_skills_hu_f1170c180bcbbd.png 1024w"
+loading="lazy"
+alt="Technical Profile of a Modern QA Engineer in Comparison to a traditional QA
+Engineer"
+class="gallery-image"
+data-flex-grow="129"
+data-flex-basis="309px"
+&gt;&lt;/p&gt;
+&lt;script&gt;
+let scrollPosition = 0;
+function openDialog(dialogId) {
+scrollPosition = window.scrollY;
+const dialog = document.getElementById(dialogId);
+window.scrollTo(0, 0);
+dialog.showModal();
+dialog.addEventListener('close', () =&gt; {
+window.scrollTo(0, scrollPosition);
+}, { once: true });
+}
+function closeDialog(dialogId) {
+document.getElementById(dialogId).close();
+}
+&lt;/script&gt;
+&lt;p&gt;&lt;button class="btn" onclick="openDialog('qa-skills')" style="width: 50%; display: block; margin: 0 auto;"&gt; Modern QA Engineers: Skills and Tools &lt;/button&gt; &lt;!-- markdownlint-disable MD013 --&gt;&lt;/p&gt;
+&lt;dialog id="qa-skills" onmousedown="event.target==this &amp;&amp; this.close()"&gt;
+&lt;button class="close-btn" onclick="closeDialog('qa-skills')"&gt;×&lt;/button&gt;
+&lt;h3&gt;Senior Software QA Engineer Skills (2025, 5+ Years Experience)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Test Case Design &amp; Management&lt;/strong&gt;&lt;br&gt;
+Proficient in designing clear, comprehensive, and reusable test cases derived from requirements and user stories,
+with hands-on experience using test case management tools such as TestRail, Jira Xray.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Test Automation Skills&lt;/strong&gt;&lt;br&gt;
+Ability to design, develop, and maintain automated tests to improve test coverage and efficiency.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;CI/CD Knowledge&lt;/strong&gt;&lt;br&gt;
+Understanding of Continuous Integration and Continuous Deployment pipelines to integrate testing into development workflows.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Programming Knowledge&lt;/strong&gt;&lt;br&gt;
+Ability to write and understand code for test automation, debugging, and scripting tasks.
+(e.g., Java, Python, JavaScript, Bash, etc.)
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Tools Proficiency&lt;/strong&gt;&lt;br&gt;
+Hands-on experience with modern testing tools and frameworks for web, mobile, and API testing.
+(e.g., Selenium, Appium, Postman, etc.)
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Native Cloud Testing&lt;/strong&gt;&lt;br&gt;
+Familiarity with testing in cloud-native environments, including microservices and serverless architectures.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Agile &amp; DevOps Knowledge&lt;/strong&gt;&lt;br&gt;
+Comfort working in Agile teams and aligning testing strategies with DevOps practices.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Security Testing&lt;/strong&gt;&lt;br&gt;
+Ability to identify vulnerabilities and test security aspects of applications
+(e.g., authentication, authorization, data protection).
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Performance Testing&lt;/strong&gt;&lt;br&gt;
+Skills to assess application performance under various conditions using tools like JMeter, k6, or Gatling.
+(e.g., load testing, chaos testing, etc.)
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;AI &amp; Machine Learning Integration&lt;/strong&gt;&lt;br&gt;
+Basic understanding of how AI/ML features impact testing and awareness of tools leveraging AI for test automation.
+&lt;/li&gt;&lt;br&gt;
+&lt;li&gt;&lt;strong&gt;Soft Skills&lt;/strong&gt;&lt;br&gt;
+Strong interpersonal skills to work effectively with developers, product managers, and other stakeholders.
+(e.g., communication, collaboration, and problem-solving).
+&lt;/li&gt;&lt;br&gt;
+&lt;/ul&gt;
+&lt;/dialog&gt;
+&lt;h3 id="the-role-has-evolved"&gt;The Role Has Evolved
+&lt;/h3&gt;&lt;p&gt;Modern QA engineers are &lt;strong&gt;technical contributors&lt;/strong&gt;, fluent in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Programming and scripting&lt;/li&gt;
+&lt;li&gt;Databases, APIs, and infrastructure&lt;/li&gt;
+&lt;li&gt;CI/CD pipelines and container orchestration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;They bridge development and QA, improving communication and producing
+&lt;strong&gt;high-quality, actionable bug reports&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="collaboration-improves-outcomes"&gt;Collaboration Improves Outcomes
+&lt;/h3&gt;&lt;p&gt;When QA joins early:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Developers and QA share understanding of feature goals and edge cases&lt;/li&gt;
+&lt;li&gt;QA helps design for testability and observability&lt;/li&gt;
+&lt;li&gt;Bug resolution is faster, and team morale improves&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Organizations that invest in skilled QA engineers enjoy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Robust systems&lt;/li&gt;
+&lt;li&gt;Faster development cycles&lt;/li&gt;
+&lt;li&gt;Higher quality products&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="effective-testing-strategies"&gt;Effective Testing Strategies
+&lt;/h2&gt;&lt;h3 id="beyond-requirements-based-testing"&gt;Beyond Requirements-Based Testing
+&lt;/h3&gt;&lt;p&gt;Requirements often become outdated or miss user expectations. Instead, QA should
+derive tests from &lt;strong&gt;acceptance criteria&lt;/strong&gt; and &lt;strong&gt;real user behavior&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“We were testing what we specified, not what users needed.”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="best-practices-for-test-derivation"&gt;Best Practices for Test Derivation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Use &lt;strong&gt;Given-When-Then&lt;/strong&gt; format for clarity and automation&lt;/li&gt;
+&lt;li&gt;Cover both happy paths and edge cases&lt;/li&gt;
+&lt;li&gt;Include non-functional tests (e.g., performance, security)&lt;/li&gt;
+&lt;li&gt;Collaborate with developers during test design&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;“A 30-minute conversation can save days of bug fixing.”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="balancing-test-documentation"&gt;Balancing Test Documentation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Critical paths&lt;/strong&gt;: Fully documented&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Core features&lt;/strong&gt;: Moderate detail&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edge cases&lt;/strong&gt;: Exploratory or intent-based notes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="automation-and-cicd-best-practices"&gt;Automation and CI/CD Best Practices
+&lt;/h2&gt;&lt;h3 id="strategic-automation"&gt;Strategic Automation
+&lt;/h3&gt;&lt;p&gt;Not everything should be automated. Focus on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;High-value regression tests&lt;/li&gt;
+&lt;li&gt;Stable APIs and core logic&lt;/li&gt;
+&lt;li&gt;Repetitive or error-prone workflows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Avoid over-automating fast-changing UIs or low-impact flows.&lt;/p&gt;
+&lt;h3 id="integrated-cicd-pipelines"&gt;Integrated CI/CD Pipelines
+&lt;/h3&gt;&lt;p&gt;Automation is most effective when integrated with CI/CD:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unit tests&lt;/strong&gt;: Fast feedback at commit / pull request stage&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integration/API tests&lt;/strong&gt;: Validate system behavior post-merge&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UI, security, and performance tests&lt;/strong&gt;: Run selectively and periodically&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="shift-left-and-shift-right-testing"&gt;Shift-Left and Shift-Right Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Shift-Left&lt;/strong&gt;: Run tests earlier using TDD, BDD, and static analysis&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shift-Right&lt;/strong&gt;: Monitor behavior in production using canary releases and
+observability tools&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="smarter-regression-testing"&gt;Smarter Regression Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Prioritize by risk and recent changes&lt;/li&gt;
+&lt;li&gt;Run tests in parallel&lt;/li&gt;
+&lt;li&gt;Remove obsolete or flaky tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="expanding-qa-with-chaos-engineering"&gt;Expanding QA with Chaos Engineering
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Chaos Engineering&lt;/strong&gt; introduces intentional failures to validate a system’s
+resilience especially useful in &lt;strong&gt;microservice and cloud-native&lt;/strong&gt; architectures.&lt;/p&gt;
+&lt;h3 id="why-it-matters"&gt;Why It Matters
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Reveals hidden dependencies and cascading failures&lt;/li&gt;
+&lt;li&gt;Tests &lt;strong&gt;real-world readiness&lt;/strong&gt; of failovers, self-healing, and monitoring&lt;/li&gt;
+&lt;li&gt;Supports recovery planning and operational readiness&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="chaos-in-practice"&gt;Chaos in Practice
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Inject latency, kill services, or simulate network outages&lt;/li&gt;
+&lt;li&gt;Monitor the impact and improve recovery mechanisms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Scale tips&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Enterprise&lt;/strong&gt;: Automate chaos tests with tools like Gremlin or Chaos Monkey&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mid-size teams&lt;/strong&gt;: Focus on critical services&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Smaller teams&lt;/strong&gt;: Run manual chaos &amp;ldquo;game days&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Prerequisite&lt;/strong&gt;: Strong observability is essential to safely run chaos
+experiments.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-future-of-qa-ai-and-self-healing-systems"&gt;The Future of QA: AI and Self-Healing Systems
+&lt;/h2&gt;&lt;p&gt;AI is revolutionizing QA by improving test generation, reducing maintenance, and
+predicting risk.&lt;/p&gt;
+&lt;h3 id="ai-powered-testing"&gt;AI-Powered Testing
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Generate tests from code, requirements, or user behavior&lt;/li&gt;
+&lt;li&gt;Use visual testing, autonomous exploration, and differential comparison&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="self-healing-automation"&gt;Self-Healing Automation
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Automatically adapts to UI or API changes&lt;/li&gt;
+&lt;li&gt;Fixes or flags broken tests using machine learning&lt;/li&gt;
+&lt;li&gt;Reduces maintenance by up to 70%&lt;/li&gt;
+&lt;li&gt;Tools like &lt;a class="link" href="https://www.browser-use.com" target="_blank" rel="noopener"
+&gt;browser-use&lt;/a&gt; exemplify adaptive,
+intent-based testing approaches.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="predictive-quality-analytics"&gt;Predictive Quality Analytics
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Analyze test data, code changes, and defect history&lt;/li&gt;
+&lt;li&gt;Predict high-risk changes and prioritize testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="the-human-ai-combo"&gt;The Human-AI Combo
+&lt;/h3&gt;&lt;p&gt;While AI offers speed and coverage, &lt;strong&gt;human testers&lt;/strong&gt; provide creativity,
+intuition, and ethical judgment.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;The winning QA formula: Human strategy + AI efficiency&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Quality assurance is no longer an isolated phase it&amp;rsquo;s a strategic enabler of
+software success. When QA is involved from day one, it drives better
+requirements, stronger architectures, faster feedback, and resilient systems.&lt;/p&gt;
+&lt;p&gt;Modern QA is &lt;strong&gt;technical, collaborative, and forward-thinking&lt;/strong&gt;, embracing tools
+like automation, chaos testing, and AI to meet the demands of today’s software
+landscape.&lt;/p&gt;
+&lt;p&gt;Organizations that prioritize QA early, invest in skilled engineers, and align
+quality with business goals won’t just ship faster they’ll ship better.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Quality is not an act, it is a habit.&amp;quot; – Aristotle&lt;/p&gt;
+&lt;/blockquote&gt;</description></item></channel></rss>

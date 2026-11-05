@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Testing on Sahraoui - Quality Engineering &amp; DevOps Consulting</title><link>https://sahraoui-it.com/tags/testing/</link><description>Recent content in Testing on Sahraoui - Quality Engineering &amp; DevOps Consulting</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Cherif Sahraoui / Sahraoui - Consulting</copyright><lastBuildDate>Thu, 13 Feb 2025 10:39:00 +0200</lastBuildDate><atom:link href="https://sahraoui-it.com/tags/testing/index.xml" rel="self" type="application/rss+xml"/><item><title>Testing in Production: Risks, Benefits, and Best Practices</title><link>https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/</link><pubDate>Thu, 13 Feb 2025 10:39:00 +0200</pubDate><guid>https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/</guid><description>&lt;img src="https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/prod_testing_img.png" alt="Featured image of post Testing in Production: Risks, Benefits, and Best Practices" /&gt;&lt;p&gt;Testing in production has long been seen as risky, often causing debates among developers, testers, and stakeholders.
+But in today&amp;rsquo;s fast-paced tech world, it&amp;rsquo;s becoming more common. Testing in production does not mean skipping tests in
+lower environments and solely relying on production testing. It simply means that after thorough testing in staging and
+other pre-production environments, we continue to validate in production to ensure real-world reliability and
+performance.&lt;/p&gt;
+&lt;h2 id="understanding-testing-in-production"&gt;Understanding Testing in Production
+&lt;/h2&gt;&lt;p&gt;Production testing means running tests in a live environment. While staging and development environments try to mimic
+production, they often fall short. Testing in production helps bridge this gap, ensuring that applications work as
+expected under real conditions.&lt;/p&gt;
+&lt;h2 id="when-production-testing-is-crucial"&gt;When Production Testing is Crucial
+&lt;/h2&gt;&lt;p&gt;Sometimes, testing in lower environments is not enough. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Third-Party Dependencies&lt;/strong&gt;: Some services, like external APIs, behave differently in production than in staging.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Real User Load&lt;/strong&gt;: Performance and scalability issues only become clear when real users interact with the system.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Complex Microservices&lt;/strong&gt;: Staging environments often lack the full set of dependencies that exist in production.
+If the QA team skips even basic manual smoke tests in production, there&amp;rsquo;s a risk of blindly promoting changes that could
+lead to critical failures. Production validation acts as a final safeguard, helping to catch unforeseen issues that
+might not surface in lower environments due to differences in data, traffic patterns, or infrastructure nuances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="risks-of-performing-tests-in-production-and-mitigation-strategies"&gt;Risks of Performing Tests in Production and Mitigation Strategies
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Risk&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Mitigation Strategy&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Unintended User Impact&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Test actions might trigger unintended user-visible changes, such as notifications, emails, or altered UI states.&lt;/td&gt;
+&lt;td&gt;Use test accounts and feature flags, exclude real users from test scenarios, and monitor user-facing effects.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Data Corruption&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Test executions could modify or delete real production data, impacting reporting and business operations.&lt;/td&gt;
+&lt;td&gt;Implement strict data isolation, use synthetic or readonly test data, and ensure proper rollback mechanisms.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Performance Degradation&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Automated or manual tests might introduce additional load, slowing down the system for real users.&lt;/td&gt;
+&lt;td&gt;Schedule tests during low-traffic periods, monitor system load, and set rate limits on test executions.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Security Risks&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Test data or scripts might unintentionally expose sensitive information or trigger security vulnerabilities.&lt;/td&gt;
+&lt;td&gt;Follow security best practices, sanitize test data, and use proper authentication and access controls for testing.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;False Positives/Negatives&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Differences between test and real user behavior might lead to misleading test results, causing unnecessary rollbacks or missed issues.&lt;/td&gt;
+&lt;td&gt;Use A/B testing, shadow testing, and compare test results with historical production data.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="benefits-of-testing-in-production"&gt;Benefits of Testing in Production
+&lt;/h2&gt;&lt;p&gt;Despite its risks, production testing has major benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Real-World Validation&lt;/strong&gt;: Captures real interactions that can&amp;rsquo;t be replicated in lower environments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Early Bug Detection&lt;/strong&gt;: Finds hidden issues before they impact all users.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Better Performance Insights&lt;/strong&gt;: Ensures scalability by testing under real traffic conditions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data-Driven Decisions&lt;/strong&gt;: Enables A/B testing and feature comparison.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="real-world-examples-where-testing-in-production-was-essential"&gt;Real World Examples where Testing in Production was Essential
+&lt;/h2&gt;&lt;p&gt;Testing in production environments can uncover issues that might not surface during pre-production testing. Here are two
+real-world scenarios illustrating this:&lt;/p&gt;
+&lt;h3 id="mobile-app-crashes-due-to-network-variability"&gt;Mobile App Crashes Due to Network Variability
+&lt;/h3&gt;&lt;p&gt;A political campaign&amp;rsquo;s mobile app, &amp;ldquo;Campaign Sidekick,&amp;rdquo; experienced significant issues during field operations. The app,
+designed to track canvassers, relied on high-speed internet connectivity. In rural areas with slow or unreliable
+internet, the app struggled to function properly, leading to data upload failures and task reassignment glitches. This
+resulted in wasted efforts and incomplete voter contact. The issues were exacerbated by the app&amp;rsquo;s inability to operate
+effectively offline, highlighting the importance of testing under diverse real-world conditions.
+&lt;a class="link" href="https://www.tothenew.com/blog/how-network-variability-impacts-mobile-applications" target="_blank" rel="noopener"
+&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="windows-blue-screen-of-death-bsod-from-faulty-update"&gt;Windows Blue Screen of Death (BSOD) from Faulty Update
+&lt;/h3&gt;&lt;p&gt;In August 2014, Microsoft released a security update (MS14-045) intended to address vulnerabilities in the Windows
+kernel. However, the update inadvertently caused some systems to crash, displaying the &amp;ldquo;Blue Screen of Death&amp;rdquo; (BSOD).
+This issue was traced back to a faulty patch that had not been adequately tested in production environments. The
+incident underscores the critical need for thorough testing of updates in production to prevent system instability and
+data loss. &lt;a class="link" href="https://testrigor.com/blog/microsofts-blue-screen-of-death/" target="_blank" rel="noopener"
+&gt;source&lt;/a&gt;
+These examples highlight the importance of testing in production to identify issues that may not be evident in
+controlled testing environments. Implementing robust testing protocols and monitoring systems can help mitigate such
+risks.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;Testing in production is no longer a reckless practice, it’s a necessity in modern software development. When done
+right, it helps catch real-world issues early, improves software quality, and enhances user experience. However, it
+requires the right tools, best practices, and a well-prepared team.
+By combining automation, monitoring, and feature flags, companies can safely test in production and deliver high-quality
+software with confidence.&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projekte on Sahraoui - Quality Engineering &amp; DevOps Beratung</title><link>https://sahraoui-it.com/de/projects/</link><description>Recent content in Projekte on Sahraoui - Quality Engineering &amp; DevOps Beratung</description><generator>Hugo -- gohugo.io</generator><language>de</language><copyright>Cherif Sahraoui / Sahraoui - Consulting</copyright><atom:link href="https://sahraoui-it.com/de/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>50Hertz: Cloud-Native Quality Engineering</title><link>https://sahraoui-it.com/de/projects/2024/50hz/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/de/projects/2024/50hz/</guid><description>&lt;img src="https://sahraoui-it.com/projects/2024/50hz/50hz.png" alt="Featured image of post 50Hertz: Cloud-Native Quality Engineering" /&gt;&lt;h2 id="hintergrund-des-50hertz-projekts"&gt;Hintergrund des 50Hertz Projekts
+&lt;/h2&gt;&lt;p&gt;Bis &lt;strong&gt;2032&lt;/strong&gt; strebt 50Hertz an, jährlich &lt;strong&gt;100 Prozent erneuerbare Energien&lt;/strong&gt;
+sicher in das Netz und System zu integrieren. Die digitale Transformation spielt
+dabei eine &lt;strong&gt;entscheidende Rolle&lt;/strong&gt;, um dieses ambitionierte Ziel zu erreichen.&lt;/p&gt;
+&lt;p&gt;Zur Unterstützung dieses Übergangs entwickelt 50Hertz ein &lt;strong&gt;neues
+Netzleitsystem&lt;/strong&gt;, das darauf ausgelegt ist, die Komplexitäten der Integration
+erneuerbarer Energien zu managen und die Netzstabilität zu gewährleisten.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="meine-rolle-im-50hertz-projekt"&gt;Meine Rolle im 50Hertz Projekt
+&lt;/h2&gt;&lt;p&gt;Ich arbeitete als Quality Assurance (QA) Lead für eine Produktlinie im
+50Hertz-Projekt. In enger Zusammenarbeit mit Entwicklungsingenieuren und
+Systemarchitekten verband ich Teststrategie, Automatisierung, CI/CD-Feedback und
+Kubernetes-basierte Validierung für ein kritisches Netzleitsystem.&lt;/p&gt;
+&lt;h2 id="hauptverantwortlichkeiten"&gt;Hauptverantwortlichkeiten
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Leitung von Quality-Engineering-Aktivitäten&lt;/strong&gt;, um Softwarezuverlässigkeit
+und Release-Sicherheit während des gesamten Entwicklungszyklus zu stärken.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kombination manueller und automatisierter Tests&lt;/strong&gt; in einer &lt;strong&gt;CI/CD-Umgebung&lt;/strong&gt;
+für zeitnahes Qualitätsfeedback.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validierung der Skalierbarkeit und Kompatibilität der Anwendung&lt;/strong&gt; innerhalb
+von &lt;strong&gt;Kubernetes-Clustern&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Durchführung von UI/UX-Tests&lt;/strong&gt;, um die Benutzererfahrung zu optimieren und
+die Benutzerfreundlichkeit zu verbessern.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Dieses Projekt zeigte, wie hands-on QA-Leadership, Testautomatisierung und
+Cloud-native Validierung die Robustheit von Anwendungen für die &lt;strong&gt;Integration
+von 100% erneuerbaren Energien&lt;/strong&gt; in das Netz stärken können.&lt;/p&gt;</description></item><item><title>Bankensektor: Testautomatisierung &amp; Compliance-Qualität</title><link>https://sahraoui-it.com/de/projects/2024/banking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/de/projects/2024/banking/</guid><description>&lt;h2 id="hintergrund-des-bankensektor-projekts"&gt;Hintergrund des Bankensektor-Projekts
+&lt;/h2&gt;&lt;p&gt;Im Rahmen eines Projekts für eine der größten Banken Deutschlands wurde ein
+besonderes Augenmerk auf die Qualitätssicherung und Automatisierung im
+Testprozess gelegt. Ziel war es, regulatorische Anforderungen effizient zu
+erfüllen und gleichzeitig die Softwarequalität im Bereich der
+Dokumentenerstellung zu erhöhen.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="meine-rolle-im-bankensektor-projekt"&gt;Meine Rolle im Bankensektor-Projekt
+&lt;/h2&gt;&lt;p&gt;In meiner Funktion als Testmanager leitete ich abteilungsübergreifende
+Initiativen zur Testautomatisierung und verantwortete die Testdatenaufbereitung
+für die Erstellung und Validierung revisionsrelevanter Dokumente. Die Rolle
+verband Qualitätsführung mit praktischer Automatisierung und Delivery-Risikomanagement
+in einer regulierten Umgebung.&lt;/p&gt;
+&lt;h2 id="hauptaufgaben"&gt;Hauptaufgaben
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Leitung von Testautomatisierungs-Initiativen&lt;/strong&gt;, um den manuellen Aufwand zu
+reduzieren und die Effizienz zu steigern.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Koordination der Testdatenbereitstellung&lt;/strong&gt; für die automatisierte Erstellung
+und Prüfung revisionsrelevanter Dokumente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Optimierung der Testprozesse und Erweiterung der Testabdeckung&lt;/strong&gt;, um Risiken
+frühzeitig zu identifizieren und Qualitätskontrollen wiederholbar zu machen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Abstimmung abteilungsübergreifender Stakeholder&lt;/strong&gt; auf zuverlässige
+Qualitätspraktiken für revisionsrelevante Delivery.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Durch dieses Projekt trug ich dazu bei, Qualitätssicherung im stark regulierten
+Bankenumfeld effizienter, wiederholbarer und zuverlässiger zu machen.&lt;/p&gt;</description></item><item><title>Quorivell: Lokale Entscheidungen mit On-Device-KI</title><link>https://sahraoui-it.com/de/projects/2026/quorivell/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/de/projects/2026/quorivell/</guid><description>&lt;img src="https://sahraoui-it.com/projects/2026/quorivell/quorivell.png" alt="Featured image of post Quorivell: Lokale Entscheidungen mit On-Device-KI" /&gt;&lt;h2 id="hobbyprojekt"&gt;Hobbyprojekt
+&lt;/h2&gt;&lt;p&gt;Beruflich arbeite ich als freiberuflicher DevOps- und Quality-Engineering-Berater.
+&lt;strong&gt;Quorivell&lt;/strong&gt; ist mein persönliches Flutter-Nebenprojekt: eine private, lokal-first App,
+die unübersichtliche Gesprächstexte in prüfbare Entscheidungen und Commitments verwandelt
+— mit Evidenz, die auf dem Gerät bleibt.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Claim:&lt;/strong&gt; Entscheidungen mit Evidenz — auf Ihrem Gerät.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="was-die-app-kann"&gt;Was die App kann
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Erfassen&lt;/strong&gt; von Gesprächstext als Quelldatensätze&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Extrahieren&lt;/strong&gt; von Kandidaten on-device mit lokalem GGUF-Modell (llama.cpp)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prüfen&lt;/strong&gt; vor dem Speichern — nichts schreibt automatisch ins Ledger&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ledger&lt;/strong&gt; für Entscheidungen, Commitments, Owner und Fälligkeiten&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chat&lt;/strong&gt; in freien Threads auf demselben lokalen Modell&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sprachen:&lt;/strong&gt; Englisch, Deutsch und Arabisch (Material 3)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Privatsphäre ist das Produkt: Drift-SQLite auf dem Gerät ist kanonisch, Inferenz bleibt
+lokal, und Quellinhalte verlassen das Telefon nicht ohne einen späteren, expliziten
+Remote-Flow.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="stack-kurz"&gt;Stack (kurz)
+&lt;/h2&gt;&lt;p&gt;Flutter · Riverpod · GoRouter · Drift · Freezed · llama.cpp (&lt;code&gt;llama_cpp_dart&lt;/code&gt;) ·
+Firebase-Auth-Grundlage (keine Cloud-KI für Capture/Extract)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="links"&gt;Links
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a class="link" href="https://github.com/cherifsahraoui/Quorivell" target="_blank" rel="noopener"
+&gt;cherifsahraoui/Quorivell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google Play (geschlossener Test):&lt;/strong&gt; &lt;a class="link" href="https://play.google.com/store/apps/details?id=com.quorivell.app" target="_blank" rel="noopener"
+&gt;com.quorivell.app&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In aktiver Entwicklung — mit erwartbaren Kanten, besonders bei großen Modell-Downloads
+auf dem Gerät.&lt;/p&gt;</description></item><item><title>Volkswagen Infotainment: Integration &amp; Testautomatisierung</title><link>https://sahraoui-it.com/de/projects/2021/vw_infotainment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/de/projects/2021/vw_infotainment/</guid><description>&lt;img src="https://sahraoui-it.com/projects/2021/vw_infotainment/volkswagen_infotainment.png" alt="Featured image of post Volkswagen Infotainment: Integration &amp; Testautomatisierung" /&gt;&lt;h2 id="hintergrund-des-volkswagen-infotainment-projekts"&gt;Hintergrund des Volkswagen Infotainment Projekts
+&lt;/h2&gt;&lt;p&gt;Volkswagen Infotainment GmbH, mit Sitz in Bochum, Deutschland, ist
+verantwortlich für die Entwicklung fortschrittlicher Infotainment-Systeme, die
+das Fahrerlebnis verbessern. Diese Systeme integrieren modernste Technologien,
+um nahtlose Konnektivität, Unterhaltung und Navigationsfunktionen für die
+Fahrzeugpalette von Volkswagen bereitzustellen.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="meine-rolle-im-volkswagen-infotainment-projekt"&gt;Meine Rolle im Volkswagen Infotainment Projekt
+&lt;/h2&gt;&lt;p&gt;Von Juni 2021 bis August 2022 arbeitete ich als Systemintegrations- und
+Testingenieur im Volkswagen Infotainment Projekt. In dieser Rolle arbeitete ich
+eng mit internen und externen Partnern, darunter Volkswagen und Continental,
+zusammen, um komplexe Embedded- und Cloud-vernetzte Softwaresysteme zu
+integrieren, zu verifizieren und zuverlässig bereitzustellen.&lt;/p&gt;
+&lt;h2 id="hauptaufgaben"&gt;Hauptaufgaben
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Analyse von Anforderungen&lt;/strong&gt; und Definition von Integrations- und
+Testkriterien, um Testbarkeit und Integrationsrisiken frühzeitig sichtbar zu
+machen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Entwicklung und Implementierung&lt;/strong&gt; von Software-, Integrations- und
+Systemtests mit Schwerpunkt auf &lt;strong&gt;Testautomatisierung&lt;/strong&gt; und zuverlässigem
+Regression-Feedback.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Entwicklung von CI-Workflows und Integrationspipelines&lt;/strong&gt; für komplexe
+Embedded- und Cloud-vernetzte Systeme.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Zusammenarbeit mit internen und externen Partnern&lt;/strong&gt; (Volkswagen,
+Continental), um eine reibungslose Integration sicherzustellen und Probleme zu
+lösen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Verfolgung von Problemen&lt;/strong&gt; und Fortschritten in &lt;strong&gt;Jira&lt;/strong&gt;, um eine
+zeitgerechte Lösung zu gewährleisten.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Diese Arbeit verband System Engineering, Testautomatisierung und CI-gestütztes
+Feedback, um die zuverlässige Bereitstellung fortschrittlicher
+Infotainment-Technologien zu unterstützen.&lt;/p&gt;</description></item></channel></rss>

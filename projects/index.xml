@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Sahraoui - Quality Engineering &amp; DevOps Consulting</title><link>https://sahraoui-it.com/projects/</link><description>Recent content in Projects on Sahraoui - Quality Engineering &amp; DevOps Consulting</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Cherif Sahraoui / Sahraoui - Consulting</copyright><atom:link href="https://sahraoui-it.com/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>50Hertz: Cloud-Native Quality Engineering</title><link>https://sahraoui-it.com/projects/2024/50hz/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/projects/2024/50hz/</guid><description>&lt;img src="https://sahraoui-it.com/projects/2024/50hz/50hz.png" alt="Featured image of post 50Hertz: Cloud-Native Quality Engineering" /&gt;&lt;h2 id="50hertz-project-background-summary"&gt;50Hertz Project Background Summary
+&lt;/h2&gt;&lt;p&gt;By &lt;strong&gt;2032&lt;/strong&gt;, 50Hertz aims to integrate an annual average of &lt;strong&gt;100 percent
+renewable energies&lt;/strong&gt; safely into the grid and the system. Digital transformation
+plays a &lt;strong&gt;decisive role&lt;/strong&gt; in achieving this ambitious goal.&lt;/p&gt;
+&lt;p&gt;To support this transition, 50Hertz is developing a &lt;strong&gt;new grid control system&lt;/strong&gt;
+designed to manage the complexities of renewable energy integration and ensure
+grid stability.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="my-role-in-the-50hertz-project"&gt;My Role in the 50Hertz Project
+&lt;/h2&gt;&lt;p&gt;I worked as the Quality Assurance (QA) Lead for one product line in the
+50Hertz project. Working closely with development engineers and system
+architects, I connected test strategy, automation, CI/CD feedback, and
+Kubernetes-based validation for a critical grid-control product.&lt;/p&gt;
+&lt;h2 id="key-responsibilities"&gt;Key Responsibilities
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Led quality engineering efforts&lt;/strong&gt; to ensure software reliability and
+delivery confidence throughout the development lifecycle.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combined manual and automated testing&lt;/strong&gt; in a &lt;strong&gt;CI/CD environment&lt;/strong&gt; to give
+teams timely quality feedback.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validated application scalability and compatibility&lt;/strong&gt; within &lt;strong&gt;Kubernetes
+clusters&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Conducted UI/UX testing&lt;/strong&gt; to optimize the user experience and improve
+usability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;This engagement demonstrated how hands-on QA leadership, test automation, and
+cloud-native validation can strengthen the robustness of systems supporting
+&lt;strong&gt;100% renewable integration&lt;/strong&gt; into the grid.&lt;/p&gt;</description></item><item><title>Banking: Test Automation &amp; Compliance Quality</title><link>https://sahraoui-it.com/projects/2024/banking/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/projects/2024/banking/</guid><description>&lt;h2 id="banking-sector-project-background"&gt;Banking Sector Project Background
+&lt;/h2&gt;&lt;p&gt;This project was carried out for one of the &lt;strong&gt;largest banks in Germany&lt;/strong&gt;, with a
+strong focus on &lt;strong&gt;quality assurance and test automation&lt;/strong&gt;. The goal was to meet
+regulatory requirements efficiently while improving software quality in the area
+of document generation.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="my-role-in-the-banking-sector-project"&gt;My Role in the Banking Sector Project
+&lt;/h2&gt;&lt;p&gt;As the Test Manager, I led cross-functional initiatives to automate testing
+processes and managed test-data preparation for the creation and validation of
+audit-relevant documents. The role combined quality leadership with practical
+automation and delivery-risk management in a regulated environment.&lt;/p&gt;
+&lt;h2 id="key-responsibilities"&gt;Key Responsibilities
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Led test automation initiatives&lt;/strong&gt; to reduce manual efforts and increase
+efficiency.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Managed test data preparation&lt;/strong&gt; for the automated generation and validation
+of audit-compliant documents.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enhanced test coverage and optimized test processes&lt;/strong&gt; to identify risks
+early and make quality controls repeatable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Aligned cross-functional stakeholders&lt;/strong&gt; on reliable quality practices for
+audit-relevant delivery.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Through this project, I helped make quality assurance more efficient,
+repeatable, and reliable in a highly regulated banking environment.&lt;/p&gt;</description></item><item><title>Quorivell: Local-First Decisions with On-Device AI</title><link>https://sahraoui-it.com/projects/2026/quorivell/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/projects/2026/quorivell/</guid><description>&lt;img src="https://sahraoui-it.com/projects/2026/quorivell/quorivell.png" alt="Featured image of post Quorivell: Local-First Decisions with On-Device AI" /&gt;&lt;h2 id="hobby-project"&gt;Hobby project
+&lt;/h2&gt;&lt;p&gt;I work as a freelance DevOps / quality engineering consultant by day. &lt;strong&gt;Quorivell&lt;/strong&gt; is a
+personal Flutter side project: a private, local-first app that turns messy conversation
+text into reviewable decisions and commitments — with evidence kept on the device.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tagline:&lt;/strong&gt; Decisions, with evidence — on your device.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="what-it-does"&gt;What it does
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Capture&lt;/strong&gt; conversation text as source records&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Extract&lt;/strong&gt; candidates on-device with a local GGUF model (llama.cpp)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Review&lt;/strong&gt; before anything is saved — nothing auto-writes the ledger&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ledger&lt;/strong&gt; for decisions, commitments, owners, and due dates you can audit&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chat&lt;/strong&gt; in free-form threads on the same local model&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Locales:&lt;/strong&gt; English, German, and Arabic (Material 3)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Privacy is the product: Drift SQLite on device is canonical, inference stays local, and
+source content does not leave the phone unless you later opt into an explicit remote flow.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="stack-short"&gt;Stack (short)
+&lt;/h2&gt;&lt;p&gt;Flutter · Riverpod · GoRouter · Drift · Freezed · llama.cpp (&lt;code&gt;llama_cpp_dart&lt;/code&gt;) ·
+Firebase Auth foundation (no cloud AI for capture/extract)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="links"&gt;Links
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a class="link" href="https://github.com/cherifsahraoui/Quorivell" target="_blank" rel="noopener"
+&gt;cherifsahraoui/Quorivell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google Play (closed testing):&lt;/strong&gt; &lt;a class="link" href="https://play.google.com/store/apps/details?id=com.quorivell.app" target="_blank" rel="noopener"
+&gt;com.quorivell.app&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Under active development — expect sharp edges, especially around large on-device model
+downloads.&lt;/p&gt;</description></item><item><title>Volkswagen Infotainment: Integration &amp; Test Automation</title><link>https://sahraoui-it.com/projects/2021/vw_infotainment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sahraoui-it.com/projects/2021/vw_infotainment/</guid><description>&lt;img src="https://sahraoui-it.com/projects/2021/vw_infotainment/volkswagen_infotainment.png" alt="Featured image of post Volkswagen Infotainment: Integration &amp; Test Automation" /&gt;&lt;h2 id="volkswagen-infotainment-project-background-summary"&gt;Volkswagen Infotainment Project Background Summary
+&lt;/h2&gt;&lt;p&gt;Volkswagen Infotainment GmbH, located in Bochum, Germany, is responsible for
+delivering advanced infotainment systems that enhance the driving experience.
+These systems integrate cutting-edge technologies to provide seamless
+connectivity, entertainment, and navigation features for Volkswagen&amp;rsquo;s range of
+vehicles.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="my-role-in-the-volkswagen-infotainment-project"&gt;My Role in the Volkswagen Infotainment Project
+&lt;/h2&gt;&lt;p&gt;From June 2021 to August 2022, I worked as a System Integration and Test
+Engineer for the Volkswagen Infotainment project. In this role, I collaborated
+closely with internal and external partners, including Volkswagen and
+Continental, to integrate, verify, and deliver complex embedded and
+cloud-connected software systems.&lt;/p&gt;
+&lt;h2 id="key-responsibilities"&gt;Key Responsibilities
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Analyzed requirements&lt;/strong&gt; and defined software-integration and test criteria,
+identifying testability and integration risks early.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Developed and implemented&lt;/strong&gt; software, integration, and system tests with a
+focus on &lt;strong&gt;test automation&lt;/strong&gt; and reliable regression feedback.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Developed CI workflows and integration pipelines&lt;/strong&gt; for complex embedded and
+cloud-connected systems.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collaborated with internal and external partners&lt;/strong&gt; (Volkswagen, Continental)
+to ensure smooth integration and resolve issues.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tracked issues&lt;/strong&gt; and progress in &lt;strong&gt;Jira&lt;/strong&gt;, ensuring timely resolutions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;This work combined systems engineering, test automation, and CI-enabled
+feedback to support the reliable delivery of advanced infotainment technology.&lt;/p&gt;</description></item></channel></rss>

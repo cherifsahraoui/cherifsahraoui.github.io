@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Testing on Sahraoui - Quality Engineering &amp; DevOps Beratung</title><link>https://sahraoui-it.com/de/tags/testing/</link><description>Recent content in Testing on Sahraoui - Quality Engineering &amp; DevOps Beratung</description><generator>Hugo -- gohugo.io</generator><language>de</language><copyright>Cherif Sahraoui / Sahraoui - Consulting</copyright><lastBuildDate>Thu, 13 Feb 2025 10:39:00 +0200</lastBuildDate><atom:link href="https://sahraoui-it.com/de/tags/testing/index.xml" rel="self" type="application/rss+xml"/><item><title>Testing in Production: Risiken, Vorteile und Best Practices</title><link>https://sahraoui-it.com/de/p/testing-in-production-risiken-vorteile-und-best-practices/</link><pubDate>Thu, 13 Feb 2025 10:39:00 +0200</pubDate><guid>https://sahraoui-it.com/de/p/testing-in-production-risiken-vorteile-und-best-practices/</guid><description>&lt;img src="https://sahraoui-it.com/p/testing-in-production-risks-benefits-and-best-practices/prod_testing_img.png" alt="Featured image of post Testing in Production: Risiken, Vorteile und Best Practices" /&gt;&lt;p&gt;Testing in der Produktion wurde lange Zeit als riskant angesehen und führte oft
+zu Diskussionen unter Entwicklern, Testern und Stakeholdern. In der heutigen,
+schnelllebigen Technologiewelt wird es jedoch immer häufiger. Testing in der
+Produktion bedeutet nicht, Tests in niedrigeren Umgebungen zu überspringen und
+sich ausschließlich auf Tests in der Produktion zu verlassen. Es bedeutet
+einfach, dass wir nach gründlichen Tests in der Staging- und anderen
+Vorproduktionsumgebungen in der Produktion weiter validieren, um die
+Zuverlässigkeit und Leistung in der realen Welt sicherzustellen.&lt;/p&gt;
+&lt;h2 id="verständnis-von-testing-in-der-produktion"&gt;Verständnis von Testing in der Produktion
+&lt;/h2&gt;&lt;p&gt;Testing in der Produktion bedeutet, Tests in einer Live-Umgebung durchzuführen.
+Während Staging- und Entwicklungsumgebungen versuchen, die Produktion zu
+imitieren, gelingt es ihnen oft nicht vollständig. Testing in der Produktion
+hilft, diese Lücke zu überbrücken, und stellt sicher, dass Anwendungen unter
+realen Bedingungen wie erwartet funktionieren.&lt;/p&gt;
+&lt;h2 id="wann-testing-in-der-produktion-entscheidend-ist"&gt;Wann Testing in der Produktion entscheidend ist
+&lt;/h2&gt;&lt;p&gt;Manchmal reicht das Testen in niedrigeren Umgebungen nicht aus. Zum Beispiel:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Drittanbieter-Abhängigkeiten&lt;/strong&gt;: Einige Dienste, wie externe APIs, verhalten
+sich in der Produktion anders als in der Staging-Umgebung.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Echter Benutzerverkehr&lt;/strong&gt;: Leistungs- und Skalierbarkeitsprobleme werden erst
+deutlich, wenn echte Benutzer mit dem System interagieren.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Komplexe Microservices&lt;/strong&gt;: In Staging-Umgebungen fehlen oft die vollständigen
+Abhängigkeiten, die in der Produktion vorhanden sind.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Wenn das QA-Team sogar grundlegende manuelle Rauchtests in der Produktion
+überspringt, besteht die Gefahr, dass Änderungen blind gefördert werden, die zu
+kritischen Fehlern führen könnten. Die Validierung in der Produktion dient als
+letzte Sicherheitsmaßnahme und hilft, unvorhergesehene Probleme zu erkennen, die
+in niedrigeren Umgebungen aufgrund von Unterschieden in den Daten,
+Verkehrsströmen oder Infrastrukturmerkmalen möglicherweise nicht auftauchen.&lt;/p&gt;
+&lt;h2 id="risiken-von-tests-in-der-produktion-und-strategien-zur-minderung"&gt;Risiken von Tests in der Produktion und Strategien zur Minderung
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Risiko&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Beschreibung&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Strategie zur Minderung&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Unbeabsichtigte Benutzerbeeinträchtigung&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Testaktionen könnten unbeabsichtigt sichtbare Änderungen für den Benutzer auslösen, wie Benachrichtigungen, E-Mails oder veränderte UI-Zustände.&lt;/td&gt;
+&lt;td&gt;Testkonten und Feature-Flags verwenden, reale Benutzer aus Testszenarien ausschließen und benutzerseitige Effekte überwachen.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Datenkorruption&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Testdurchführungen könnten echte Produktionsdaten ändern oder löschen und so Berichterstattung und Geschäftsoperationen beeinträchtigen.&lt;/td&gt;
+&lt;td&gt;Strikte Datenisolierung implementieren, synthetische oder nur-lesende Testdaten verwenden und geeignete Rollback-Mechanismen sicherstellen.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Leistungsbeeinträchtigung&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Automatisierte oder manuelle Tests könnten zusätzliche Last erzeugen und das System für reale Benutzer verlangsamen.&lt;/td&gt;
+&lt;td&gt;Tests während Zeiten mit wenig Verkehr planen, Systemauslastung überwachen und Ratenbegrenzungen für Testdurchführungen setzen.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Sicherheitsrisiken&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Testdaten oder Skripte könnten unbeabsichtigt sensible Informationen offenlegen oder Sicherheitslücken auslösen.&lt;/td&gt;
+&lt;td&gt;Sicherheitsbest Practices befolgen, Testdaten säubern und geeignete Authentifizierung sowie Zugriffskontrollen für Tests verwenden.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Falsch-positive/negative Ergebnisse&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Unterschiede zwischen Test- und realem Benutzerverhalten könnten zu irreführenden Testergebnissen führen, was unnötige Rollbacks oder unentdeckte Probleme zur Folge hat.&lt;/td&gt;
+&lt;td&gt;A/B-Tests, Shadow-Tests durchführen und Testergebnisse mit historischen Produktionsdaten vergleichen.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="vorteile-von-testing-in-der-produktion"&gt;Vorteile von Testing in der Produktion
+&lt;/h2&gt;&lt;p&gt;Trotz seiner Risiken hat Testing in der Produktion erhebliche Vorteile:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Validierung in der realen Welt&lt;/strong&gt;: Erfasst echte Interaktionen, die in
+niedrigeren Umgebungen nicht nachgebildet werden können.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Frühe Fehlererkennung&lt;/strong&gt;: Findet versteckte Probleme, bevor sie alle Benutzer
+betreffen.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bessere Leistungsanalyse&lt;/strong&gt;: Stellt die Skalierbarkeit sicher, indem es unter
+realen Verkehrsbedingungen getestet wird.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Datengetriebene Entscheidungen&lt;/strong&gt;: Ermöglicht A/B-Tests und den Vergleich von
+Funktionen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="beispiele-aus-der-praxis-bei-denen-testing-in-der-produktion-entscheidend-war"&gt;Beispiele aus der Praxis, bei denen Testing in der Produktion entscheidend war
+&lt;/h2&gt;&lt;p&gt;Testing in Produktionsumgebungen kann Probleme aufdecken, die beim Testen in
+Vorproduktionsumgebungen möglicherweise nicht auftreten. Hier sind zwei reale
+Szenarien, die dies veranschaulichen:&lt;/p&gt;
+&lt;h3 id="abstürze-der-mobilen-app-aufgrund-von-netzwerkvariabilität"&gt;Abstürze der mobilen App aufgrund von Netzwerkvariabilität
+&lt;/h3&gt;&lt;p&gt;Die mobile App einer politischen Kampagne, &amp;ldquo;Campaign Sidekick&amp;rdquo;, erlebte
+erhebliche Probleme während der Feldoperationen. Die App, die dazu entwickelt
+wurde, Wahlhelfer zu verfolgen, war auf eine schnelle Internetverbindung
+angewiesen. In ländlichen Gebieten mit langsamen oder unzuverlässigen
+Internetverbindungen hatte die App Schwierigkeiten, richtig zu funktionieren,
+was zu Daten-Upload-Fehlern und Fehlern bei der Aufgaben-Neuzuweisung führte.
+Dies führte zu verschwendeten Bemühungen und unvollständigen Wählerkontakten.
+Die Probleme wurden durch die Unfähigkeit der App, effektiv offline zu arbeiten,
+verschärft, was die Bedeutung von Tests unter verschiedenen realen Bedingungen
+unterstreicht.&lt;br&gt;
+&lt;a class="link" href="https://www.tothenew.com/blog/how-network-variability-impacts-mobile-applications" target="_blank" rel="noopener"
+&gt;Quelle&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="windows-blue-screen-of-death-bsod-durch-fehlerhaftes-update"&gt;Windows Blue Screen of Death (BSOD) durch fehlerhaftes Update
+&lt;/h3&gt;&lt;p&gt;Im August 2014 veröffentlichte Microsoft ein Sicherheitsupdate (MS14-045), das
+darauf abzielte, Schwachstellen im Windows-Kernel zu beheben. Das Update führte
+jedoch unbeabsichtigt dazu, dass einige Systeme abstürzten und den &amp;ldquo;Blue Screen
+of Death&amp;rdquo; (BSOD) anzeigten. Dieses Problem wurde auf einen fehlerhaften Patch
+zurückgeführt, der in Produktionsumgebungen nicht ausreichend getestet worden
+war. Der Vorfall unterstreicht die kritische Notwendigkeit für gründliches
+Testing von Updates in der Produktion, um Systeminstabilität und Datenverlust zu
+verhindern.&lt;br&gt;
+&lt;a class="link" href="https://testrigor.com/blog/microsofts-blue-screen-of-death/" target="_blank" rel="noopener"
+&gt;Quelle&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Diese Beispiele zeigen die Bedeutung von Tests in der Produktion, um Probleme zu
+erkennen, die in kontrollierten Testumgebungen möglicherweise nicht
+offensichtlich sind. Die Implementierung robuster Testprotokolle und
+Überwachungssysteme kann helfen, solche Risiken zu mindern.&lt;/p&gt;
+&lt;h2 id="fazit"&gt;Fazit
+&lt;/h2&gt;&lt;p&gt;Testing in der Produktion ist keine leichtsinnige Praxis mehr, sondern eine
+Notwendigkeit in der modernen Softwareentwicklung. Wenn es richtig durchgeführt
+wird, hilft es, reale Probleme frühzeitig zu erkennen, die Softwarequalität zu
+verbessern und die Benutzererfahrung zu optimieren. Es erfordert jedoch die
+richtigen Werkzeuge, Best Practices und ein gut vorbereitetes Team.&lt;br&gt;
+Durch die Kombination von Automatisierung, Überwachung und Feature-Flags können
+Unternehmen sicher in der Produktion testen und hochwertige Software mit
+Vertrauen liefern.&lt;/p&gt;</description></item></channel></rss>
