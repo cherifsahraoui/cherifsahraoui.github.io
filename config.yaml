@@ -1,0 +1,503 @@
+module:
+  imports:
+    - path: github.com/CaiJimmy/hugo-theme-stack/v3
+
+caches:
+  images:
+    dir: :cacheDir/images
+
+baseurl: https://sahraoui-it.com
+languageCode: en-us
+theme: hugo-theme-stack
+title: Sahraoui - Quality Engineering & DevOps Consulting
+copyright: Cherif Sahraoui / Sahraoui - Consulting
+
+# Theme i18n support
+# Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
+DefaultContentLanguage: en
+
+# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
+# This will make .Summary and .WordCount behave correctly for CJK languages.
+hasCJKLanguage: false
+
+languages:
+    en:
+        languageName: English
+        title: Sahraoui - Quality Engineering & DevOps Consulting
+        weight: 1
+        params:
+            reading_speed: 228
+            sidebar:
+                subtitle: A hands-on Quality Engineering, Test Automation, and DevOps consultant for cloud-native delivery, CI/CD quality, Kubernetes, and secure platforms.
+            home:
+                title: Quality Engineering & DevOps for Reliable Software Delivery
+                subtitle: I help teams make quality an engineering capability by connecting test automation, CI/CD, GitOps, Kubernetes, and secure cloud platforms. Sahraoui - Consulting brings hands-on QA and DevOps expertise to faster, safer, and more reliable releases.
+            about:
+                title: Quality Engineering Meets DevOps
+                subtitle: Building quality into platforms, pipelines, and releases
+                whyQuality:
+                    title: Why Quality Engineering and DevOps Belong Together
+                    text1: Quality is not a final testing phase. In cloud-native delivery, it must be designed into architecture, code, CI/CD pipelines, infrastructure, and operational feedback loops.
+                    text2: I work hands-on across test automation, API/UI testing, CI/CD, Kubernetes, Terraform, GitOps, and platform security to connect quality with reliable delivery.
+                    text3: Sahraoui - Consulting helps teams establish pragmatic quality controls that improve release confidence, compliance, observability, and long-term maintainability.
+                btnText: Explore My Quality Engineering Approach
+            services:
+                title: Services
+                subtitle: Quality Engineering, Test Automation, and Cloud-Native Delivery Services
+                qaStrategy:
+                    title: Quality Engineering & Delivery Strategy
+                    description: Defining testable delivery models, quality gates, risk-based test strategies, and scalable team practices.
+                testAutomation:
+                    title: Test Automation & Quality Platforms
+                    description: Building maintainable API/UI automation and Kubernetes-native test execution into developer workflows.
+                cicdIntegration:
+                    title: CI/CD, GitOps & Release Engineering
+                    description: Engineering secure, reliable pipelines with GitLab CI, Jenkins, ArgoCD, Helm, and cloud-native tooling.
+                performanceSecurity:
+                    title: DevSecOps, Reliability & Observability
+                    description: Implementing secrets management, governance, compliance, monitoring, and reliable platform operations.
+                qaLeadership:
+                    title: Technical QA & Platform Leadership
+                    description: Leading quality and platform initiatives through roadmap planning, testability, stakeholder alignment, and delivery ownership.
+                testProcessOptimization:
+                    title: Continuous Quality Improvement
+                    description: Creating actionable metrics and feedback loops that improve test effectiveness, release flow, and production confidence.
+            skills:
+                title: Quality Engineering, DevOps & Platform Tooling
+                subtitle: Technologies for automated quality and cloud-native delivery
+
+                testingTools:
+                    title: Quality Engineering & Test Automation
+                    pytest: Pytest
+                    selenium: Selenium
+                    cypress: Cypress
+                    junit: JUnit
+                    postman: Postman
+                    apiUiTests: Automated API/UI Testing
+
+                cloudDevOps:
+                    title: DevOps, Cloud & Platform Engineering
+                    kubernetes: Kubernetes (K8s)
+                    docker: Docker
+                    helm: Helm
+                    argocd: ArgoCD
+                    kustomize: Kustomize
+                    terraform: Terraform
+                    gitops: GitOps
+                    harness: Harness
+                    gitlabCi: GitLab CI
+                    jenkins: Jenkins
+                    bitbucketPipelines: Bitbucket Pipelines
+                    aws: AWS
+                    gcp: GCP
+                    onPremK8s: On-Prem Kubernetes
+                    iaac: Infrastructure-as-Code (IaC)
+                    cicd: CI/CD Pipelines
+
+                programming:
+                    title: Programming & Scripting
+                    python: Python
+                    bash: Bash
+                    linuxCommandLine: Linux Command Line
+
+                monitoring:
+                    title: Monitoring & Observability
+                    prometheus: Prometheus
+                    grafana: Grafana
+                    sast: SAST (Static Application Security Testing)
+                    dast: DAST (Dynamic Application Security Testing)
+
+                versionControl:
+                    title: Delivery, Quality & Collaboration Tools
+                    bitbucket: Bitbucket
+                    gitlab: GitLab
+                    confluence: Confluence
+                    jira: Jira
+                    jiraXray: Jira/XRay
+                    testrail: TestRail
+                    vault: Vault
+                    sonarqube: SonarQube
+
+                security:
+                    title: Security & DevSecOps
+                    secretsManagement: Secrets Management (Vault, KMS)
+                    imageSecurity: Container & OCI Image Security
+                    supplyChain: Software Supply Chain Security (SLSA, SBOM)
+                    signing: Artifact Signing (Cosign, Notation)
+                    scanning: Dependency & Vulnerability Scanning (Trivy,)
+                    policy: Policy-as-Code (OPA, Kyverno)
+                    compliance: Compliance & Regulatory Controls (Energy, Banking)
+
+
+            industries:
+                title: Industries We Support
+                subtitle: Engineering quality and reliable delivery in complex environments
+                automotive:
+                    title: Automotive
+                    description: Automating quality and delivery pipelines for automotive platforms, embedded software, and connected systems.
+                banking:
+                    title: Banking & Finance
+                    description: Test automation, compliant CI/CD, and infrastructure controls for regulated environments.
+                energy:
+                    title: Energy
+                    description: Reliability-focused quality engineering, DevOps, and observability for critical energy and grid infrastructure.
+            cta:
+                title: Build Quality Into Every Release
+                text1: Looking for hands-on Quality Engineering, test automation, DevOps, or CI/CD modernization support? Let's connect.
+                text2: I help teams create secure, scalable delivery ecosystems where automated quality is part of the platform.
+                btnText: Contact Me
+
+    de:
+        languageName: Deutsch
+        title: Sahraoui - Quality Engineering & DevOps Beratung
+        weight: 2
+        params:
+            reading_speed: 228
+            sidebar:
+                subtitle: Praxisnaher Berater für Quality Engineering, Testautomatisierung und DevOps mit Fokus auf Cloud-native Delivery, CI/CD-Qualität, Kubernetes und sichere Plattformen.
+            home:
+                title: Quality Engineering & DevOps für zuverlässige Softwarebereitstellung
+                subtitle: Als praxisnaher Berater für Quality Engineering, Testautomatisierung und DevOps helfe ich Teams, Qualität in CI/CD-Pipelines, Testautomatisierung, Kubernetes und GitOps zu verankern. Sahraoui - Consulting verbindet technische QA-Kompetenz mit Cloud- und Platform Engineering für schnellere, sicherere und zuverlässigere Releases.
+            about:
+                title: Quality Engineering trifft DevOps
+                subtitle: Qualität in Plattformen, Pipelines und Releases verankern
+                whyQuality:
+                    title: Warum Quality Engineering und DevOps zusammengehören
+                    text1: Qualität ist keine finale Testphase. In Cloud-native-Umgebungen muss sie in Architektur, Code, CI/CD-Pipelines, Infrastruktur und operative Feedback-Schleifen eingebaut sein.
+                    text2: Ich arbeite hands-on mit Testautomatisierung, API/UI-Tests, CI/CD, Kubernetes, Terraform, GitOps und Plattform-Security, um Qualität mit zuverlässiger Delivery zu verbinden.
+                    text3: Sahraoui - Consulting etabliert pragmatische Qualitätskontrollen, die Release-Sicherheit, Compliance, Observability und langfristige Wartbarkeit verbessern.
+                btnText: Mehr über meinen Quality-Engineering-Ansatz
+            services:
+                title: Dienstleistungen
+                subtitle: Dienstleistungen für Quality Engineering, Testautomatisierung und Cloud-native Delivery
+                qaStrategy:
+                    title: Quality Engineering & Delivery-Strategie
+                    description: Entwicklung testbarer Delivery-Modelle, Quality Gates, risikobasierter Teststrategien und skalierbarer Teampraktiken.
+                testAutomation:
+                    title: Testautomatisierung & Quality Platforms
+                    description: Aufbau wartbarer API/UI-Testautomatisierung und Kubernetes-nativer Testausführung in Entwickler-Workflows.
+                cicdIntegration:
+                    title: CI/CD, GitOps & Release Engineering
+                    description: Engineering sicherer, zuverlässiger Pipelines mit GitLab CI, Jenkins, ArgoCD, Helm und Cloud-native-Tools.
+                performanceSecurity:
+                    title: DevSecOps, Zuverlässigkeit & Observability
+                    description: Implementierung von Secrets-Management, Governance, Compliance, Monitoring und zuverlässigem Plattformbetrieb.
+                qaLeadership:
+                    title: Technische QA- & Plattformleitung
+                    description: Leitung von Qualitäts- und Plattforminitiativen durch Roadmap-Planung, Testbarkeit, Stakeholder-Abstimmung und Delivery Ownership.
+                testProcessOptimization:
+                    title: Kontinuierliche Qualitätsverbesserung
+                    description: Einführung aussagekräftiger Metriken und Feedback-Schleifen für bessere Testwirksamkeit, Releases und Produktionssicherheit.
+            skills:
+                title: Quality Engineering, DevOps & Platform Tooling
+                subtitle: Technologien für automatisierte Qualität und Cloud-native Delivery
+
+                testingTools:
+                    title: Quality Engineering & Testautomatisierung
+                    pytest: Pytest
+                    selenium: Selenium
+                    cypress: Cypress
+                    junit: JUnit
+                    postman: Postman
+                    apiUiTests: Automatisiertes API/UI-Testing
+
+                cloudDevOps:
+                    title: DevOps, Cloud & Platform Engineering
+                    kubernetes: Kubernetes (K8s)
+                    docker: Docker
+                    helm: Helm
+                    argocd: ArgoCD
+                    kustomize: Kustomize
+                    terraform: Terraform
+                    gitops: GitOps
+                    harness: Harness
+                    gitlabCi: GitLab CI
+                    jenkins: Jenkins
+                    bitbucketPipelines: Bitbucket Pipelines
+                    aws: AWS
+                    gcp: GCP
+                    onPremK8s: On-Premises Kubernetes
+                    iaac: Infrastructure-as-Code (IaC)
+                    cicd: CI/CD-Pipelines
+
+                programming:
+                    title: Programmierung & Scripting
+                    python: Python
+                    bash: Bash
+                    linuxCommandLine: Linux-Befehlszeile
+
+                monitoring:
+                    title: Monitoring & Observability
+                    prometheus: Prometheus
+                    grafana: Grafana
+                    sast: SAST (Static Application Security Testing)
+                    dast: DAST (Dynamic Application Security Testing)
+
+                versionControl:
+                    title: Delivery-, Quality- & Collaboration-Tools
+                    bitbucket: Bitbucket
+                    gitlab: GitLab
+                    confluence: Confluence
+                    jira: Jira
+                    jiraXray: Jira/XRay
+                    testrail: TestRail
+                    vault: Vault
+                    sonarqube: SonarQube
+
+                security:
+                    title: Sicherheit & DevSecOps
+                    secretsManagement: Secrets Management (Vault, KMS)
+                    imageSecurity: Container- & OCI-Image-Sicherheit
+                    supplyChain: Software-Lieferkettensicherheit (SLSA, SBOM)
+                    signing: Artefakt-Signierung (Cosign, Notation)
+                    scanning: Dependency- & Schwachstellen-Scanning (Trivy)
+                    policy: Policy-as-Code (OPA, Kyverno)
+                    compliance: Compliance & Regulierung (Energie, Banken)
+
+
+            industries:
+                title: Branchen, die wir unterstützen
+                subtitle: Qualität und zuverlässige Delivery in komplexen Umgebungen
+                automotive:
+                    title: Automobilindustrie
+                    description: Automatisierung von Qualität und Delivery-Pipelines für Automotive-, Embedded- und vernetzte Systeme.
+                banking:
+                    title: Banken & Finanzen
+                    description: Testautomatisierung, compliance-konforme CI/CD-Pipelines und Infrastrukturkontrollen für regulierte Umgebungen.
+                energy:
+                    title: Energie
+                    description: Reliability-orientiertes Quality Engineering, DevOps und Observability für kritische Energie- und Netzinfrastrukturen.
+            cta:
+                title: Qualität in jedes Release integrieren
+                text1: Sie suchen hands-on Unterstützung für Quality Engineering, Testautomatisierung, DevOps oder CI/CD-Modernisierung? Lassen Sie uns sprechen.
+                text2: Ich helfe Teams, sichere und skalierbare Delivery-Ökosysteme aufzubauen, in denen automatisierte Qualität Teil der Plattform ist.
+                btnText: Kontaktieren Sie mich
+
+services:
+    # GA Tracking ID
+    googleAnalytics:
+        id:
+
+pagination:
+    pagerSize: 3
+
+permalinks:
+    post: /p/:slug/
+    page: /:slug/
+
+params:
+    mainSections:
+        - post
+    featuredImageField: image
+    rssFullContent: true
+    favicon: "favicon_dark.ico"
+    appleTouchIcon: "favicon_dark.png"
+
+    footer:
+        # since: 2020
+        customText:
+
+    dateFormat:
+        published: Jan 02, 2006
+        lastUpdated: Jan 02, 2006 15:04 MST
+
+    sidebar:
+        # emoji: 🍥
+        avatar:
+            enabled: true
+            local: true
+            src: img/avatar.png
+
+    article:
+        math: false
+        toc: true
+        readingTime: true
+        license:
+            enabled: false
+            default: Licensed under CC BY-NC-SA 4.0
+
+    comments:
+        enabled: true
+        provider: utterances
+
+        disqusjs:
+            shortname:
+            apiUrl:
+            apiKey:
+            admin:
+            adminLabel:
+
+        utterances:
+            repo: "cherifsahraoui/cherifsahraoui.github.io"
+            issueTerm: pathname
+            label: "💬 comment"
+
+        beaudar:
+            repo:
+            issueTerm: pathname
+            label:
+            theme:
+
+        remark42:
+            host:
+            site:
+            locale:
+
+        vssue:
+            platform:
+            owner:
+            repo:
+            clientId:
+            clientSecret:
+            autoCreateIssue: false
+
+        # Waline client configuration see: https://waline.js.org/en/reference/component.html
+        waline:
+            serverURL:
+            lang:
+            pageview:
+            emoji:
+                - https://unpkg.com/@waline/emojis@1.0.1/weibo
+            requiredMeta:
+                - name
+                - email
+                - url
+            locale:
+                admin: Admin
+                placeholder:
+
+        twikoo:
+            envId:
+            region:
+            path:
+            lang:
+
+        # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
+        cactus:
+            defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
+            serverName: "cactus.chat"
+            siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
+
+        giscus:
+            repo:
+            repoID:
+            category:
+            categoryID:
+            mapping:
+            lightTheme:
+            darkTheme:
+            reactionsEnabled: 1
+            emitMetadata: 0
+
+        gitalk:
+            owner:
+            admin:
+            repo:
+            clientID:
+            clientSecret:
+            proxy:
+
+        cusdis:
+            host:
+            id:
+    widgets:
+        homepage:
+            - type: search
+            - type: tag-cloud
+              params:
+                  limit: 10
+        page:
+            - type: toc
+
+    opengraph:
+        twitter:
+            # Your Twitter username
+            site:
+
+            # Available values: summary, summary_large_image
+            card: summary_large_image
+
+    defaultImage:
+        opengraph:
+            enabled: false
+            local: false
+            src:
+
+    colorScheme:
+        # Display toggle
+        toggle: true
+
+        # Available values: auto, light, dark
+        default: auto
+
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
+### Custom menu
+### See https://stack.jimmycai.com/config/menu
+### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
+menu:
+    main: []
+
+    social:
+        - identifier: github
+          name: GitHub
+          url: https://github.com/cherifsahraoui/
+          params:
+              icon: brand-github
+
+        - identifier: linkedin
+          name: Linkedin
+          url: https://www.linkedin.com/in/cherif-sahraoui/
+          params:
+              icon: brand-linkedin
+
+        - identifier: sahraoui-it
+          name: sahraoui-consulting
+          url: https://sahraoui-it.com
+          params:
+              icon: brand-sahraoui-it
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        extensions:
+            passthrough:
+                enable: true
+                delimiters:
+                    block:
+                        - - \[
+                          - \]
+                        - - $$
+                          - $$
+                    inline:
+                        - - \(
+                          - \)
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: true
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4

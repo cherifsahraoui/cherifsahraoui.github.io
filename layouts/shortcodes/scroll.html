@@ -1,0 +1,18 @@
+<script>
+    let scrollPosition = 0;
+
+    function openDialog(dialogId) {
+        scrollPosition = window.scrollY;
+        const dialog = document.getElementById(dialogId);
+        window.scrollTo(0, 0);
+        dialog.showModal();
+
+        dialog.addEventListener('close', () => {
+            window.scrollTo(0, scrollPosition);
+        }, { once: true });
+    }
+
+    function closeDialog(dialogId) {
+        document.getElementById(dialogId).close();
+    }
+</script>

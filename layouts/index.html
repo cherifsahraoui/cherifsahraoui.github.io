@@ -1,0 +1,147 @@
+{{ define "main" }}
+<section class="home-hero-banner">
+    <div class="home-hero-container">
+        <div class="home-hero-content">
+            <h1>
+                {{ .Site.Params.home.title }}
+            </h1>
+            <p>
+                {{ .Site.Params.home.subtitle }}
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="home-card">
+    <div class="home-card-container">
+        <div class="home-card-section-title">
+            <h2>{{ .Site.Params.about.title }}</h2>
+            <p>{{ .Site.Params.about.subtitle }}</p>
+        </div>
+        <div class="home-card-content">
+            <div class="home-card-text">
+                <h3>{{ .Site.Params.about.whyQuality.title }}</h3>
+                <p>{{ .Site.Params.about.whyQuality.text1 }}</p>
+                <p>{{ .Site.Params.about.whyQuality.text2 }}</p>
+                <p>{{ .Site.Params.about.whyQuality.text3 }}</p>
+            </div>
+            <div class="home-card-btn">
+                <a href="{{ .Site.LanguagePrefix }}/p/qa-good-practices/" class="btn">{{
+                    .Site.Params.about.btnText }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="home-card">
+    <div class="home-card-container">
+        <div class="home-card-section-title">
+            <h2>{{ .Site.Params.services.title }}</h2>
+            <p>{{ .Site.Params.services.subtitle }}</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>{{ .Site.Params.services.qaStrategy.title }}</h3>
+                <p>{{ .Site.Params.services.qaStrategy.description }}</p>
+            </div>
+            <div class="service-card">
+                <h3>{{ .Site.Params.services.testAutomation.title }}</h3>
+                <p>{{ .Site.Params.services.testAutomation.description }}</p>
+            </div>
+            <div class="service-card">
+                <h3>{{ .Site.Params.services.cicdIntegration.title }}</h3>
+                <p>{{ .Site.Params.services.cicdIntegration.description }}</p>
+            </div>
+            <div class="service-card">
+                <h3>{{ .Site.Params.services.performanceSecurity.title }}</h3>
+                <p>{{ .Site.Params.services.performanceSecurity.description }}</p>
+            </div>
+            <div class="service-card">
+                <h3>{{ .Site.Params.services.qaLeadership.title }}</h3>
+                <p>{{ .Site.Params.services.qaLeadership.description }}</p>
+            </div>
+            <div class="service-card">
+                <h3>{{ .Site.Params.services.testProcessOptimization.title }}</h3>
+                <p>{{ .Site.Params.services.testProcessOptimization.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="home-card">
+    <div class="home-card-container">
+        <div class="home-card-section-title">
+            <h2>{{ .Site.Params.skills.title }}</h2>
+            <p>{{ .Site.Params.skills.subtitle }}</p>
+        </div>
+
+        <div class="skills-container">
+
+            {{ range $categoryKey, $category := .Site.Params.skills }}
+            {{ if and (ne $categoryKey "title") (ne $categoryKey "subtitle") }}
+            <div class="skill-category">
+                <h3>{{ $category.title }}</h3>
+
+                <ul class="skill-list">
+                    {{/* Loop through each skill inside the category */}}
+                    {{ range $skillKey, $skillValue := $category }}
+                    {{ if ne $skillKey "title" }}
+                    <li>{{ $skillValue }}</li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+            {{ end }}
+
+        </div>
+    </div>
+</section>
+
+<section id="industries" class="home-card">
+    <div class="home-card-container">
+        <div class="home-card-section-title">
+            <h2>{{ .Site.Params.industries.title }}</h2>
+            <p>{{ .Site.Params.industries.subtitle }}</p>
+        </div>
+        <div class="industry-cards">
+            <div class="industry-card">
+                <img id="car-icon" alt="Car Icon">
+                <h3>{{ .Site.Params.industries.automotive.title }}</h3>
+                <p>{{ .Site.Params.industries.automotive.description }}</p>
+            </div>
+            <div class="industry-card">
+                <img id="bank-icon" alt="Banking Icon">
+                <h3>{{ .Site.Params.industries.banking.title }}</h3>
+                <p>{{ .Site.Params.industries.banking.description }}</p>
+            </div>
+            <div class="industry-card">
+                <img id="energy-icon" alt="Energy Icon">
+                <h3>{{ .Site.Params.industries.energy.title }}</h3>
+                <p>{{ .Site.Params.industries.energy.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cta" class="home-card">
+    <div class="home-card-container">
+        <div class="home-card-content">
+            <div class="home-card-section-title">
+                <h2>{{ .Site.Params.cta.title }}</h2>
+            </div>
+            <div class="home-card-text">
+                <p>{{ .Site.Params.cta.text1 }}</p>
+                <p>{{ .Site.Params.cta.text2 }}</p>
+            </div>
+            <div class="home-card-btn">
+                <a href="/contact" class="btn">{{ .Site.Params.cta.btnText }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{- partial "footer/footer" . -}}
+{{ end }}
+
+{{ define "right-sidebar" }}
+{{ end }}
